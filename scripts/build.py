@@ -1,0 +1,71 @@
+import pathlib,sys,json,html,urllib.parse
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+COORD=pathlib.Path(r'C:\Users\Admin\OneDrive - CWU\AI\Projects\Rinehart-Oil-Website-Redesign-Content-Migration')
+sys.path.insert(0,str(COORD/'.deps'))
+from bs4 import BeautifulSoup
+D=json.loads((COORD/'source/inventory.json').read_text(encoding='utf8')); ASSETS=D['assets']; PATHS={p['path'] for p in D['pages']}
+NAV=[('','Home'),('trucking-for-hire','Trucking'),('branded-fuels','Branded fuels'),('unbranded-fuels','Unbranded fuels'),('pacific-pride-card-lock','Cardlock'),('customer-resources','Resources')]
+ROUTES=[]
+def clean(fragment,prefix):
+    s=BeautifulSoup(fragment,'html.parser')
+    for el in s.select('script,style,form,iframe,input,button,object,embed'):el.decompose()
+    for el in s.find_all(True):
+        for key in list(el.attrs):
+            if key not in ('href','src','alt','title','colspan','rowspan'):del el.attrs[key]
+        for key in ['href','src']:
+            if not el.has_attr(key):continue
+            u=urllib.parse.urlsplit(urllib.parse.urljoin(D['source'],el[key]));path=u.path
+            if u.scheme not in ('http','https','mailto','tel'):el.attrs.pop(key,None);continue
+            if u.hostname in ('www.rinehartoil.com','rinehartoil.com'):
+                if path in ASSETS and ASSETS[path].get('local'):
+                    target=ASSETS[path].get('optimized',ASSETS[path]['local']) if key=='src' else ASSETS[path]['local'];el[key]=prefix+target
+                elif path in ASSETS and ASSETS[path].get('error') and key=='href':
+                    el[key]='https://www.rinehartoil.com/employment-application/'
+                    el.string='View current application instructions (source PDF unavailable)'
+                elif path in PATHS:el[key]=prefix+path.strip('/')+'/index.html' if path!='/' else prefix+'index.html'
+                else:el[key]=D['source']+path
+            if key=='href' and u.scheme in ('http','https') and u.hostname not in ('www.rinehartoil.com','rinehartoil.com'):el['rel']='noopener noreferrer'
+        if el.name=='img':el['loading']='lazy';el['alt']=el.get('alt') or 'Rinehart Oil source photograph';el['decoding']='async'
+    return str(s)
+def shell(title,path,body,prefix):
+    nav=''.join(f'<a href="{prefix}{slug+"/" if slug else ""}index.html" '+('aria-current="page"' if path.strip('/')==slug else '')+f'>{label}</a>' for slug,label in NAV)
+    return f'''<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><title>{html.escape(title)} | Rinehart Oil</title><meta name="description" content="Rinehart Oil website review. Family-owned Northern California fuel supply, trucking and commercial fueling since 1959."><link rel="icon" href="{prefix}assets/mark.svg" type="image/svg+xml"><link rel="stylesheet" href="{prefix}assets/site.css?v=20261012-1"><script defer src="{prefix}assets/site.js"></script></head><body><a class="skip" href="#main">Skip to content</a><div class="review">WEBSITE DESIGN REVIEW <span>Current customer services: <a href="https://www.rinehartoil.com/">rinehartoil.com ↗</a></span></div><header><div class="masthead"><a class="brand" href="{prefix}index.html" aria-label="Rinehart Oil home"><img src="{prefix}assets/mark.svg" alt="" width="54" height="54"><span>RINEHART <b>OIL</b><small>FAMILY OWNED. ROAD PROVEN.</small></span></a><a class="phone" href="tel:+17074628811"><small>LET’S GET TO WORK</small>(707) 462-8811</a><button class="menu" aria-expanded="false" aria-controls="nav">Menu</button></div><nav id="nav">{nav}<a class="nav-contact" href="{prefix}contact/index.html">Contact & dispatch ↗</a></nav></header><main id="main">{body}</main><section class="bottom-cta"><div><p class="eyebrow">A REAL TEAM. A RELIABLE PARTNER.</p><h2>Let’s keep you moving.</h2></div><a class="button light" href="{prefix}contact/index.html">Talk to Rinehart <span>↗</span></a></section><footer><div><a class="brand footer-brand" href="{prefix}index.html">RINEHART <b>OIL</b></a><p>Family owned service to the North Bay since 1959.</p><p>2401 N. State Street, Ukiah, CA 95482<br>P.O. Box 725, Ukiah, CA 95482</p></div><div><h3>Customer connections</h3><a href="{prefix}credit-application/index.html">Credit application</a><a href="{prefix}employment-opportunities/index.html">Careers</a><a href="{prefix}employment-application/index.html">Employment applications</a><a href="https://app.testteamtrainer.com/" rel="noopener noreferrer">Employee training ↗</a></div><div><h3>Stay connected</h3><a href="tel:+17074628811">Office: (707) 462-8811</a><a href="tel:+17074673313">Dispatch: (707) 467-3313</a><a href="mailto:dispatch@rinehartoil.com">dispatch@rinehartoil.com</a><a href="{prefix}privacy-policy/index.html">Privacy & review information</a></div><div class="footer-base">© 2026 Rinehart Oil, Inc. <span>Independent design review · Source photo credit: <a href="http://www.kevinfaleriosphotography.com/" rel="noopener noreferrer">Kevin Falerios</a></span></div></footer></body></html>'''
+home=D['pages'][0]
+cards=[('01','trucking-for-hire','Bulk fuel. Serious muscle.','Reliable transportation for above- and below-ground tanks. Professional drivers. A company-owned fleet.'),('02','branded-fuels','The right brand. Your advantage.','Fuel supply and retail expertise for independent station owners and operators.'),('03','unbranded-fuels','Supply built around you.','Gasoline and diesel, daily pricing, inventory management and supply agreements.'),('04','pacific-pride-card-lock','Your fleet. Fueled for more.','Commercial fueling and access to the Pacific Pride network.')]
+tiles=''.join(f'<a class="service" href="{slug}/index.html"><span class="service-num">{num} /</span><h3>{title}</h3><p>{desc}</p><span class="service-link">Explore {"cardlock" if num=="04" else "service"} <b>↗</b></span></a>' for num,slug,title,desc in cards)
+body=f'''<section class="hero"><div class="hero-photo" role="img" aria-label="Rinehart Oil tanker truck with the Golden Gate Bridge"></div><div class="hero-inner"><p class="eyebrow">NORTHERN CALIFORNIA. SINCE 1959.</p><h1>Built to deliver.<br><span>Driven by service.</span></h1><p class="hero-lead">Fuel for the work ahead.<br>A team you can count on.</p><p class="hero-desc">Family-owned fuel supply, transportation and commercial fueling. Built on service. Driven by dependability.</p><div class="hero-actions"><a class="button" href="contact/index.html">Put us to work <span>↗</span></a><a class="text-link" href="#services">Find your fuel solution ↓</a></div></div><div class="hero-stamp"><strong>24/7</strong><span>TRUCKING OPERATIONS<br>365 DAYS A YEAR</span></div></section><section class="proof-strip"><div><strong>1959</strong><span>OUR ROOTS RUN DEEP</span></div><div><strong>24 / 365</strong><span>DEDICATED FUEL TRANSPORT</span></div><div><strong>NorCal</strong><span>LOCAL KNOWLEDGE. REAL PEOPLE.</span></div></section><section id="services" class="services wrap"><div class="section-head"><p class="eyebrow">BUILT TO DELIVER</p><h2>One dependable partner.<br>Every mile of the way.</h2><p>From the first gallon to the last delivery, we help keep Northern California businesses moving.</p></div><div class="service-grid">{tiles}</div></section><section class="story wrap"><div class="story-photo"><img src="assets/owner-11.webp" alt="Owner-supplied photograph of the Rinehart Oil stainless-steel tanker truck" loading="lazy"><span>POWERED BY PEOPLE. PROVEN ON THE ROAD.</span></div><div class="story-copy"><p class="eyebrow">STEEL IN OUR SPINE. SERVICE AT OUR CORE.</p><h2>Strength is keeping<br>your word.</h2><p>Rinehart Oil serves independent stations, truck stops, businesses, government, agriculture and private customers. Our focus is practical knowledge, quality products and exceptional service.</p><p>Honesty. Integrity. Reliability. Operational excellence. Customer focus. The same principles that started this business still drive it.</p><a class="text-link" href="about/index.html">Meet the company behind the delivery ↗</a></div></section><section class="dispatch-band wrap"><p class="eyebrow">READY FOR THE NEXT DELIVERY?</p><h2>Reach the people<br>who make it happen.</h2><div><a href="tel:+17074673313">Dispatch <strong>(707) 467-3313</strong></a><a href="mailto:dispatch@rinehartoil.com">Email the team <strong>dispatch@rinehartoil.com ↗</strong></a></div></section>'''
+(ROOT/'index.html').write_text(shell('Fuel for the work ahead','/',body,''),encoding='utf8')
+for page in D['pages']:
+    path=page['path']
+    if path=='/':continue
+    prefix='../'*len(path.strip('/').split('/'));dest=ROOT/path.strip('/');dest.mkdir(parents=True,exist_ok=True)
+    raw=(COORD/'source'/((path.strip('/').replace('/','__') or 'home')+'.html')).read_bytes().decode('utf8',errors='replace').replace('\ufffd',' ')
+    s=BeautifulSoup(raw,'html.parser');regions=[s.select_one('#page-content'),s.select_one('#expanding-regions-page'),s.select_one('#page-content-secondary'),s.select_one('#page-secondary')]
+    content=''.join(clean(str(r),prefix) for r in regions if r)
+    notice=''
+    if path=='/customer-resources/':notice='<div class="notice"><strong>Customer tools and reference library</strong><p>The working margin calculator remains on the current website. Historical industry notices below are retained as reference, not current regulatory guidance.</p><a href="https://www.rinehartoil.com/customer-resources/">Open the current customer tools ↗</a></div>'
+    if 'employment' in path:notice=f'<div class="notice"><strong>Join a team built to deliver.</strong><p>Source listings and contacts are preserved for review. Confirm current openings and application instructions with the office.</p><a href="https://www.rinehartoil.com{path}">View the current official application page ↗</a></div>'
+    if path=='/privacy-policy/':notice='<div class="notice"><strong>About this design review</strong><p>This staged website has no analytics, account login or submission forms. Links to the official website use its own privacy practices. The historical policy below belongs to the source website and is preserved for owner review.</p></div>'
+    if not BeautifulSoup(content,'html.parser').get_text(strip=True):content=f'<p>Use the current official page for this application and its latest instructions.</p><a class="button" href="https://www.rinehartoil.com{path}">Open official page ↗</a>'
+    if path=='/contact/':notice=f'<div class="contact-panel"><a href="tel:+17074673313"><small>DISPATCH</small><strong>(707) 467-3313</strong></a><a href="tel:+17074628811"><small>MAIN OFFICE</small><strong>(707) 462-8811</strong></a></div><p>2401 N. State Street, Ukiah, CA 95482</p>'
+    body=f'<section class="page-head wrap"><p class="eyebrow">RINEHART OIL / BUILT ON DEPENDABILITY</p><h1 class="page-title">{html.escape(page["title"])}</h1></section><section class="page-content wrap">{notice}<div class="prose">{content}</div></section>'
+    (dest/'index.html').write_text(shell(page['title'],path,body,prefix),encoding='utf8');ROUTES.append({'source':path,'target':path+'index.html','disposition':'migrated public content; live workflows remain official source links'})
+dest=ROOT/'about';dest.mkdir(exist_ok=True)
+about='<section class="page-head wrap"><p class="eyebrow">FAMILY OWNED. ROAD PROVEN.</p><h1 class="page-title">Built on a promise.<br>Since 1959.</h1></section><section class="page-content wrap"><div class="prose">'+clean(home['content'],'../')+clean(home['secondary'],'../')+'</div></section>'
+(dest/'index.html').write_text(shell('Our history','/about/',about,'../'),encoding='utf8')
+captions=['Service truck, ready for the field','Rino service fleet','The Rino name on the road','Chrome, steel and dependable service','A fleet built for bulk fuel','Rinehart tanker, ready to deliver','Company-owned tanker fleet','Peterbilt, road proven','Rino branding and polished steel','Rinehart Oil, Inc.','Stainless-steel tanker at the yard','Local service, real people']
+gallery=''.join(f'<figure><a href="../assets/owner-{i+1:02d}.webp"><img src="../assets/owner-{i+1:02d}.webp" alt="{caption}" loading="lazy"></a><figcaption>{caption}</figcaption></figure>' for i,caption in enumerate(captions))
+dest=ROOT/'fleet';dest.mkdir(exist_ok=True)
+(dest/'index.html').write_text(shell('Our fleet','/fleet/','<section class="page-head wrap"><p class="eyebrow">OUR EQUIPMENT. OUR COMMITMENT.</p><h1 class="page-title">Strength you can see.</h1></section><section class="page-content wrap"><p>Company trucks. Stainless steel. Real Rinehart strength, photographed by our team.</p><div class="fleet-gallery">'+gallery+'</div></section>','../'),encoding='utf8')
+for file in ROOT.rglob('*.html'):
+    depth=len(file.relative_to(ROOT).parts)-1;prefix='../'*depth
+    text=file.read_text(encoding='utf8')
+    text=text.replace('Customer connections</h3>','Customer connections</h3><a href="'+prefix+'fleet/index.html">Meet our fleet</a>')
+    if file==ROOT/'index.html':text=text.replace('<section class="dispatch-band wrap">','<section class="fleet-feature wrap"><div><p class="eyebrow">REAL TRUCKS. REAL STRENGTH.</p><h2>Polished steel.<br>Proven commitment.</h2><p>Meet the equipment and the company behind every delivery.</p><a class="text-link" href="fleet/index.html">Take a closer look at our fleet ↗</a></div><img src="assets/owner-06.webp" alt="Rinehart red and white tanker with a polished stainless-steel tank" loading="lazy"></section><section class="dispatch-band wrap">')
+    file.write_text(text,encoding='utf8')
+(ROOT/'owner-image-provenance.json').write_text(json.dumps([{k:v for k,v in a.items() if k!='source'}|{'sourceFilename':pathlib.Path(a['source']).name} for a in json.loads((COORD/'owner-image-import.json').read_text(encoding='utf8'))],indent=2),encoding='utf8')
+(ROOT/'route-map.json').write_text(json.dumps([{'source':'/','target':'index.html','disposition':'redesigned; full company history retained at about/index.html'}]+ROUTES,indent=2),encoding='utf8')
+(ROOT/'.nojekyll').touch();(ROOT/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
+print('Built',len(ROUTES)+2,'pages')
+
+

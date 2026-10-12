@@ -1,0 +1,67 @@
+[
+  {
+    "source": "/",
+    "target": "index.html",
+    "disposition": "redesigned; full company history retained at about/index.html"
+  },
+  {
+    "source": "/trucking-for-hire/",
+    "target": "/trucking-for-hire/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/branded-fuels/",
+    "target": "/branded-fuels/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/unbranded-fuels/",
+    "target": "/unbranded-fuels/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/pacific-pride-card-lock/",
+    "target": "/pacific-pride-card-lock/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/customer-resources/",
+    "target": "/customer-resources/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/contact/",
+    "target": "/contact/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/credit-application/",
+    "target": "/credit-application/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/employment-application/",
+    "target": "/employment-application/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/employment-application/rroi-webpagecontentdriver-application-with-desc-2019-revpdf/",
+    "target": "/employment-application/rroi-webpagecontentdriver-application-with-desc-2019-revpdf/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/employment-application/office-positions/",
+    "target": "/employment-application/office-positions/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/employment-opportunities/",
+    "target": "/employment-opportunities/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  },
+  {
+    "source": "/privacy-policy/",
+    "target": "/privacy-policy/index.html",
+    "disposition": "migrated public content; live workflows remain official source links"
+  }
+]

@@ -1,0 +1,316 @@
+{
+  "/media/2796/76-pump.jpg": {
+    "source": "https://www.rinehartoil.com/media/2796/76-pump.jpg",
+    "filename": "76-pump.jpg",
+    "local": "assets/2796-76-pump.jpg",
+    "bytes": 1960081,
+    "sha256": "cdecc83eec1c45ea5147bb330d857bbba9ffd26ed1ae9287358e3c11ad4b5a88",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/2796-76-pump.webp",
+    "optimizedBytes": 127064,
+    "optimizedSha256": "131a92bbd0985f495c6d72450e0cc67b0f7e5e7320d4be60c96f6e80231d3b10"
+  },
+  "/media/2797/istock_000016458912large.jpg": {
+    "source": "https://www.rinehartoil.com/media/2797/istock_000016458912large.jpg",
+    "filename": "istock_000016458912large.jpg",
+    "disposition": "source-only, stock rights unverified"
+  },
+  "/media/6338/rino-truck-4-1-of-1.jpg": {
+    "source": "https://www.rinehartoil.com/media/6338/rino-truck-4-1-of-1.jpg",
+    "filename": "rino-truck-4-1-of-1.jpg",
+    "local": "assets/6338-rino-truck-4-1-of-1.jpg",
+    "bytes": 2282399,
+    "sha256": "c6da8f1e71a58a41112f9480286aee789ad1801572c0bcd9b14f7dd66ab033c2",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6338-rino-truck-4-1-of-1.webp",
+    "optimizedBytes": 192174,
+    "optimizedSha256": "8dbd5185e9703179868a4512af810c660a3d0eecbe16e3c7c04ddc68279fb875"
+  },
+  "/media/6367/pacpride-logo-4.png": {
+    "source": "https://www.rinehartoil.com/media/6367/pacpride-logo-4.png",
+    "filename": "pacpride-logo-4.png",
+    "local": "assets/6367-pacpride-logo-4.png",
+    "bytes": 90822,
+    "sha256": "bf33ee31ba539019637b9ce0ec12b05f1ad2752e0c36f7d88497ce5117d25b41",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6367-pacpride-logo-4.webp",
+    "optimizedBytes": 43424,
+    "optimizedSha256": "f4aed96ca44af56adc43580e188b1acb1e1912e6e6241b0d389844ecc1aca0fd"
+  },
+  "/media/2802/roi-2011-logo.jpg": {
+    "source": "https://www.rinehartoil.com/media/2802/roi-2011-logo.jpg",
+    "filename": "roi-2011-logo.jpg",
+    "local": "assets/2802-roi-2011-logo.jpg",
+    "bytes": 18536,
+    "sha256": "656eb6e2dff91717049adc124c4231deb28d824571aa1edc126f71d4c9b4e156",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/2802-roi-2011-logo.webp",
+    "optimizedBytes": 5404,
+    "optimizedSha256": "b6cad775a9feb4b08164cd19516d5791ab17c183b7bd7a0602eb612aee05abb5"
+  },
+  "/media/6374/truck-gg-bridge.jpg": {
+    "source": "https://www.rinehartoil.com/media/6374/truck-gg-bridge.jpg",
+    "filename": "truck-gg-bridge.jpg",
+    "local": "assets/6374-truck-gg-bridge.jpg",
+    "bytes": 68867,
+    "sha256": "83efd1aec931ed5ef3cf479c88f7507e334e49f22dd640ee4648e5396c9bdb15",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6374-truck-gg-bridge.webp",
+    "optimizedBytes": 62952,
+    "optimizedSha256": "35e777630e6279d6876da3cab80c8904d5aa145db9e5c12caef5908da3c36975"
+  },
+  "/media/2805/p66-logo.jpg": {
+    "source": "https://www.rinehartoil.com/media/2805/p66-logo.jpg",
+    "filename": "p66-logo.jpg",
+    "local": "assets/2805-p66-logo.jpg",
+    "bytes": 10608,
+    "sha256": "eac2561f5ebc5fa9dc11ceaebf201e41ad3c820aef8ab323c2f40847186c668c",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/2805-p66-logo.webp",
+    "optimizedBytes": 2852,
+    "optimizedSha256": "950307724c90ad18ce524f0dabd56ce87fcf59d0ce80d22a58c53fd3e4afaa11"
+  },
+  "/media/6334/76-logo-i_94x92.jpg": {
+    "source": "https://www.rinehartoil.com/media/6334/76-logo-i_94x92.jpg",
+    "filename": "76-logo-i_94x92.jpg",
+    "local": "assets/6334-76-logo-i_94x92.jpg",
+    "bytes": 4510,
+    "sha256": "4cdcd3880f1755e22154adb1fae62346139fd5b430d6ad4c1290e7586da0a8c9",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6334-76-logo-i_94x92.webp",
+    "optimizedBytes": 2406,
+    "optimizedSha256": "4fe3984e0721e1a30a84390ead04c496e735d158fa451bfd6d00a8a82a3a26a8"
+  },
+  "/media/2806/valero-logo_188x132.jpg": {
+    "source": "https://www.rinehartoil.com/media/2806/valero-logo_188x132.jpg",
+    "filename": "valero-logo_188x132.jpg",
+    "local": "assets/2806-valero-logo_188x132.jpg",
+    "bytes": 7512,
+    "sha256": "9f60bf54fec5d1839c2a4e7055b93d14a09ced0903f889d1fcab13d4b54f14a5",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/2806-valero-logo_188x132.webp",
+    "optimizedBytes": 3812,
+    "optimizedSha256": "cee53eb182016cdaa157d1b73d33f4df053c10f7c5dd5a2946f2203f7d3c4b59"
+  },
+  "/media/6345/valero-1-of-1.jpg": {
+    "source": "https://www.rinehartoil.com/media/6345/valero-1-of-1.jpg",
+    "filename": "valero-1-of-1.jpg",
+    "local": "assets/6345-valero-1-of-1.jpg",
+    "bytes": 571520,
+    "sha256": "9f29fe777cae8fe36fc7a49720079d5e957271cbc139b9869c6245d288a47687",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6345-valero-1-of-1.webp",
+    "optimizedBytes": 213356,
+    "optimizedSha256": "a6e350235db8059e2dbae4f4c092416c4a55da026070ef2cd0932b0f20331ff8"
+  },
+  "/media/6373/old-time-station-1.png": {
+    "source": "https://www.rinehartoil.com/media/6373/old-time-station-1.png",
+    "filename": "old-time-station-1.png",
+    "local": "assets/6373-old-time-station-1.png",
+    "bytes": 1503144,
+    "sha256": "c21a7cd5a8756ea2b31683c965ef76585a96f2e4dac032686bcda50c4a044c9b",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6373-old-time-station-1.webp",
+    "optimizedBytes": 190976,
+    "optimizedSha256": "ee038d7fd272226c175fca3ef6bfac0c1fe1c6f20ef19336e68b4d46c92e1027"
+  },
+  "/media/6333/rino-pac-credit-app-new.pdf": {
+    "source": "https://www.rinehartoil.com/media/6333/rino-pac-credit-app-new.pdf",
+    "filename": "rino-pac-credit-app-new.pdf",
+    "local": "assets/6333-rino-pac-credit-app-new.pdf",
+    "bytes": 1295620,
+    "sha256": "2e726b32f33122e003c2e9e8039af2de4768ff9dafff84dbda65d07e7562aed6",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6370/pac-pride-station-image-1.png": {
+    "source": "https://www.rinehartoil.com/media/6370/pac-pride-station-image-1.png",
+    "filename": "pac-pride-station-image-1.png",
+    "local": "assets/6370-pac-pride-station-image-1.png",
+    "bytes": 761912,
+    "sha256": "6722c8be8629b68e567530cb2335fd13e5ace83db582cf275a67e3f25c93e877",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6370-pac-pride-station-image-1.webp",
+    "optimizedBytes": 40384,
+    "optimizedSha256": "8585914812f3d7ac8ce0955091ca48839268d78da1d0a45ae17323de77273446"
+  },
+  "/media/13566/ROI-COVID-19-PREVENTION-PROGRAM-EMERGENCY-TEMPORARY-STANDARDS.pdf": {
+    "source": "https://www.rinehartoil.com/media/13566/ROI-COVID-19-PREVENTION-PROGRAM-EMERGENCY-TEMPORARY-STANDARDS.pdf",
+    "filename": "ROI-COVID-19-PREVENTION-PROGRAM-EMERGENCY-TEMPORARY-STANDARDS.pdf",
+    "local": "assets/13566-ROI-COVID-19-PREVENTION-PROGRAM-EMERGENCY-TEMPORARY-STANDARDS.pdf",
+    "bytes": 2270562,
+    "sha256": "7db63b11574742c0b175fa688f97e8ade5e39600c8fc15cac088f24638b0c128",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6361/sb-1400-defeated.pdf": {
+    "source": "https://www.rinehartoil.com/media/6361/sb-1400-defeated.pdf",
+    "filename": "sb-1400-defeated.pdf",
+    "local": "assets/6361-sb-1400-defeated.pdf",
+    "bytes": 839900,
+    "sha256": "0b827312b8ad5411975999eb33169c6b0f2ef34e370836ae5411fa0a20e1cbf0",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6360/poc-2016-complimentary-pass.pdf": {
+    "source": "https://www.rinehartoil.com/media/6360/poc-2016-complimentary-pass.pdf",
+    "filename": "poc-2016-complimentary-pass.pdf",
+    "local": "assets/6360-poc-2016-complimentary-pass.pdf",
+    "bytes": 673527,
+    "sha256": "d90c6b6c44c5fb98358b5a119953a7962621666492654a2c25147e908cc0599f",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6359/sb-1400-new-hearing-time.pdf": {
+    "source": "https://www.rinehartoil.com/media/6359/sb-1400-new-hearing-time.pdf",
+    "filename": "sb-1400-new-hearing-time.pdf",
+    "local": "assets/6359-sb-1400-new-hearing-time.pdf",
+    "bytes": 104448,
+    "sha256": "41d10ee2afb26eb08c606cea8b2edb5eb7d03a507eaa398373621085b7728cb8",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6356/sb-1400-alert-update-062216.pdf": {
+    "source": "https://www.rinehartoil.com/media/6356/sb-1400-alert-update-062216.pdf",
+    "filename": "sb-1400-alert-update-062216.pdf",
+    "local": "assets/6356-sb-1400-alert-update-062216.pdf",
+    "bytes": 100594,
+    "sha256": "be11ccf176b83c93be40e732b37365132cadb8148c0964cc9c7b94bbe33a2676",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6357/sb-1400-alert-update-062216-sample-letter.pdf": {
+    "source": "https://www.rinehartoil.com/media/6357/sb-1400-alert-update-062216-sample-letter.pdf",
+    "filename": "sb-1400-alert-update-062216-sample-letter.pdf",
+    "local": "assets/6357-sb-1400-alert-update-062216-sample-letter.pdf",
+    "bytes": 123141,
+    "sha256": "ae06dbbd135696cada731357557d33e9e568406694c3837a603845bb1843f046",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6358/sb-1400-alert-update-062216-gov-sample-letter.pdf": {
+    "source": "https://www.rinehartoil.com/media/6358/sb-1400-alert-update-062216-gov-sample-letter.pdf",
+    "filename": "sb-1400-alert-update-062216-gov-sample-letter.pdf",
+    "local": "assets/6358-sb-1400-alert-update-062216-gov-sample-letter.pdf",
+    "bytes": 122545,
+    "sha256": "8115ebabf893e78a2f2ec90257beb120ad2fde81a303039ef6293a5dc8b647b1",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6355/sb-1400-alert-update-061516.docx": {
+    "source": "https://www.rinehartoil.com/media/6355/sb-1400-alert-update-061516.docx",
+    "filename": "sb-1400-alert-update-061516.docx",
+    "local": "assets/6355-sb-1400-alert-update-061516.docx",
+    "bytes": 20138,
+    "sha256": "8e8d4e02661dd623b77fbbdb463c38fa36769e9ae81515e2c1c31acf0b1fcbce",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6354/cioma-member-alert-sb-1400.pdf": {
+    "source": "https://www.rinehartoil.com/media/6354/cioma-member-alert-sb-1400.pdf",
+    "filename": "cioma-member-alert-sb-1400.pdf",
+    "local": "assets/6354-cioma-member-alert-sb-1400.pdf",
+    "bytes": 2612329,
+    "sha256": "6ad263d4666a47e384f12b754f90059068827bd0e0ea013d51fb70f1a6a76699",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6353/cioma-member-alert-sb-350.pdf": {
+    "source": "https://www.rinehartoil.com/media/6353/cioma-member-alert-sb-350.pdf",
+    "filename": "cioma-member-alert-sb-350.pdf",
+    "local": "assets/6353-cioma-member-alert-sb-350.pdf",
+    "bytes": 64038,
+    "sha256": "d446660528e08903c8c1af222f16d4f44b67196a5b181fe09d1dc8a2dfc3e755",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6348/supply-chain-transparency-statement.pdf": {
+    "source": "https://www.rinehartoil.com/media/6348/supply-chain-transparency-statement.pdf",
+    "filename": "supply-chain-transparency-statement.pdf",
+    "local": "assets/6348-supply-chain-transparency-statement.pdf",
+    "bytes": 212766,
+    "sha256": "616b1a85c1da78483a02ee385f10f5e25bfc927ea741233b550fd13cc8640649",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/6347/greenhouse-gas-emission-fee-2015.pdf": {
+    "source": "https://www.rinehartoil.com/media/6347/greenhouse-gas-emission-fee-2015.pdf",
+    "filename": "greenhouse-gas-emission-fee-2015.pdf",
+    "local": "assets/6347-greenhouse-gas-emission-fee-2015.pdf",
+    "bytes": 408089,
+    "sha256": "e69e371f61782eb99399c0a683cca604ccb2d519e34dfb05223bd85e9a1a4848",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/2805/p66-logo_102x101.jpg": {
+    "source": "https://www.rinehartoil.com/media/2805/p66-logo_102x101.jpg",
+    "filename": "p66-logo_102x101.jpg",
+    "local": "assets/2805-p66-logo_102x101.jpg",
+    "bytes": 5789,
+    "sha256": "cba79dc8022fac24ab1daefe9554de583f8f95771123daad072637abbe6144b4",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/2805-p66-logo_102x101.webp",
+    "optimizedBytes": 3214,
+    "optimizedSha256": "b233c93bf635f51927a7a44b2f00378bfe55ae1378be5aed74823e6b932fb2b0"
+  },
+  "/media/2806/valero-logo_140x98.jpg": {
+    "source": "https://www.rinehartoil.com/media/2806/valero-logo_140x98.jpg",
+    "filename": "valero-logo_140x98.jpg",
+    "local": "assets/2806-valero-logo_140x98.jpg",
+    "bytes": 5797,
+    "sha256": "84fd01d35ad01528688d0b91f7e93df71bb210f35fc284221e654e8897e8fa2b",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/2806-valero-logo_140x98.webp",
+    "optimizedBytes": 2680,
+    "optimizedSha256": "08b39df4c4a2c3cbf86967ba01e9bcbf0203de0a93d47070298c80f936e9cb42"
+  },
+  "/media/2807/chevron_logo_83x93.jpg": {
+    "source": "https://www.rinehartoil.com/media/2807/chevron_logo_83x93.jpg",
+    "filename": "chevron_logo_83x93.jpg",
+    "local": "assets/2807-chevron_logo_83x93.jpg",
+    "bytes": 3640,
+    "sha256": "8c9e39ee940a39b2847f4580d5dc30ab2edcc15f7869414257061fc407e87452",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/2807-chevron_logo_83x93.webp",
+    "optimizedBytes": 1914,
+    "optimizedSha256": "70bcc399f6c8eb4342fc530cd06296f17444ea703ce119fad6ce4ba9a1584b2c"
+  },
+  "/media/6346/rino-truck-6-1-of-1-cropped.jpg": {
+    "source": "https://www.rinehartoil.com/media/6346/rino-truck-6-1-of-1-cropped.jpg",
+    "filename": "rino-truck-6-1-of-1-cropped.jpg",
+    "local": "assets/6346-rino-truck-6-1-of-1-cropped.jpg",
+    "bytes": 3904297,
+    "sha256": "64872c8f265a89c39112cccfde0bb6b7052293ff9902bed3b69143576a9b20be",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/6346-rino-truck-6-1-of-1-cropped.webp",
+    "optimizedBytes": 228656,
+    "optimizedSha256": "4c3973d6ede63b436706ab6adc946654f77f31adf4884b079bed3304e3c1da7a"
+  },
+  "/media/6352/roi-credit-packet.pdf": {
+    "source": "https://www.rinehartoil.com/media/6352/roi-credit-packet.pdf",
+    "filename": "roi-credit-packet.pdf",
+    "local": "assets/6352-roi-credit-packet.pdf",
+    "bytes": 148822,
+    "sha256": "2fac136af9b59de91f6933557b1489d92dedf971fd15048e812f114ab48b4151",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/13567/rino-credit-application.png": {
+    "source": "https://www.rinehartoil.com/media/13567/rino-credit-application.png",
+    "filename": "rino-credit-application.png",
+    "local": "assets/13567-rino-credit-application.png",
+    "bytes": 241555,
+    "sha256": "a1e5f6bb21b816d50ff048e9076c9ccb23e9603d414aca8993207b45dc12f73d",
+    "disposition": "public source reuse for owner-requested review; production rights review pending",
+    "optimized": "assets/13567-rino-credit-application.webp",
+    "optimizedBytes": 78246,
+    "optimizedSha256": "028fab72b49d3535895f41dbc97670c8ed6ccabe10c09e1440dfd8de11bb4052"
+  },
+  "/media/13569/roi-employment-application_final-uae.pdf": {
+    "source": "https://www.rinehartoil.com/media/13569/roi-employment-application_final-uae.pdf",
+    "filename": "roi-employment-application_final-uae.pdf",
+    "local": "assets/13569-roi-employment-application_final-uae.pdf",
+    "bytes": 215567,
+    "sha256": "db0feb68434ff71f242070de48b68d9513b9572f70f321ea138a32f06d14a31d",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/13571/driver-application-with-desc-2019-rev.pdf": {
+    "source": "https://www.rinehartoil.com/media/13571/driver-application-with-desc-2019-rev.pdf",
+    "filename": "driver-application-with-desc-2019-rev.pdf",
+    "local": "assets/13571-driver-application-with-desc-2019-rev.pdf",
+    "bytes": 249152,
+    "sha256": "504c4702267915b90d8801c15dc3b0d90a126c41207f89355b55fb9d024ea742",
+    "disposition": "public source reuse for owner-requested review; production rights review pending"
+  },
+  "/media/13570/driver-employment-application-2023_final-uae.pdf": {
+    "source": "https://www.rinehartoil.com/media/13570/driver-employment-application-2023_final-uae.pdf",
+    "filename": "driver-employment-application-2023_final-uae.pdf",
+    "error": "HTTP Error 404: Not Found"
+  }
+}

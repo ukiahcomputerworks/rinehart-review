@@ -1,0 +1,158 @@
+[
+  {
+    "sourceSha256": "2ceb8edec6ab3db5a34be891fece559790635d8a6a6cdf5f600fe4e9920d70a0",
+    "local": "assets/owner-01.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 292682,
+    "sha256": "0c41eb14545a2b357d2e8391b4ef365917fa51dfe9c86bd3676294675fc9b4f5",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_174945462_iOS.heic"
+  },
+  {
+    "sourceSha256": "02f417034469d42de44fe43c36c40f33423cee5cc8c45b25e385cf78510843bd",
+    "local": "assets/owner-02.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 205434,
+    "sha256": "d96193bdc7c770323329c2b4072fd2246b00e2a72051e4c2b20aa8c1b48d77d0",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175009436_iOS.heic"
+  },
+  {
+    "sourceSha256": "ec0aa7a7f0fbe6095676b8fab5cd2ce5114a9aeb88f630ff7e163217d9d8749f",
+    "local": "assets/owner-03.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 129026,
+    "sha256": "803bc71a5cb5e0c965cc6a4b368e95576464d02d26e8e7b68526397380ec75bc",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175029745_iOS.heic"
+  },
+  {
+    "sourceSha256": "8f79e8025364c011b298ac77dfac04d2d40674598de9f53d0a76f121f9006e80",
+    "local": "assets/owner-04.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 170148,
+    "sha256": "6eda06f470c440126186aa207a83188538c9b99a228c527c9c5f726ae7714bda",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175114804_iOS.heic"
+  },
+  {
+    "sourceSha256": "6609ffce832514b09c8d0f971c4a47dfecd29b52461cb319bd6a7c82cfb6825e",
+    "local": "assets/owner-05.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 201150,
+    "sha256": "3401703cda3dd0da8c5da4796fe7bab9a933aa43ab09fd1d6b77fb91014852ff",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175152302_iOS.heic"
+  },
+  {
+    "sourceSha256": "08a11619da0d13c6a640b179e061c8a514cd83ace586126b6cacfd175ccf6c05",
+    "local": "assets/owner-06.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 341448,
+    "sha256": "64d6af8cc05e4ef5b87b02e5d784e04a9546a444bf76bed6d150dd6f75cf2fd2",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175243533_iOS.heic"
+  },
+  {
+    "sourceSha256": "58c49e3451bbb435f48b14fd313be04bbd07f31c153588a929850f95dc125e2e",
+    "local": "assets/owner-07.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 415622,
+    "sha256": "11ccd1675a532831de28c9e6fefd264576754837d2957c5e08b653b606343499",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175250107_iOS.heic"
+  },
+  {
+    "sourceSha256": "5c61cfa0f5ae1421b7a5d5ca3e7965c01d44cb88d7331298f49d3cdad2455e9e",
+    "local": "assets/owner-08.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 388116,
+    "sha256": "b4d14d70447dbf2ec64546faff4187a88ef913a436be98069aa69931ed678a23",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175354918_iOS.heic"
+  },
+  {
+    "sourceSha256": "1a098bc05a49acce22e138b82025e401c531dfa5a53d0c0bc2eea5c11d5770b9",
+    "local": "assets/owner-09.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 129526,
+    "sha256": "9580e812cb752551a72889b255794aee7e319f2cbb1fe6608cbee4ec802365be",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175416260_iOS.heic"
+  },
+  {
+    "sourceSha256": "f7cd0231866961be67c30e5328e1333338f65ae6993a4893abc0001f853b8e95",
+    "local": "assets/owner-10.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 89104,
+    "sha256": "415eff799cca1314c880b46a89f0880d887889b16a868b16bc1f6f5b90d16686",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_175537566_iOS.heic"
+  },
+  {
+    "sourceSha256": "18db209ee2a6f41522c7f648947cc9922849bc8f8cb02bc72fb7657dc640f5f1",
+    "local": "assets/owner-11.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 175546,
+    "sha256": "f206b9b1d029205647355774f92414e1163a2283e3d506309fea6c87a263feda",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_183934791_iOS.heic"
+  },
+  {
+    "sourceSha256": "f8310ec6633ca1fbe05832a5f675159ada05d43c96cd57181fb901b976331118",
+    "local": "assets/owner-12.webp",
+    "dimensions": [
+      3024,
+      4032
+    ],
+    "bytes": 356568,
+    "sha256": "37a457d9b9503dc03c493f592c5cf7bb319694bba707a5552b3f04f9a9ce6f39",
+    "authority": "Owner explicitly supplied for this website on 2026-10-12",
+    "metadata": "EXIF omitted from public export",
+    "sourceFilename": "20260928_183950386_iOS.heic"
+  }
+]
