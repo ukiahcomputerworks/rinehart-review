@@ -18,3 +18,5 @@
 
 
 .steel-surface .button span{color:#fff}@media(max-width:700px){.hero-stamp.steel-surface{max-width:calc(100% - 44px);gap:12px}.hero-stamp.steel-surface strong{font-size:34px}.hero-stamp.steel-surface span{font-size:9px}}
+
+.hero-stamp.steel-surface{position:absolute}
