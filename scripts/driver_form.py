@@ -29,4 +29,11 @@ for file in ROOT.rglob('*.html'):
     text=text.replace('Customer connections</h3>','Customer connections</h3><a href="'+prefix+'driver-application/index.html">Apply to drive online</a>')
     if file.parent.name=='employment-opportunities':text=text.replace('<div class="prose">','<a class="button application-cta" href="'+prefix+'driver-application/index.html">Start the online driver application ↗</a><div class="prose">')
     file.write_text(text,encoding='utf8')
-print('Built seven-step driver application preview')
+import re
+for file in ROOT.rglob('*.html'):
+    soup=b.BeautifulSoup(file.read_text(encoding='utf8'),'html.parser')
+    for heading in soup.select('title,h1,h2,h3,h4,legend,nav a,.hero-lead,#step-name'):
+        for text in list(heading.find_all(string=True)):
+            text.replace_with(re.sub(r"(?<![\w'’])([a-z])",lambda m:m.group(1).upper(),str(text)))
+    file.write_text(str(soup),encoding='utf8')
+print('Built seven-step driver application preview; all page titles and headings use owner-requested Title Case')

@@ -1,0 +1,16 @@
+{
+  "source": "Owner-approved original RINO logo from public source and supplied attachment",
+  "sourceUrl": "https://www.rinehartoil.com/media/2802/roi-2011-logo.jpg",
+  "operation": "Transparent background edit using image_gen; visually compared with supplied brand artwork; subtitle RINEHART OIL INC.",
+  "path": "assets\\rino-logo-transparent.png",
+  "sha256": "0f27e105aae537b7514733219b3d00bcb29bac31f3a39552239d10811c3cd7b7",
+  "dimensions": [
+    2170,
+    725
+  ],
+  "alphaRange": [
+    0,
+    255
+  ],
+  "date": "2026-10-12"
+}
