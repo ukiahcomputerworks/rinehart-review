@@ -70,6 +70,8 @@ team=[('leadership','President','Reed Rinehart','rrinehart'),('leadership','VP /
 team_html=''.join(f'<a class="team-card" data-department="{department}" href="mailto:{email}@rinehartoil.com"><span class="team-index">{i:02d}</span><span class="team-role">{role}</span><h3>{name}</h3><span class="team-action">Email {name.split()[0]} <b>↗</b></span></a>' for i,(department,role,name,email) in enumerate(team,1))
 contact=(ROOT/'scripts'/'contact-template.txt').read_text(encoding='utf-8-sig').replace('{{TEAM}}',team_html)
 (ROOT/'contact'/'index.html').write_text(shell('Contact & Dispatch','/contact/',contact,'../'),encoding='utf8')
+privacy=(ROOT/'scripts'/'privacy-template.txt').read_text(encoding='utf-8-sig')
+(ROOT/'privacy-policy'/'index.html').write_text(shell('Privacy Policy','/privacy-policy/',privacy,'../'),encoding='utf8')
 from resource_page import resources
 (ROOT/'customer-resources'/'index.html').write_text(shell('Customer Resources','/customer-resources/',resources(ROOT),'../'),encoding='utf8')
 for file in ROOT.rglob('*.html'):
