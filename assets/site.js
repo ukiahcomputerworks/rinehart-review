@@ -23,3 +23,12 @@ glintElements.forEach(element=>{
   }
   nextPass();
 });
+const teamFilters=document.querySelectorAll('[data-team-filter]');
+teamFilters.forEach(filter=>filter.addEventListener('click',()=>{
+  teamFilters.forEach(button=>button.setAttribute('aria-pressed',String(button===filter)));
+  let visible=0;
+  document.querySelectorAll('.team-card').forEach(card=>{card.hidden=filter.dataset.teamFilter!=='all'&&card.dataset.department!==filter.dataset.teamFilter;if(!card.hidden)visible++});
+  document.querySelector('.team-result').textContent=`${visible} contacts shown`;
+}));
+
+document.querySelectorAll('.command-copy h1 span,.team-heading h2').forEach(element=>element.classList.add('steel-text'));
