@@ -32,3 +32,13 @@ teamFilters.forEach(filter=>filter.addEventListener('click',()=>{
 }));
 
 document.querySelectorAll('.command-copy h1 span,.team-heading h2').forEach(element=>element.classList.add('steel-text'));
+const resourceSearch=document.querySelector('#resource-search');
+if(resourceSearch){
+ let resourceCategory='all';
+ const resourceButtons=document.querySelectorAll('[data-resource-filter]');
+ const resourceCards=document.querySelectorAll('[data-resource]');
+ function filterResources(){let count=0;const query=resourceSearch.value.trim().toLocaleLowerCase();resourceCards.forEach(card=>{card.hidden=!(resourceCategory==='all'||card.dataset.resource===resourceCategory)||!card.textContent.toLocaleLowerCase().includes(query);if(!card.hidden)count++});document.querySelector('#resource-count').textContent=`${count} of ${resourceCards.length} Resources`;document.querySelector('#resource-empty').hidden=count!==0;resourceButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resourceFilter===resourceCategory)))}
+ resourceSearch.addEventListener('input',filterResources);
+ resourceButtons.forEach(button=>button.addEventListener('click',()=>{resourceCategory=button.dataset.resourceFilter;filterResources()}));
+ document.querySelector('#resource-reset').addEventListener('click',()=>{resourceCategory='all';resourceSearch.value='';filterResources();resourceSearch.focus()});
+}
