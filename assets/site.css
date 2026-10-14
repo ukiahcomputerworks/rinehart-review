@@ -430,6 +430,16 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .connection-fallback{display:block;padding:12px;border-bottom:1px solid #829fb2;min-height:44px}
 @media(max-width:700px){.resource-page-switch{padding-top:8px;gap:8px;display:flex}.resource-page-switch a{flex:1}.document-folder>summary{font-size:17px;padding:10px 12px;gap:8px}.folder-count{font-size:10px}.document-folder>.document-grid{padding:4px}.connection-console{grid-template-columns:1fr;gap:10px}.connection-choices{display:none}.connection-display{position:static}.connection-file{padding:12px}.connection-file-heading{grid-template-columns:54px minmax(0,1fr);gap:10px}.connection-seal{width:54px;height:54px;font-size:18px}.connection-file h2{font-size:28px}.connection-filters{gap:6px}.connection-filters button{font-size:12px;flex:1;min-width:90px}.connection-file>p{font-size:15px}.resource-filters>a{flex-grow:1}}
 
+/* A familiar visible location and map, with no expandable address panel. */
+.contact-location{padding:12px 0 0;border-top:1px solid #7b96a8}
+.contact-location h2{font-size:32px;margin:0 0 10px}
+.location-layout{display:grid;grid-template-columns:minmax(230px,.7fr) minmax(0,1.3fr);gap:16px;align-items:start}
+.location-copy>p{font:16px/1.45 Arial,sans-serif;margin:0 0 10px}
+.location-copy .address-detail{font:13px/1.4 Arial,sans-serif;margin-top:10px}
+.location-copy .button.directions-image-button{display:block;width:156px;max-width:100%;min-height:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #344e5c}
+.location-map{display:block;width:100%;height:230px;border:2px solid #b7d0dd;background:#d8e3e9}
+@media(max-width:700px){.location-layout{grid-template-columns:1fr;gap:12px}.contact-location h2{font-size:28px}.location-map{height:200px}.location-copy>p{font-size:15px}}
+
 /* Credit return details stay compact instead of one paragraph per address line. */
 .prose .credit-packet{font:15px/1.4 Arial,sans-serif}
 .credit-download{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid #b8d0dd;border-top:2px solid #fff;background:linear-gradient(110deg,#9ab4c5,#e5f4fc 46%,#adc8d9);color:#102d40;font-weight:800;text-decoration:none}

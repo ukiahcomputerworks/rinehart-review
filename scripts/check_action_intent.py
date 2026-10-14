@@ -26,7 +26,9 @@ def check(root):
         assert anchor and anchor.get('href') == target, f'{page}: {image} must link to {target}'
     contact = BeautifulSoup((root/'contact/index.html').read_text(encoding='utf8'), 'html.parser')
     assert not contact.select('.bottom-cta a'), 'Contact must not contain a bottom Contact button'
-    assert len(contact.select('.contact-disclosure')) == 5, 'Preserve approved five collapsed sections'
+    assert len(contact.select('.contact-disclosure')) == 4, 'Preserve three department sections and office hours'
+    assert contact.select_one('.contact-location iframe'), 'Address must have a visible map'
+    assert not contact.select_one('.contact-location').find_parent('details'), 'Location must not be collapsed'
     assert not contact.select('.contact-disclosure[open]'), 'Directory must start collapsed'
     print(f'PASS {len(expected)} owner artwork destinations and Contact exclusions')
 

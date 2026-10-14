@@ -24,6 +24,17 @@ def apply(root):
  base=s.select_one('.contact-base')
  base['class']=['contact-base','contact-accordions','wrap']
  for panel,title in [(base.select_one('.contact-hours'),'Office & Dispatch Hours'),(base.select_one('.contact-address'),'Address & Directions')]:
+  if title == 'Address & Directions':
+   location=s.new_tag('section',attrs={'class':'contact-location','aria-labelledby':'location-title'})
+   heading=s.new_tag('h2',id='location-title');heading.string='Visit Rinehart';location.append(heading)
+   layout=s.new_tag('div',attrs={'class':'location-layout'})
+   copy=s.new_tag('div',attrs={'class':'location-copy'})
+   for old_heading in panel.select('.eyebrow,h2'):old_heading.decompose()
+   for child in list(panel.contents):copy.append(child.extract())
+   layout.append(copy)
+   frame=s.new_tag('iframe',attrs={'class':'location-map','title':'Map Of Rinehart Oil, 2401 North State Street, Ukiah','src':'https://www.google.com/maps?q=Rinehart+Oil+2401+N+State+Street+Ukiah+CA+95482&z=16&output=embed','loading':'lazy','referrerpolicy':'no-referrer','allowfullscreen':''})
+   layout.append(frame);location.append(layout);panel.replace_with(location)
+   continue
   detail=s.new_tag('details',attrs={'class':'contact-disclosure','name':'rinehart-contact-detail'})
   summary=s.new_tag('summary');summary.string=title;detail.append(summary)
   body=s.new_tag('div',attrs={'class':'disclosure-content '+('compact-hours' if 'Hours' in title else 'compact-address')})
