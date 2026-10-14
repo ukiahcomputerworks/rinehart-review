@@ -89,3 +89,7 @@
 @media(max-width:700px){.photo-page-head.three-row-head>.source-header-photo{grid-row:auto;grid-column:1}}
 
 @media(min-width:701px){.policy-navigator{max-height:calc(100dvh - 48px);overflow:auto}}
+
+/* Keep the original logo prominent while tightening its vertical surround. */
+.masthead.steel-surface{padding-top:8px;padding-bottom:8px}
+.masthead .brand small{margin-top:4px}
