@@ -176,3 +176,9 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .photo-rail-contact .fleet-action.fleet-art-button{display:block;padding:0;min-height:0;border:0;background:transparent;box-shadow:0 3px 0 #26353e,0 6px 16px #0006;overflow:hidden;line-height:0}
 .fleet-art-button img{display:block;width:100%;height:auto;aspect-ratio:1024/254;object-fit:contain}
 .photo-rail-contact .fleet-art-button:hover{box-shadow:0 5px 0 #455762,0 10px 22px #0007}
+
+/* Compact driver-application preview notice without reducing text size. */
+.application-main>.notice{padding:10px 16px;margin-bottom:14px;line-height:1.5}
+.application-main>.notice>strong{display:block;margin-bottom:4px}
+.application-main>.notice>p{margin:0;line-height:1.5}
+@media(max-width:700px){.application-main>.notice{padding:10px 12px}}
