@@ -197,3 +197,6 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .driver-requirements ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 24px;margin:0 0 12px;padding-left:20px;font-size:14px;line-height:1.5}
 .driver-requirements .check{font-size:14px;line-height:1.5}
 @media(max-width:700px){.driver-requirements ul{grid-template-columns:1fr}}
+
+.employment-content .application-cta.application-image-button{display:block;width:min(100%,312px);min-height:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #452a25,0 6px 16px #0005}
+.application-image-button img{display:block;width:100%;height:auto;aspect-ratio:488/141;object-fit:contain}

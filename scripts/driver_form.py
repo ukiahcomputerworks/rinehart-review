@@ -48,7 +48,7 @@ for file in ROOT.rglob('*.html'):
     text=text.replace('Customer connections</h3>','Customer connections</h3><a href="'+prefix+'driver-application/index.html">Apply to drive online</a>')
     if file.parent.name=='employment-opportunities':
         target='<div class="source-page-layout">' if '<div class="source-page-layout">' in text else '<div class="prose">'
-        text=text.replace(target,'<a class="button application-cta" href="'+prefix+'driver-application/index.html">Start the online driver application </a>'+target)
+        text=text.replace(target,'<a class="button application-cta application-image-button" href="'+prefix+'driver-application/index.html" aria-label="Start The Online Driver Application"><img src="'+prefix+'assets/talk-to-rinehart.jpg" alt="Talk To Rinehart" width="488" height="141" loading="lazy" decoding="async"></a>'+target)
     file.write_text(text,encoding='utf8')
 import re
 for file in ROOT.rglob('*.html'):
