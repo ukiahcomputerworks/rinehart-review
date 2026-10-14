@@ -40,3 +40,15 @@
 @media(prefers-reduced-motion:reduce){.document-card:before{animation:none}.document-card{transition:none}}
 /* Employment copy: comfortable reading size for requirements and benefits. */
 .employment-content .prose{max-width:960px;font-size:20px;line-height:1.65}.employment-content .prose p,.employment-content .prose li,.employment-content .prose blockquote{font-size:20px;line-height:1.65}.employment-content .prose h3,.employment-content .prose h4{font-size:32px;line-height:1.15;margin:24px 0 16px}.employment-content .notice{font-size:18px;line-height:1.6}.employment-content .application-cta{font-size:17px}.employment-content .prose blockquote{padding:18px 22px}.employment-content .prose a{overflow-wrap:anywhere}@media(max-width:700px){.employment-content .prose,.employment-content .prose p,.employment-content .prose li,.employment-content .prose blockquote{font-size:19px;line-height:1.6}.employment-content .prose h3,.employment-content .prose h4{font-size:29px}.employment-content .notice{font-size:17px}.employment-content .prose ul{padding-left:18px}.employment-content .prose blockquote{padding:15px 17px}.employment-content .application-cta{font-size:16px}}
+
+/* Independent sunlight on machined borders and raised diamond plate. */
+.metal-host{position:relative}
+.metal-host>.metal-reflection{position:absolute!important;max-width:none;width:auto;height:auto;margin:0;inset:0;display:block!important;pointer-events:none;z-index:2;border-radius:inherit;opacity:0;background:linear-gradient(var(--glint-angle,110deg),transparent 34%,#c5dce955 43%,#fff 49%,#eaf7ffcc 51%,transparent 64%);background-size:300% 100%;background-position:115% center}
+.metal-border{padding:2px;-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);mask-composite:exclude}
+.industrial-window>.metal-border,.story-photo>.metal-border{padding:4px}
+.metal-plate{mix-blend-mode:soft-light;background-image:linear-gradient(var(--glint-angle,110deg),transparent 33%,#d9efff99 44%,#fff 49%,#fff 51%,transparent 66%)}
+.metal-reflection.steel-glint{animation:metal-sunlight var(--steel-duration,3s) ease-in-out both}
+@keyframes metal-sunlight{0%{opacity:0;background-position:115% center}15%{opacity:1}80%{opacity:1}100%{opacity:0;background-position:-15% center}}
+/* Replaced the earlier synchronized card/window loops with the shared random scheduler. */
+.team-card:before,.document-card:before,.industrial-window .window-edge{animation:none;display:none}
+@media(prefers-reduced-motion:reduce){.metal-host>.metal-reflection{display:none!important;animation:none!important}}
