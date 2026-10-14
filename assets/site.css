@@ -203,3 +203,6 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 
 .hero-actions .button.put-work-image-button{display:block;flex:0 0 auto;width:235px;max-width:100%;min-height:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #35231e,0 7px 20px #0006}
 .put-work-image-button img{display:block;width:100%;height:auto;aspect-ratio:1024/499;object-fit:contain}
+
+.hero-actions .fuel-solution-image-button{display:block;flex:0 0 auto;width:235px;max-width:100%;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #35231e,0 7px 20px #0006;text-decoration:none}
+.fuel-solution-image-button img{display:block;width:100%;height:auto;aspect-ratio:1024/527;object-fit:contain}
