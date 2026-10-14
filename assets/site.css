@@ -350,3 +350,19 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .email-image-button img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .email-image-button:hover{box-shadow:0 5px 0 #547180,0 10px 20px #0006}
 @media(max-width:700px){.contact-console>.email-image-button{margin-bottom:12px}}
+
+/* Closed department and office details replace the long scrolling directory. */
+.team-section{padding-top:16px;padding-bottom:8px}.team-heading{margin-bottom:12px;align-items:center}.team-heading h2{font-size:32px;margin:0}.team-heading .eyebrow{margin-bottom:6px}.team-heading>p{margin:0;font-size:14px}
+.contact-disclosure{position:relative;margin:0 0 8px;background:linear-gradient(135deg,#213541,#0d1923);border:1px solid #9cb4c4;border-top:2px solid #e9f5fc;box-shadow:0 3px 0 #344b5b}
+.contact-disclosure>summary{position:relative;display:flex;align-items:center;gap:14px;padding:14px 18px;min-height:56px;cursor:pointer;list-style:none;font:800 19px/1.3 Arial,sans-serif;color:#e5f1f8}
+.contact-disclosure>summary::-webkit-details-marker{display:none}.contact-disclosure>summary::after{content:'+';margin-left:auto;font:400 28px/1 Arial,sans-serif;color:#d2e6f4;flex-shrink:0}
+.contact-disclosure[open]>summary::after{content:'−'}.contact-disclosure[open]>summary{border-bottom:1px solid #7390a2;background:#284150}
+.contact-disclosure>summary:hover{background:#2d485a}.contact-disclosure>summary:focus-visible{outline:3px solid #ffd66c;outline-offset:3px}
+.disclosure-count{font:400 12px/1.4 Arial,sans-serif;color:#b9d0de}
+.department-contacts{padding:4px 16px}
+.department-contacts .team-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px;align-items:center;padding:12px 4px;min-height:54px;border:0;border-bottom:1px solid #5b7383;background:transparent;box-shadow:none;text-decoration:none}
+.department-contacts .team-card:last-child{border-bottom:0}.department-contacts .team-index,.department-contacts .team-action{display:none}
+.department-contacts .team-role{font:400 14px/1.4 Arial,sans-serif;color:#c3d4de}.department-contacts .team-card h3{font:700 19px/1.3 Arial,sans-serif;margin:0}
+.department-contacts .team-card:hover{background:#294759}.department-contacts .team-card:active{background:#365d73}
+.contact-base.contact-accordions{display:block;padding-top:0;padding-bottom:16px}.disclosure-content{padding:12px 18px}.disclosure-content>p{margin-bottom:12px;font-size:15px;color:#d1e1ec}.disclosure-content .hours-row{padding:8px 0}.disclosure-content .button{min-height:44px}
+@media(max-width:700px){.team-heading{display:block}.team-heading h2{font-size:30px}.team-heading>p{margin-top:8px}.contact-disclosure>summary{font-size:16px;padding:12px;gap:8px}.disclosure-count{font-size:11px}.department-contacts{padding:4px 10px}.department-contacts .team-card{grid-template-columns:1fr;gap:4px;padding:10px 4px}.department-contacts .team-card h3{font-size:19px}.disclosure-content{padding:12px}.team-section{padding-top:12px}}
