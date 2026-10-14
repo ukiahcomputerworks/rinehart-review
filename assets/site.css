@@ -330,3 +330,9 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .fleet-feature>div{min-width:0}.fleet-feature .eyebrow{margin-bottom:10px}.fleet-feature h2{margin-bottom:12px}.fleet-feature p:not(.eyebrow){margin-bottom:12px}
 @media(min-width:701px) and (max-width:900px){.fleet-feature{grid-template-columns:1fr 1fr;gap:24px}}
 @media(max-width:700px){.fleet-feature{grid-template-columns:1fr;gap:16px}}
+
+/* Supplied team artwork replaces the red dispatch contact card. */
+.contact-console>.dispatch-priority.dispatch-image-button{display:block;align-self:center;min-width:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #344e5c,0 6px 16px #0005}
+.dispatch-image-button img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.dispatch-image-button:hover{box-shadow:0 5px 0 #547180,0 10px 20px #0006}
+@media(max-width:700px){.contact-console>.dispatch-image-button{margin-bottom:12px}}
