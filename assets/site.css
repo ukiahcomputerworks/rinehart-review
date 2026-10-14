@@ -241,7 +241,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 }
 
 .resource-hero,.photo-page-head{padding-top:12px!important;padding-bottom:12px!important}
-.resource-hero.photo-page-head>.bright-steel-copy{grid-column:1;grid-row:1/4;align-self:center;padding:12px 18px}
+.resource-hero.photo-page-head>.bright-steel-copy{grid-column:1;grid-row:1/4;align-self:start;padding:12px 18px}
 .resource-hero .bright-steel-copy h1{margin:0}
 .resource-hero .bright-steel-copy .eyebrow{margin-bottom:8px}
 .resource-hero .bright-steel-copy>p:last-child{margin-bottom:0}
@@ -398,3 +398,5 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .compact-address .button.directions-image-button{display:block;width:124px;max-width:100%;min-height:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 2px 0 #344e5c,0 4px 12px #0005}
 .directions-image-button img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .directions-image-button:hover{box-shadow:0 4px 0 #547180,0 8px 18px #0006}
+
+.resource-search-area{padding-top:12px;padding-bottom:16px}.resource-search-area .library-heading{margin-bottom:0}.resource-tools{padding-bottom:16px}
