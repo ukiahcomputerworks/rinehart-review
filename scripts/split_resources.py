@@ -42,11 +42,7 @@ def apply(root):
  s.select_one('#document-search-help').string='Search document titles. Matching categories open as you type.'
  s.select_one('.resource-search-area .eyebrow').string='DOCUMENTS & FORMS'
  library=s.select_one('.resource-library');library['data-resource-kind']='Documents'
- filters=s.select_one('.resource-filters');filters.clear()
- for key,label in [('all','All Documents'),('news','Historical Notices'),('forms','Applications & Company Documents')]:
-  button=s.new_tag('button',attrs={'type':'button','data-resource-filter':key,'aria-pressed':'true' if key=='all' else 'false'});button.string=label;filters.append(button)
- for key,label in GROUPS:
-  a=s.new_tag('a',href=f'../resource-links/index.html#{key}');a.string=label;hint=s.new_tag('small');hint.string='Links';a.append(hint);filters.append(a)
+ s.select_one('.resource-filters').decompose()
  results=s.select_one('#document-results');results['class']=['document-groups']
  for key,title,slug in [('forms','Applications & Company Documents','applications'),('news','Historical Notices','historical')]:
   matching=list(results.select(f'[data-resource="{key}"]'))
@@ -56,10 +52,12 @@ def apply(root):
   grid=s.new_tag('div',attrs={'class':'document-grid'})
   for card in matching:grid.append(card.extract())
   detail.append(grid);results.append(detail)
- s.select_one('.library-note').string='Historical notices are retained reference files. Confirm current requirements and versions with the relevant organization.'
+ s.select_one('.library-note').decompose()
  s.select_one('.library-footnote').decompose()
  s.select_one('#resource-count').string=f'{len(s.select(".document-card"))} Documents'
  s.select_one('#resource-empty h3').string='No Matching Documents'
+ s.select_one('#resource-empty p').string='Try a broader search.'
+ s.select_one('#resource-reset').string='Clear Search'
  file.write_text(str(s),encoding='utf8')
  # Reuse the same header/footer shell; the links directory has its own focused content.
  links.title.string='Industry & Government Links | Rinehart Oil'
