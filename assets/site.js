@@ -4,9 +4,11 @@ document.querySelectorAll('footer h3').forEach(heading=>{
  heading.replaceWith(frame);frame.append(heading);
 });
 // Recessed dark steel behind bright headings preserves the approved silver material.
-document.querySelectorAll('.page-head,.dispatch-band').forEach(surface=>{
+document.querySelectorAll('.page-head,.dispatch-band,.resource-hero').forEach(surface=>{
+ const children=[...surface.children].filter(child=>!child.matches('.source-header-photo,.policy-header-panel'));
+ if(!children.length)return;
  const panel=document.createElement('div');panel.className='bright-steel-copy';
- [...surface.children].filter(child=>!child.matches('.source-header-photo,.policy-header-panel')).forEach(child=>panel.append(child));
+ children.forEach(child=>panel.append(child));
  surface.prepend(panel);
 });
 // Independent, newly randomized sunlight passes rather than synchronized loops.
@@ -16,7 +18,7 @@ const steelTitles=document.querySelectorAll('h1,h2,h3,h4,.hero-lead,.hero h1 spa
 steelTitles.forEach(element=>element.classList.add('steel-text'));
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 // Border reflections and plate reflections have separate clocks, even on the same panel.
-const borders=document.querySelectorAll('.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button');
+const borders=document.querySelectorAll('.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch');
 const plates=document.querySelectorAll('.page-head,.dispatch-band,.contact-address');
 const metalLayers=[];
 function addReflection(element,kind){

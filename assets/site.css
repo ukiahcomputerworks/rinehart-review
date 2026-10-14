@@ -206,3 +206,45 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 
 .hero-actions .fuel-solution-image-button{display:block;flex:0 0 auto;width:235px;max-width:100%;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #35231e,0 7px 20px #0006;text-decoration:none}
 .fuel-solution-image-button img{display:block;width:100%;height:auto;aspect-ratio:1024/527;object-fit:contain}
+
+/* Compact title panels and contact actions across every route. */
+.page-head,.page-head.photo-page-head{padding-top:12px!important;padding-bottom:12px!important}
+.page-head>.bright-steel-copy{padding:12px 18px!important;min-height:0;align-self:center!important;justify-content:flex-start!important}
+.page-head .eyebrow{margin-bottom:8px!important}
+.page-head .page-title{margin-bottom:0!important}
+.page-head .bright-steel-copy>p:last-child{margin-bottom:0}
+.page-content{padding-top:16px;padding-bottom:22px}
+.services{padding-top:24px;padding-bottom:24px}
+.story,.fleet-feature{padding-top:18px;padding-bottom:22px}
+.bottom-cta{display:block;padding-top:12px;padding-bottom:12px}
+.bottom-cta>.cta-panel{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:18px;padding:12px 18px}
+.cta-copy{min-width:0}.cta-copy .eyebrow{margin-bottom:8px}.cta-copy h2{margin:0}
+.bottom-cta .contact-image-button{align-self:center}
+.footer-base>.client-copyright{font-size:12px;font-weight:700;line-height:1.5;color:inherit;margin:0}
+.hero-dispatch{position:absolute;right:32px;top:22px;z-index:3;width:310px;max-width:calc(100% - 32px);padding:14px 16px;background:linear-gradient(135deg,#15252eef,#0b141de8);border:1px solid #9fb3c0;box-shadow:0 6px 20px #0005;color:#e1e9ee}
+.hero-dispatch .eyebrow{font-size:10px;margin:0 0 6px}
+.hero-dispatch h2{font-size:26px;line-height:1.08;margin:0 0 10px}
+.hero-dispatch>div{display:grid;gap:6px}
+.hero-dispatch a{font-size:11px;line-height:1.4;text-decoration:none}
+.hero-dispatch strong{display:block;font-size:17px;overflow-wrap:anywhere}
+.hero-dispatch a[href^="mailto:"] strong{font-size:15px}
+@media(min-width:701px) and (max-width:1100px){.hero-inner{padding-top:220px}}
+@media(max-width:700px){
+ .page-head>.bright-steel-copy{padding:10px 14px!important}
+ .bottom-cta>.cta-panel{grid-template-columns:1fr;gap:10px;padding:12px 14px}
+ .bottom-cta .contact-image-button{justify-self:end}
+ .hero-dispatch{top:10px;right:10px;width:230px;padding:10px 12px}
+ .hero-dispatch .eyebrow{font-size:8px;margin-bottom:4px}
+ .hero-dispatch h2{font-size:18px;margin-bottom:6px}
+ .hero-dispatch a{font-size:9px}.hero-dispatch strong{font-size:14px}
+ .hero-dispatch a[href^="mailto:"] strong{font-size:12px}
+}
+
+.resource-hero,.photo-page-head{padding-top:12px!important;padding-bottom:12px!important}
+.resource-hero.photo-page-head>.bright-steel-copy{grid-column:1;grid-row:1/4;align-self:center;padding:12px 18px}
+.resource-hero .bright-steel-copy h1{font-size:clamp(36px,4.1vw,62px);line-height:1.05;margin:0}
+.resource-hero .bright-steel-copy .eyebrow{margin-bottom:8px}
+.resource-hero .bright-steel-copy>p:last-child{margin-bottom:0}
+.policy-header-panel{padding:12px 18px!important}
+.policy-header-panel .page-title{margin-bottom:0}
+@media(max-width:700px){.resource-hero.photo-page-head>.bright-steel-copy{grid-column:1;grid-row:auto;padding:10px 14px}.resource-hero .bright-steel-copy h1{font-size:36px}.policy-header-panel{padding:10px 14px!important}}

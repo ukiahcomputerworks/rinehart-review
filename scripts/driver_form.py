@@ -63,6 +63,9 @@ print('Built seven-step driver application preview; all page titles and headings
 from remaining_layout import apply as apply_remaining_layout
 apply_remaining_layout(ROOT)
 
+from compact_layout import apply as apply_compact_layout
+apply_compact_layout(ROOT)
+
 from strip_arrows import apply as strip_link_arrows
 strip_link_arrows(ROOT)
 
