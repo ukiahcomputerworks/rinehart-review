@@ -27,7 +27,9 @@ dest=ROOT/'driver-application';dest.mkdir(exist_ok=True);(dest/'index.html').wri
 for file in ROOT.rglob('*.html'):
     prefix='../'*(len(file.relative_to(ROOT).parts)-1);text=file.read_text(encoding='utf8')
     text=text.replace('Customer connections</h3>','Customer connections</h3><a href="'+prefix+'driver-application/index.html">Apply to drive online</a>')
-    if file.parent.name=='employment-opportunities':text=text.replace('<div class="prose">','<a class="button application-cta" href="'+prefix+'driver-application/index.html">Start the online driver application ↗</a><div class="prose">')
+    if file.parent.name=='employment-opportunities':
+        target='<div class="source-page-layout">' if '<div class="source-page-layout">' in text else '<div class="prose">'
+        text=text.replace(target,'<a class="button application-cta" href="'+prefix+'driver-application/index.html">Start the online driver application ↗</a>'+target)
     file.write_text(text,encoding='utf8')
 import re
 for file in ROOT.rglob('*.html'):
