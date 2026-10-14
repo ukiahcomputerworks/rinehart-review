@@ -18,7 +18,7 @@ def apply(root):
  root=Path(root)
  for route,(hero,hero_caption,detail,detail_caption) in PHOTOS.items():
   prefix='../'*len(route.split('/'))
-  rail_title='Join The Rinehart Team.' if 'employment' in route else 'Your Next Delivery Starts Here.'
+  rail_title='Join The Rinehart Team.' if 'employment' in route else ''
   rail_link=f'{prefix}employment-opportunities/index.html' if 'employment' in route else f'{prefix}contact/index.html'
   rail_action='View Opportunities' if 'employment' in route else 'Talk To Rinehart'
   file=root/route/'index.html';s=BeautifulSoup(file.read_text(encoding='utf8'),'html.parser');prefix='../'*len(route.split('/'))
@@ -30,6 +30,15 @@ def apply(root):
   if prose:
    layout=s.new_tag('div',attrs={'class':'source-page-layout'});prose.wrap(layout)
    rail=BeautifulSoup(f'<aside class="source-photo-rail" aria-label="Rinehart Photography"><figure><a href="{prefix}assets/{detail}" aria-label="View {detail_caption}"><img src="{prefix}assets/{detail}" alt="{detail_caption}" loading="lazy" decoding="async"></a><figcaption>{detail_caption}</figcaption></figure><div class="photo-rail-contact"><p class="eyebrow">LET’S GET TO WORK</p><h2>{rail_title}</h2><a href="{rail_link}">{rail_action} ↗</a><a href="{prefix}fleet/index.html">See Our Fleet ↗</a></div></aside>','html.parser');layout.append(rail.aside)
+   panel=rail.select_one('.photo-rail-contact')
+   if 'employment' not in route:
+    panel.clear()
+   else:
+    for link in list(panel.select('a')):
+     if 'fleet/index.html' in link.get('href',''):link.decompose()
+     else:link['class']=['career-action']
+   action=BeautifulSoup(f'<a class="fleet-action" href="{prefix}fleet/index.html"><span class="action-copy"><strong>Explore Our Fleet</strong><small>See The Trucks Behind Every Delivery</small></span><b aria-hidden="true">↗</b></a>','html.parser')
+   panel.append(action.a)
   file.write_text(str(s),encoding='utf8')
  # Homepage: source images guide visitors to the matching service and history pages.
  file=root/'index.html';s=BeautifulSoup(file.read_text(encoding='utf8'),'html.parser')
