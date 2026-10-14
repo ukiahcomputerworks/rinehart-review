@@ -190,3 +190,10 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .contact-image-button img{display:block;width:100%;height:auto;aspect-ratio:488/141;object-fit:contain}
 .bottom-cta .contact-image-button:hover{box-shadow:0 5px 0 #614139,0 10px 22px #0006}
 @media(max-width:700px){.bottom-cta .contact-image-button{align-self:flex-end}}
+
+.driver-requirements{padding:14px 16px;border:1px solid #7f99aa;background:#14232d}
+.driver-requirements h3{font-size:24px;margin:0 0 8px}
+.driver-requirements p{margin:0 0 8px;font-size:14px}
+.driver-requirements ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px 24px;margin:0 0 12px;padding-left:20px;font-size:14px;line-height:1.5}
+.driver-requirements .check{font-size:14px;line-height:1.5}
+@media(max-width:700px){.driver-requirements ul{grid-template-columns:1fr}}
