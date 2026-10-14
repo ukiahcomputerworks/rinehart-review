@@ -37,7 +37,7 @@ def apply(root):
     for link in list(panel.select('a')):
      if 'fleet/index.html' in link.get('href',''):link.decompose()
      else:link['class']=['career-action']
-   action=BeautifulSoup(f'<a class="fleet-action" href="{prefix}fleet/index.html"><span class="action-copy"><strong>Explore Our Fleet</strong><small>See The Trucks Behind Every Delivery</small></span></a>','html.parser')
+   action=BeautifulSoup(f'<a class="fleet-action fleet-art-button" href="{prefix}fleet/index.html" aria-label="Check Out Our Fleet"><img src="{prefix}assets/fleet-button-industrial.png" alt="Check Out Our Fleet — Rinehart tanker trucks in an industrial steel frame" width="1024" height="254" loading="lazy" decoding="async"></a>','html.parser')
    panel.append(action.a)
   file.write_text(str(s),encoding='utf8')
  # Homepage: source images guide visitors to the matching service and history pages.
