@@ -136,3 +136,9 @@ footer a:not(.brand){margin-bottom:4px}.footer-base{padding-top:10px;gap:16px;al
 .history-card:hover{transform:translateY(-3px);border-color:#edf8ff;box-shadow:0 7px 0 #526f82,0 16px 32px #0008}.history-card:active{transform:translateY(2px)}
 @media(max-width:700px){.history-card{margin-top:0}.history-caption{display:block;padding:14px 16px}.history-caption>span{display:block;margin-top:8px;font-size:11px}.history-caption h3{font-size:21px}}
 @media(prefers-reduced-motion:reduce){.history-card{transition:none}.history-card:hover,.history-card:active{transform:none}}
+
+/* Compact history image button sits at the base of the company text column. */
+.story>.story-photo{align-self:end}.story>.story-copy{display:flex;flex-direction:column;align-self:stretch;min-width:0}
+.story-copy .history-card{grid-column:auto;flex-shrink:0;width:min(100%,var(--history-button-width,340px));margin-top:auto;align-self:flex-start;border-top-width:2px;box-shadow:0 3px 0 #354e5e,0 6px 14px #0005}
+.story-copy .history-card img{width:100%;height:auto;aspect-ratio:1024/254}
+@media(max-width:700px){.story-copy .history-card{margin-top:8px}}

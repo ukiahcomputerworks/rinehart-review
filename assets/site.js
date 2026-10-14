@@ -58,3 +58,11 @@ if(resourceSearch){
  resourceButtons.forEach(button=>button.addEventListener('click',()=>{resourceCategory=button.dataset.resourceFilter;filterResources()}));
  document.querySelector('#resource-reset').addEventListener('click',()=>{resourceCategory='all';resourceSearch.value='';filterResources();resourceSearch.focus()});
 }
+
+const historyButton=document.querySelector('.story-copy .history-card');
+if(historyButton){
+ const historyFont=getComputedStyle(document.querySelector('.story-copy p:not(.eyebrow)')).font;
+ const historyMeasure=document.createElement('canvas').getContext('2d');
+ historyMeasure.font=historyFont;
+ historyButton.style.setProperty('--history-button-width',`${Math.ceil(historyMeasure.measureText('principles that started this business still drive it.').width)}px`);
+}
