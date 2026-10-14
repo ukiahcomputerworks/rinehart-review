@@ -56,12 +56,13 @@ def apply(root, check=False):
         prefix = '../' * (len(path.relative_to(root).parts) - 1)
         csslink = '<link rel="stylesheet" href="' + prefix + 'assets/cwu-colophon.css" data-cwu-colophon="true">'
         if check:
-            if original.count('id="cwu-colophon"') != 1 or original.count(START) != 1 or csslink not in original or template not in original:
+            if original.count('id="cwu-colophon"') != 1 or original.count(START) != 1 or csslink not in original or template not in original or (config.get('ownerAssumesMediaOwnership') and 'falerios' in original.lower()):
                 failures.append(str(path.relative_to(root)))
             continue
         text = LINK.sub('', BLOCK.sub('', original))
         if config.get('ownerAssumesMediaOwnership'):
             text = re.sub(r'<span>Source photo credit:.*?</span>', '', text, flags=re.S)
+            text = re.sub(r'<p\b[^>]*>.*?</p>', lambda m: '' if 'falerios' in m.group().lower() or 'Truck photo courtesey of Rinehart driver' in m.group() else m.group(), text, flags=re.S)
         text = re.sub(r'Independent design review\s*(?:&middot;|&#183;|.)\s*Source photo credit:', 'Source photo credit:', text)
         text = re.sub(r'</head\s*>', csslink + '\n</head>', text, count=1, flags=re.I)
         if re.search(r'</footer\s*>', text, re.I):
