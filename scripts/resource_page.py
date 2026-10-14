@@ -18,7 +18,7 @@ def resources(root):
             meta=ext
             if path.exists() and path.is_file(): meta+=f' · {max(1,round(path.stat().st_size/1024)):,} KB'
             if category=='news':meta+=' · Historical Reference'
-            cards.append(f'<a class="document-card" data-resource="{category}" href="{html.escape(href,quote=True)}" rel="noopener noreferrer"><span class="document-type">{meta}</span><h3>{html.escape(label)}</h3><span class="document-action">Open {"Document" if ext!="WEBSITE" else "Website"} </span></a>')
+            cards.append(f'<a class="document-card" data-resource="{category}" href="{html.escape(href,quote=True)}" rel="noopener noreferrer"><span class="document-type">{meta}</span><h3>{html.escape(label)}</h3><span class="document-action">Open</span></a>')
     # Include every retained downloadable document, including applications outside this page.
     known={BeautifulSoup(card,'html.parser').a['href'] for card in cards}
     names={'13566-ROI-COVID-19-PREVENTION-PROGRAM-EMERGENCY-TEMPORARY-STANDARDS.pdf':'COVID-19 Prevention Program, Historical Reference','13569-roi-employment-application_final-uae.pdf':'Rinehart Oil Employee Application','13571-driver-application-with-desc-2019-rev.pdf':'Rinehart Driver Employment Application','6333-rino-pac-credit-app-new.pdf':'Rino Pacific Credit Application','6352-roi-credit-packet.pdf':'Rinehart Oil Credit Application Packet'}
@@ -26,7 +26,7 @@ def resources(root):
         href='../assets/'+path.name
         if path.suffix.lower() not in {'.pdf','.doc','.docx','.xls','.xlsx'} or href in known:continue
         label=names.get(path.name,path.stem.split('-',1)[-1].replace('-',' ').replace('_',' ').title())
-        cards.append(f'<a class="document-card" data-resource="forms" href="{html.escape(href,quote=True)}"><span class="document-type">{path.suffix[1:].upper()} · {max(1,round(path.stat().st_size/1024)):,} KB</span><h3>{html.escape(label)}</h3><span class="document-action">Open Document</span></a>')
+        cards.append(f'<a class="document-card" data-resource="forms" href="{html.escape(href,quote=True)}"><span class="document-type">{path.suffix[1:].upper()} · {max(1,round(path.stat().st_size/1024)):,} KB</span><h3>{html.escape(label)}</h3><span class="document-action">Open</span></a>')
     groups.append(('forms','Applications & Company Documents','Company documents and application packets.'))
     intro='''<section class="resource-hero wrap"><p class="eyebrow">THE RIGHT INFORMATION. WITHIN REACH.</p><h1>Your Business.<br><span>Your Resource Desk.</span></h1><p>Find reference documents, supplier safety libraries and account application information.</p></section><section class="resource-tools wrap"><a href="../credit-application/index.html" class="resource-tool resource-image-tool" aria-label="View Credit Application"><img src="../assets/credit-application-button.jpg" alt="Credit Application, find the application and instructions for opening an account" width="1024" height="410" loading="lazy" decoding="async"></a><a href="../contact/index.html" class="resource-tool resource-image-tool" aria-label="Ask Our Team, Find Your Contact"><img src="../assets/ask-our-team.jpg" alt="Ask Our Team, help finding a specific document or current version" width="1024" height="397" loading="lazy" decoding="async"></a></section>'''
     filters=''.join(f'<button type="button" data-resource-filter="{category}" aria-pressed="false">{title}</button>' for category,title,_ in groups)

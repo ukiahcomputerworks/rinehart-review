@@ -377,3 +377,14 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .compact-address>p{font-size:14px;line-height:1.4;margin:0}.compact-address .button{min-height:44px;padding:8px 12px;font-size:13px;box-shadow:0 2px 0 #641610;gap:0}
 .compact-address .address-detail{grid-column:1/-1;font-size:12px;line-height:1.4;margin:0}
 @media(max-width:700px){.contact-disclosure>summary{font-size:16px;padding:10px 12px}.compact-hours .hours-row{grid-template-columns:74px minmax(0,1fr);gap:8px;font-size:12px}.compact-hours .hours-row b{margin-left:6px;display:inline;font-size:12px}.compact-address{gap:8px}.compact-address .button{font-size:12px;padding:8px 10px}.compact-address>p{font-size:13px}}
+
+/* Resource directories use dense content-sized rows, never filler cards. */
+.document-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;align-items:start}
+.document-card,.document-card.document-last{display:grid;grid-template-columns:minmax(0,1fr) auto;column-gap:12px;row-gap:2px;align-items:center;padding:8px 12px;min-height:0;grid-column:auto}
+.document-type{grid-column:1;font-size:10px;line-height:1.3}
+.document-card h3{grid-column:1;font:700 18px/1.25 Arial,sans-serif;margin:0;overflow-wrap:anywhere}
+.document-action{grid-column:2;grid-row:1/3;margin:0;padding:8px 10px;min-height:44px;border:1px solid #9eb9cb;border-top:2px solid #edf8ff;background:linear-gradient(115deg,#809dad,#d9eaf4 47%,#a0bacb);color:#102d3e;font-size:12px;line-height:1.3;display:flex;align-items:center;justify-content:center}
+.document-card:hover{transform:none;background:linear-gradient(135deg,#304f62,#152c3d)}
+@media(max-width:700px){.document-grid{grid-template-columns:1fr}.document-card,.document-card.document-last{padding:8px 10px;column-gap:10px}.document-card h3{font-size:16px;line-height:1.3}.document-type{font-size:9px}.document-action{font-size:11px;padding:8px;max-width:95px;text-align:center}}
+
+@media(max-width:700px){.document-card h3{grid-column:1;grid-row:2}.document-type{grid-column:1;grid-row:1}.document-action{grid-column:2;grid-row:1/3;width:48px;padding:8px 4px}.document-card{column-gap:8px;row-gap:2px}}
