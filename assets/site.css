@@ -323,3 +323,6 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
  .hero-stamp.steel-surface{margin:0 22px 18px}
 }
 @media(max-width:360px){.hero-photo{height:220px}.hero-dispatch>div{grid-template-columns:1fr;gap:4px}.hero-dispatch a{min-height:40px}.hero-dispatch a[href^="mailto:"] strong{font-size:14px}.hero-actions{gap:10px}.hero h1{font-size:32px}.masthead .brand small{font-size:6px}.masthead .menu{padding:10px 12px}}
+
+/* Owner-selected crop: emphasize the truck rather than empty sky and pavement. */
+.fleet-feature>img{height:auto;aspect-ratio:7/5;object-fit:cover;object-position:center 20%}
