@@ -21,7 +21,7 @@ def resources(root):
             cards.append(f'<a class="document-card" data-resource="{category}" href="{html.escape(href,quote=True)}" rel="noopener noreferrer"><span class="document-type">{meta}</span><h3>{html.escape(label)}</h3><span class="document-action">Open</span></a>')
     # Include every retained downloadable document, including applications outside this page.
     known={BeautifulSoup(card,'html.parser').a['href'] for card in cards}
-    names={'13566-ROI-COVID-19-PREVENTION-PROGRAM-EMERGENCY-TEMPORARY-STANDARDS.pdf':'COVID-19 Prevention Program, Historical Reference','13569-roi-employment-application_final-uae.pdf':'Rinehart Oil Employee Application','13571-driver-application-with-desc-2019-rev.pdf':'Rinehart Driver Employment Application','6333-rino-pac-credit-app-new.pdf':'Rino Pacific Credit Application','6352-roi-credit-packet.pdf':'Rinehart Oil Credit Application Packet'}
+    names={'13566-ROI-COVID-19-PREVENTION-PROGRAM-EMERGENCY-TEMPORARY-STANDARDS.pdf':'COVID-19 Prevention Program, Historical Reference','13569-roi-employment-application_final-uae.pdf':'Rinehart Oil Employee Application','13571-driver-application-with-desc-2019-rev.pdf':'Rinehart Driver Employment Application','6333-rino-pac-credit-app-new.pdf':'Rino Pacific Credit Application','6352-roi-credit-packet.pdf':'Rinehart Oil Credit Application Packet, Fillable PDF'}
     for path in sorted((root/'assets').iterdir()):
         href='../assets/'+path.name
         if path.suffix.lower() not in {'.pdf','.doc','.docx','.xls','.xlsx'} or href in known:continue

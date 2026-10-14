@@ -356,7 +356,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .contact-disclosure{position:relative;margin:0 0 8px;background:linear-gradient(135deg,#213541,#0d1923);border:1px solid #9cb4c4;border-top:2px solid #e9f5fc;box-shadow:0 3px 0 #344b5b}
 .contact-disclosure>summary{position:relative;display:flex;align-items:center;gap:14px;padding:14px 18px;min-height:56px;cursor:pointer;list-style:none;font:800 19px/1.3 Arial,sans-serif;color:#e5f1f8}
 .contact-disclosure>summary::-webkit-details-marker{display:none}.contact-disclosure>summary::after{content:'+';margin-left:auto;font:400 28px/1 Arial,sans-serif;color:#d2e6f4;flex-shrink:0}
-.contact-disclosure[open]>summary::after{content:'−'}.contact-disclosure[open]>summary{border-bottom:1px solid #7390a2;background:#284150}
+.contact-disclosure[open]>summary::after{content:'âˆ’'}.contact-disclosure[open]>summary{border-bottom:1px solid #7390a2;background:#284150}
 .contact-disclosure>summary:hover{background:#2d485a}.contact-disclosure>summary:focus-visible{outline:3px solid #ffd66c;outline-offset:3px}
 .disclosure-count{font:400 12px/1.4 Arial,sans-serif;color:#b9d0de}
 .department-contacts{padding:4px 16px}
@@ -408,7 +408,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .resource-filters>a{display:flex;align-items:center;gap:6px;min-height:44px;padding:8px 12px;border:1px solid #768fa1;text-decoration:none;font-size:12px;background:#1b303e}.resource-filters>a small{font-size:9px;color:#b6ccd9}
 .document-folder{position:relative;margin-bottom:8px;border:1px solid #93adbe;border-top:2px solid #e9f6ff;background:linear-gradient(135deg,#223b4b,#101f2b)}
 .document-folder>summary{display:flex;align-items:center;gap:12px;padding:12px 14px;min-height:52px;list-style:none;cursor:pointer;font:800 20px/1.25 Arial,sans-serif;color:#e1edf5}
-.document-folder>summary::-webkit-details-marker{display:none}.document-folder>summary::after{content:'+';font:400 26px/1 Arial,sans-serif;margin-left:auto}.document-folder[open]>summary::after{content:'−'}
+.document-folder>summary::-webkit-details-marker{display:none}.document-folder>summary::after{content:'+';font:400 26px/1 Arial,sans-serif;margin-left:auto}.document-folder[open]>summary::after{content:'âˆ’'}
 .document-folder>summary:focus-visible{outline:3px solid #ffd66c;outline-offset:3px}.document-folder>summary:hover{background:#2d4c60}.folder-count{font:400 12px/1.3 Arial,sans-serif;color:#b9d2e2}
 .document-folder>.document-grid{padding:6px}
 .connections{padding-top:14px;padding-bottom:18px}.connection-filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
@@ -429,6 +429,18 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .connection-open{position:relative;display:flex;align-items:center;justify-content:center;min-height:48px;padding:10px 14px;text-decoration:none;font:800 15px/1.3 Arial,sans-serif;background:linear-gradient(110deg,#90aebf,#e7f5fd 46%,#abc6d8);color:#102d3f;border-top:2px solid #fff;box-shadow:0 3px 0 #3a576b}.connection-open:hover{color:#102d3f;background:#eaf8ff}
 .connection-fallback{display:block;padding:12px;border-bottom:1px solid #829fb2;min-height:44px}
 @media(max-width:700px){.resource-page-switch{padding-top:8px;gap:8px;display:flex}.resource-page-switch a{flex:1}.document-folder>summary{font-size:17px;padding:10px 12px;gap:8px}.folder-count{font-size:10px}.document-folder>.document-grid{padding:4px}.connection-console{grid-template-columns:1fr;gap:10px}.connection-choices{display:none}.connection-display{position:static}.connection-file{padding:12px}.connection-file-heading{grid-template-columns:54px minmax(0,1fr);gap:10px}.connection-seal{width:54px;height:54px;font-size:18px}.connection-file h2{font-size:28px}.connection-filters{gap:6px}.connection-filters button{font-size:12px;flex:1;min-width:90px}.connection-file>p{font-size:15px}.resource-filters>a{flex-grow:1}}
+
+/* Statistics are quiet evidence; the image cards are the primary actions. */
+.hero .hero-stamp{position:static;inset:auto;width:auto;max-width:none;display:flex;gap:8px;align-items:center;padding:0;margin:0 48px 12px;border:0;box-shadow:none;background:transparent;color:#a9bac5;transform:none}
+.hero .hero-stamp strong{font:700 16px/1.3 Arial,sans-serif}
+.hero .hero-stamp span{font:400 11px/1.4 Arial,sans-serif;letter-spacing:.02em}
+.proof-strip{padding:10px 48px;gap:20px;background:#111d25;color:#a9bac5;border:0;box-shadow:none}
+.proof-strip div{gap:8px}.proof-strip strong{font:700 18px/1.3 Arial,sans-serif}.proof-strip span{font:400 10px/1.35 Arial,sans-serif;letter-spacing:.03em;max-width:160px}
+.hero-actions .button.put-work-image-button,.hero-actions .fuel-solution-image-button{position:relative;width:260px;border:3px solid #aec5d2;border-top-color:#f6fbff;border-bottom-color:#526e7e;padding:2px;background:#192e3b;box-shadow:0 5px 0 #284657,0 8px 18px #0008;transition:transform .18s,border-color .18s;cursor:pointer}
+.hero-actions a:hover,.hero-actions a:focus-visible{transform:translateY(-2px);border-color:#fff;filter:brightness(1.13)}
+.hero-actions a:active{transform:translateY(2px);box-shadow:0 1px 0 #284657}
+@media(max-width:700px){.hero-actions{grid-template-columns:1fr;gap:12px}.hero-actions .button.put-work-image-button,.hero-actions .fuel-solution-image-button{width:min(100%,340px);justify-self:start}.hero .hero-stamp{order:4;margin:0 22px 12px}.proof-strip{padding:8px 22px;gap:8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.proof-strip div{display:block}.proof-strip strong{font-size:15px}.proof-strip span{display:block;margin-top:2px;font-size:10px;letter-spacing:0}}
+@media(prefers-reduced-motion:reduce){.hero-actions a{transition:none}.hero-actions a:hover,.hero-actions a:focus-visible,.hero-actions a:active{transform:none}}
 
 /* Contact artwork preserves its named action and native image proportions. */
 .team-image-button{position:relative;display:block;width:min(100%,312px);margin-top:12px;border:3px solid #a6bfce;border-top-color:#f4fbff;border-bottom-color:#496677;box-shadow:0 4px 0 #243d4e;line-height:0;overflow:hidden}
