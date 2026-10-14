@@ -99,3 +99,9 @@
 .page-head .steel-text,.dispatch-band .steel-text,.bottom-cta .steel-text,footer .steel-text,.notice .steel-text{--text-glint:#102e40;--metal-text-base:linear-gradient(180deg,#061923 0%,#244150 26%,#0b2535 44%,#486274 49%,#123448 55%,#263f4e 77%,#071e2b 100%);filter:drop-shadow(0 1px 0 #ffffff55)}
 .page-head .policy-header-panel .steel-text{--metal-text-base:initial;--text-glint:#fff;filter:drop-shadow(0 2px 1px #0006)}
 @media(prefers-reduced-motion:reduce){.steel-text,.hero h1 span{background-image:var(--metal-text-base,linear-gradient(180deg,#fff,#bccbd6 45%,#fff 55%,#d5e0e8));background-size:100% 100%;animation:none!important}}
+
+/* Compact shared footer, preserving branding, destinations and steel reflections. */
+footer{padding-top:16px;padding-bottom:12px;gap:12px 28px;line-height:1.45}
+footer .footer-brand{margin-bottom:8px}footer p{margin-bottom:8px}footer h3{margin-bottom:8px}
+footer a:not(.brand){margin-bottom:4px}.footer-base{padding-top:10px;gap:16px;align-items:center}.footer-base a{margin-bottom:0!important}
+@media(max-width:700px){footer{grid-template-columns:repeat(2,minmax(0,1fr));padding:16px 22px 12px;gap:14px 16px}footer>div:first-child{grid-column:1/-1}footer h3{font-size:13px}footer a:not(.brand){min-height:28px;line-height:1.4;margin-bottom:3px;overflow-wrap:anywhere}.footer-base{grid-column:1/-1;padding-top:8px;line-height:1.5}.footer-base span{margin-top:4px}.footer-base a{min-height:0!important}}
