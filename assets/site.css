@@ -272,3 +272,8 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .cardlock-sales-actions small{display:block;font:800 11px/1.3 Arial,sans-serif;margin-bottom:4px}.cardlock-sales-actions strong{font:800 15px/1.3 Arial,sans-serif;overflow-wrap:anywhere}.cardlock-sales-actions a:hover,.cardlock-sales-actions a:focus-visible{color:#102c3c;transform:translateY(-2px);box-shadow:0 5px 0 #678495,0 0 14px #d6f0ff33}
 @media(max-width:700px){.cardlock-action-grid{grid-template-columns:1fr;gap:18px}.prose .cardlock-locator>img,.cardlock-document{height:140px}.cardlock-action-copy{padding:12px}.prose .cardlock-action h3{font-size:30px}.cardlock-sales{padding:12px}.cardlock-sales-actions{grid-template-columns:1fr}.cardlock-sales-actions a{min-height:58px}}
 @media(prefers-reduced-motion:reduce){.cardlock-action,.cardlock-action>img,.cardlock-sales-actions a{transition:none}.cardlock-action:hover,.cardlock-action:focus-visible,.cardlock-action:active,.cardlock-action:hover>img,.cardlock-sales-actions a:hover{transform:none}}
+
+/* Owner artwork replaces the Resources credit card at native proportions. */
+.resource-tool.resource-image-tool,.resource-tool.resource-image-tool:first-child{display:block;align-self:center;padding:0;border:0;min-height:0;background:transparent;box-shadow:0 3px 0 #314653,0 6px 16px #0005;overflow:hidden;line-height:0}
+.resource-image-tool img{display:block;width:100%;height:auto;aspect-ratio:1024/410;object-fit:contain}
+.resource-image-tool:hover{box-shadow:0 5px 0 #547180,0 10px 20px #0006}
