@@ -11,3 +11,6 @@ The review uses no analytics, login or form backend. Applications and working cu
 The source-linked 2023 driver application returns 404. The review preserves the official handoff; it does not claim that document is available. Historical resource notices and the legacy privacy policy are labeled as retained reference.
 
 Upcoming: owner will announce images in `AI\Media\Incoming`. Incorporate only approved Rinehart images with provenance and rerun responsive checks.
+
+
+Media attribution update, October 14, 2026: the owner states that they assume ownership of supplied/source material and authorizes removal of the Kevin Falerios public photo credit and link. This records the owner instruction; it is not an independent chain-of-title determination. The photos remain unchanged.
