@@ -93,3 +93,9 @@
 /* Keep the original logo prominent while tightening its vertical surround. */
 .masthead.steel-surface{padding-top:8px;padding-bottom:8px}
 .masthead .brand small{margin-top:4px}
+
+/* Every heading shares the polished-metal finish; light panels use dark steel. */
+.steel-text,.hero h1 span{background-image:linear-gradient(110deg,transparent 37%,var(--text-glint,#fff) 49%,transparent 59%),var(--metal-text-base,linear-gradient(180deg,#fff 0%,#d9e4ec 25%,#8497a5 44%,#fff 49%,#a8bac6 54%,#f8fcff 77%,#bdccd6 100%));background-size:280% 100%,100% 100%;background-position:115% center,center;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.page-head .steel-text,.dispatch-band .steel-text,.bottom-cta .steel-text,footer .steel-text,.notice .steel-text{--text-glint:#102e40;--metal-text-base:linear-gradient(180deg,#061923 0%,#244150 26%,#0b2535 44%,#486274 49%,#123448 55%,#263f4e 77%,#071e2b 100%);filter:drop-shadow(0 1px 0 #ffffff55)}
+.page-head .policy-header-panel .steel-text{--metal-text-base:initial;--text-glint:#fff;filter:drop-shadow(0 2px 1px #0006)}
+@media(prefers-reduced-motion:reduce){.steel-text,.hero h1 span{background-image:var(--metal-text-base,linear-gradient(180deg,#fff,#bccbd6 45%,#fff 55%,#d5e0e8));background-size:100% 100%;animation:none!important}}
