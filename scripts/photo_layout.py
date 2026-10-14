@@ -30,7 +30,7 @@ def apply(root):
   if prose:
    layout=s.new_tag('div',attrs={'class':'source-page-layout'});prose.wrap(layout)
    rail=BeautifulSoup(f'<aside class="source-photo-rail" aria-label="Rinehart Photography"><figure><a href="{prefix}assets/{detail}" aria-label="View {detail_caption}"><img src="{prefix}assets/{detail}" alt="{detail_caption}" loading="lazy" decoding="async"></a><figcaption>{detail_caption}</figcaption></figure><div class="photo-rail-contact"><p class="eyebrow">LET’S GET TO WORK</p><h2>{rail_title}</h2><a href="{rail_link}">{rail_action} </a><a href="{prefix}fleet/index.html">See Our Fleet </a></div></aside>','html.parser');layout.append(rail.aside)
-   panel=rail.select_one('.photo-rail-contact')
+   panel=layout.select_one('.photo-rail-contact')
    if 'employment' not in route:
     panel.clear()
    else:

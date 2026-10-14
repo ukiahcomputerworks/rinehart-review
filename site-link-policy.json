@@ -1,0 +1,7 @@
+{
+  "blockedLegacyHosts": [
+    "rinehartoil.com",
+    "www.rinehartoil.com"
+  ],
+  "reason": "Owner forbids old-site fallback/comparison links in the website; preserve valid mailto/tel/supplier links."
+}

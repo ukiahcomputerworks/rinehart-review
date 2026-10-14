@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+python scripts/check_release_links.py
+python scripts/apply_colophon.py --check

@@ -25,6 +25,7 @@ steps=''.join(f'<section class="application-step" data-step="{i}" '+('' if i==0 
 body='<section class="page-head wrap"><p class="eyebrow">CAREERS / PETROLEUM TRANSPORTATION DRIVER</p><h1 class="page-title">Your next mile<br>starts here.</h1><p>Apply to drive with a family-owned team built on safe, dependable service.</p></section><section class="page-content wrap"><div class="application-shell"><aside class="application-aside"><img src="../assets/owner-08.webp" alt="Chrome grille of a Rinehart Oil Peterbilt truck"><h2>A team worth<br>driving for.</h2><p>Professional drivers. Company-owned equipment. Real people behind you.</p><a href="../employment-opportunities/index.html">See the driver role </a><p class="form-note">Questions? Call (707) 462-8811.</p></aside><div class="application-main"><div class="notice"><strong>Online application design preview</strong><p>Test the application with sample information. Nothing is sent or saved to a server. Delivery and final HR requirements are being configured.</p></div><div class="progress-label"><span id="step-name">Your details</span><span id="step-count">1 / 7</span></div><progress id="application-progress" max="7" value="1" aria-label="Application progress"></progress><form id="driver-application" novalidate>'+steps+'<div id="form-error" role="alert" tabindex="-1"></div><div class="form-actions"><button type="button" class="secondary-button" id="previous" hidden> Back</button><button type="button" class="button" id="next">Continue </button><button type="submit" class="button" id="finish" hidden>Finish preview</button></div></form><div id="complete" hidden role="status"><h2>Preview complete.</h2><p>Your application has not been submitted. Live delivery is awaiting configuration and HR review.</p><button type="button" class="secondary-button" id="print-application">Print your answers</button><button type="button" class="secondary-button" id="restart">Return to your answers</button></div></div></div></section><script defer src="../assets/application.js"></script>'
 dest=ROOT/'driver-application';dest.mkdir(exist_ok=True);(dest/'index.html').write_text(b.shell('Driver application','/driver-application/',body,'../'),encoding='utf8')
 for file in ROOT.rglob('*.html'):
+    if any(part in {'scripts','source','templates','.deps'} for part in file.relative_to(ROOT).parts):continue
     prefix='../'*(len(file.relative_to(ROOT).parts)-1);text=file.read_text(encoding='utf8')
     text=text.replace('Customer connections</h3>','Customer connections</h3><a href="'+prefix+'driver-application/index.html">Apply to drive online</a>')
     if file.parent.name=='employment-opportunities':
@@ -33,6 +34,7 @@ for file in ROOT.rglob('*.html'):
     file.write_text(text,encoding='utf8')
 import re
 for file in ROOT.rglob('*.html'):
+    if any(part in {'scripts','source','templates','.deps'} for part in file.relative_to(ROOT).parts):continue
     soup=b.BeautifulSoup(file.read_text(encoding='utf8'),'html.parser')
     for heading in soup.select('title,h1,h2,h3,h4,legend,nav a,.hero-lead,#step-name'):
         for text in list(heading.find_all(string=True)):
@@ -48,3 +50,6 @@ strip_link_arrows(ROOT)
 
 from apply_colophon import apply as apply_site_colophon
 apply_site_colophon(ROOT)
+
+from check_release_links import check as check_release_links
+check_release_links(ROOT)

@@ -14,3 +14,8 @@ Upcoming: owner will announce images in `AI\Media\Incoming`. Incorporate only ap
 
 
 Media attribution update, October 14, 2026: the owner states that they assume ownership of supplied/source material and authorizes removal of the Kevin Falerios public photo credit and link. This records the owner instruction; it is not an independent chain-of-title determination. The photos remain unchanged.
+
+
+### Required Release Link Guard
+
+Owner forbids public old-site fallback/comparison links. Run `python scripts/check_release_links.py` before release. `site-link-policy.json` records blocked legacy hosts; generation and `.githooks/pre-push` enforce the check. Configure a fresh clone with `git config core.hooksPath .githooks`. Valid supplier services, mailto/tel and retained local documents remain supported. Source provenance belongs to coordination records, never public migration callouts.
