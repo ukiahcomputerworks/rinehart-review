@@ -325,4 +325,8 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 @media(max-width:360px){.hero-photo{height:220px}.hero-dispatch>div{grid-template-columns:1fr;gap:4px}.hero-dispatch a{min-height:40px}.hero-dispatch a[href^="mailto:"] strong{font-size:14px}.hero-actions{gap:10px}.hero h1{font-size:32px}.masthead .brand small{font-size:6px}.masthead .menu{padding:10px 12px}}
 
 /* Owner-selected crop: emphasize the truck rather than empty sky and pavement. */
-.fleet-feature>img{height:auto;aspect-ratio:7/5;object-fit:cover;object-position:center 20%}
+.fleet-feature{grid-template-columns:minmax(0,1fr) minmax(0,340px);gap:32px;align-items:center;padding-top:14px;padding-bottom:14px}
+.fleet-feature>img{width:100%;height:auto;aspect-ratio:7/5;object-fit:cover;object-position:center 20%}
+.fleet-feature>div{min-width:0}.fleet-feature .eyebrow{margin-bottom:10px}.fleet-feature h2{margin-bottom:12px}.fleet-feature p:not(.eyebrow){margin-bottom:12px}
+@media(min-width:701px) and (max-width:900px){.fleet-feature{grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:700px){.fleet-feature{grid-template-columns:1fr;gap:16px}}
