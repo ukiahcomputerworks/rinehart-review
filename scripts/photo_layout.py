@@ -40,14 +40,10 @@ def apply(root):
    action=BeautifulSoup(f'<a class="fleet-action fleet-art-button" href="{prefix}fleet/index.html" aria-label="Check Out Our Fleet"><img src="{prefix}assets/fleet-button-industrial.png" alt="Check Out Our Fleet — Rinehart tanker trucks in an industrial steel frame" width="1024" height="254" loading="lazy" decoding="async"></a>','html.parser')
    panel.append(action.a)
   file.write_text(str(s),encoding='utf8')
- # Homepage: source images guide visitors to the matching service and history pages.
+ # Keep these original photos on their matching detail pages, without a redundant home row.
  file=root/'index.html';s=BeautifulSoup(file.read_text(encoding='utf8'),'html.parser')
- if not s.select_one('.familiar-photos'):
-  strip=s.new_tag('section',attrs={'class':'familiar-photos wrap','aria-label':'Rinehart Services And History'})
-  cards=[('6373-old-time-station-1.webp','Our Roots. Our Promise.','about','Explore Our History'),('2796-76-pump.webp','Familiar Brands. Dependable Supply.','branded-fuels','Explore Branded Fuels'),('6370-pac-pride-station-image-1.webp','Keep Your Business Moving.','pacific-pride-card-lock','Explore Cardlock')]
-  for image,title,route,action in cards:
-   card=BeautifulSoup(f'<a class="familiar-photo" href="{route}/index.html"><img src="assets/{image}" alt="{title}" loading="lazy" decoding="async"><div><h3>{title}</h3><span>{action} </span></div></a>','html.parser');strip.append(card.a)
-  s.select_one('.story').insert_after(strip);file.write_text(str(s),encoding='utf8')
+ for panel in s.select('.familiar-photos'):panel.decompose()
+ file.write_text(str(s),encoding='utf8')
  # Fleet: retain all owner photos and add the original website's two fleet portraits.
  file=root/'fleet/index.html';s=BeautifulSoup(file.read_text(encoding='utf8'),'html.parser');gallery=s.select_one('.fleet-gallery')
  if not s.select_one('.source-fleet-photo'):

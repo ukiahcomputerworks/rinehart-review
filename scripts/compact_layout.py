@@ -11,6 +11,8 @@ def apply(root):
             continue
         soup = BeautifulSoup(file.read_text(encoding='utf-8'), 'html.parser')
         if file == root / 'index.html':
+            for panel in soup.select('.familiar-photos'):
+                panel.decompose()
             dispatch = soup.select_one('.dispatch-band')
             hero = soup.select_one('.hero')
             if dispatch and hero:
