@@ -29,7 +29,7 @@ def apply(root):
   content=s.select_one('.page-content');prose=content.select_one('.prose')
   if prose:
    layout=s.new_tag('div',attrs={'class':'source-page-layout'});prose.wrap(layout)
-   rail=BeautifulSoup(f'<aside class="source-photo-rail" aria-label="Rinehart Photography"><figure><a href="{prefix}assets/{detail}" aria-label="View {detail_caption}"><img src="{prefix}assets/{detail}" alt="{detail_caption}" loading="lazy" decoding="async"></a><figcaption>{detail_caption}</figcaption></figure><div class="photo-rail-contact"><p class="eyebrow">LET’S GET TO WORK</p><h2>{rail_title}</h2><a href="{rail_link}">{rail_action} ↗</a><a href="{prefix}fleet/index.html">See Our Fleet ↗</a></div></aside>','html.parser');layout.append(rail.aside)
+   rail=BeautifulSoup(f'<aside class="source-photo-rail" aria-label="Rinehart Photography"><figure><a href="{prefix}assets/{detail}" aria-label="View {detail_caption}"><img src="{prefix}assets/{detail}" alt="{detail_caption}" loading="lazy" decoding="async"></a><figcaption>{detail_caption}</figcaption></figure><div class="photo-rail-contact"><p class="eyebrow">LET’S GET TO WORK</p><h2>{rail_title}</h2><a href="{rail_link}">{rail_action} </a><a href="{prefix}fleet/index.html">See Our Fleet </a></div></aside>','html.parser');layout.append(rail.aside)
    panel=rail.select_one('.photo-rail-contact')
    if 'employment' not in route:
     panel.clear()
@@ -37,7 +37,7 @@ def apply(root):
     for link in list(panel.select('a')):
      if 'fleet/index.html' in link.get('href',''):link.decompose()
      else:link['class']=['career-action']
-   action=BeautifulSoup(f'<a class="fleet-action" href="{prefix}fleet/index.html"><span class="action-copy"><strong>Explore Our Fleet</strong><small>See The Trucks Behind Every Delivery</small></span><b aria-hidden="true">↗</b></a>','html.parser')
+   action=BeautifulSoup(f'<a class="fleet-action" href="{prefix}fleet/index.html"><span class="action-copy"><strong>Explore Our Fleet</strong><small>See The Trucks Behind Every Delivery</small></span></a>','html.parser')
    panel.append(action.a)
   file.write_text(str(s),encoding='utf8')
  # Homepage: source images guide visitors to the matching service and history pages.
@@ -46,7 +46,7 @@ def apply(root):
   strip=s.new_tag('section',attrs={'class':'familiar-photos wrap','aria-label':'Rinehart Services And History'})
   cards=[('6373-old-time-station-1.webp','Our Roots. Our Promise.','about','Explore Our History'),('2796-76-pump.webp','Familiar Brands. Dependable Supply.','branded-fuels','Explore Branded Fuels'),('6370-pac-pride-station-image-1.webp','Keep Your Business Moving.','pacific-pride-card-lock','Explore Cardlock')]
   for image,title,route,action in cards:
-   card=BeautifulSoup(f'<a class="familiar-photo" href="{route}/index.html"><img src="assets/{image}" alt="{title}" loading="lazy" decoding="async"><div><h3>{title}</h3><span>{action} ↗</span></div></a>','html.parser');strip.append(card.a)
+   card=BeautifulSoup(f'<a class="familiar-photo" href="{route}/index.html"><img src="assets/{image}" alt="{title}" loading="lazy" decoding="async"><div><h3>{title}</h3><span>{action} </span></div></a>','html.parser');strip.append(card.a)
   s.select_one('.story').insert_after(strip);file.write_text(str(s),encoding='utf8')
  # Fleet: retain all owner photos and add the original website's two fleet portraits.
  file=root/'fleet/index.html';s=BeautifulSoup(file.read_text(encoding='utf8'),'html.parser');gallery=s.select_one('.fleet-gallery')

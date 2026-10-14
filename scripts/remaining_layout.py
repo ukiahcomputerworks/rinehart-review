@@ -32,9 +32,9 @@ def apply(root):
   links=[]
   for i,heading in enumerate(prose.select('h2'),1):
    heading['id']=f'privacy-section-{i}';links.append(f'<a href="#privacy-section-{i}">{heading.get_text(strip=True)}</a>')
-  nav=BeautifulSoup('<aside class="policy-navigator"><nav aria-label="Privacy Policy Sections"><p class="eyebrow">FIND YOUR ANSWER</p><h2>In This Policy</h2>'+''.join(links)+'</nav><div class="policy-help"><h3>Privacy Questions?</h3><p>Use the contact details in the policy to ask about your information.</p><a href="#privacy-section-8">Contact Rinehart ↗</a></div></aside>','html.parser');layout.append(nav.aside)
+  nav=BeautifulSoup('<aside class="policy-navigator"><nav aria-label="Privacy Policy Sections"><p class="eyebrow">FIND YOUR ANSWER</p><h2>In This Policy</h2>'+''.join(links)+'</nav><div class="policy-help"><h3>Privacy Questions?</h3><p>Use the contact details in the policy to ask about your information.</p><a href="#privacy-section-8">Contact Rinehart </a></div></aside>','html.parser');layout.append(nav.aside)
   head=s.select_one('.page-head');head['class']=head.get('class',[])+['photo-page-head','policy-page-head']
-  head.append(BeautifulSoup('<div class="policy-header-panel"><p class="eyebrow">EFFECTIVE OCTOBER 2026</p><h2>Your Information.<br>Your Choice.</h2><a href="#privacy-section-3">Explore Your Privacy Rights ↗</a><a href="#privacy-section-8">Ask A Privacy Question ↗</a></div>','html.parser').div)
+  head.append(BeautifulSoup('<div class="policy-header-panel"><p class="eyebrow">EFFECTIVE OCTOBER 2026</p><h2>Your Information.<br>Your Choice.</h2><a href="#privacy-section-3">Explore Your Privacy Rights </a><a href="#privacy-section-8">Ask A Privacy Question </a></div>','html.parser').div)
   file.write_text(str(s),encoding='utf8')
  # Remove empty legacy text blocks that create spacing without visible content.
  for file in root.rglob('*.html'):

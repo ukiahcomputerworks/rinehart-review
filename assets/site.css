@@ -147,3 +147,6 @@ footer a:not(.brand){margin-bottom:4px}.footer-base{padding-top:10px;gap:16px;al
 .fleet-image-button img{display:block;width:100%;height:auto;aspect-ratio:1024/254;object-fit:contain}
 .fleet-image-button:hover{transform:translateY(-3px);border-color:#edf8ff;box-shadow:0 5px 0 #526f82,0 10px 20px #0007}.fleet-image-button:active{transform:translateY(2px)}
 @media(prefers-reduced-motion:reduce){.fleet-image-button{transition:none}.fleet-image-button:hover,.fleet-image-button:active{transform:none}}
+
+/* Whole links remain the controls, without trailing arrow compartments. */
+.bottom-cta .button.light{justify-content:center;gap:0}.fleet-action{justify-content:center}.service-link,.document-action,.team-action{gap:0}
