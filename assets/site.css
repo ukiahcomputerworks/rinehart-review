@@ -153,3 +153,21 @@ footer a:not(.brand){margin-bottom:4px}.footer-base{padding-top:10px;gap:16px;al
 
 /* Reflection layers must never inherit a button icon compartment. */
 .bottom-cta .button.light>.metal-reflection{width:auto;height:auto;border:0;box-shadow:none;background-color:transparent;transform:none}
+
+/* One bright polished-silver title material, matching Polished Steel / Proven Commitment. */
+.page-head .steel-text,.dispatch-band .steel-text,.bottom-cta .steel-text,footer .steel-text,.notice .steel-text{--metal-text-base:initial;--text-glint:#fff;filter:drop-shadow(0 2px 1px #0006)}
+.bright-steel-copy,.bottom-cta>div{min-width:0;padding:20px 24px;background:linear-gradient(135deg,#17242cfa,#0b141af7);border:1px solid #8ea6b5;box-shadow:inset 0 1px 0 #edf7ff33,0 5px 15px #0003}
+.page-head.photo-page-head>.bright-steel-copy{grid-column:1;grid-row:1/3;align-self:stretch;display:flex;flex-direction:column;justify-content:center}
+.page-head.photo-page-head.three-row-head>.bright-steel-copy{grid-row:1/4}
+.bright-steel-copy .page-title{font-size:clamp(36px,4.1vw,62px);margin-bottom:0}.bright-steel-copy .eyebrow{margin-bottom:16px}.bright-steel-copy>p:not(.eyebrow){margin:16px 0 0;line-height:1.6}
+.dispatch-band>.bright-steel-copy{display:block;width:100%}.dispatch-band .bright-steel-copy>div{display:flex;gap:40px}.bottom-cta>div{flex:1}.bottom-cta .eyebrow{margin-bottom:14px}
+.bright-steel-copy p,.bright-steel-copy a,.bright-steel-copy strong,.bottom-cta>div .eyebrow{color:#c4d2dc!important}.bright-steel-copy strong{color:#e3edf4!important}
+footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9px;box-shadow:0 1px 0 #698495;border-radius:0}
+.eyebrow,.bright-steel-copy .eyebrow,.bottom-cta .eyebrow,.contact-base .eyebrow,.contact-command .eyebrow,.photo-rail-contact .eyebrow,.policy-navigator .eyebrow{font-size:12px;font-weight:800;letter-spacing:.18em;line-height:1.5;color:#bbcbd5}
+.story-copy p:not(.eyebrow),.fleet-feature p:not(.eyebrow),.command-copy>p:not(.eyebrow),.resource-hero>p:last-of-type{font-size:16px;line-height:1.6;color:#c5d2db}
+.notice:has(.steel-text){background:linear-gradient(135deg,#243640,#0c1821);color:#d3e0e9}.notice:has(.steel-text) p{color:#c5d2db}
+@media(max-width:700px){.bright-steel-copy,.bottom-cta>div{padding:18px 16px}.page-head.photo-page-head>.bright-steel-copy,.page-head.photo-page-head.three-row-head>.bright-steel-copy{grid-column:1;grid-row:auto}.bright-steel-copy .page-title{font-size:36px}.dispatch-band .bright-steel-copy>div{flex-direction:column;gap:18px}.bottom-cta>div{width:100%}.eyebrow,.bright-steel-copy .eyebrow,.bottom-cta .eyebrow,.contact-base .eyebrow,.contact-command .eyebrow,.photo-rail-contact .eyebrow,.policy-navigator .eyebrow{font-size:10px}.story-copy p:not(.eyebrow),.fleet-feature p:not(.eyebrow),.command-copy>p:not(.eyebrow),.resource-hero>p:last-of-type{font-size:16px}}
+
+.footer-heading-frame{display:inline-block;padding:4px 8px;margin-bottom:8px;background:#14232d;border-top:1px solid #7f9aae}footer .footer-heading-frame h3.steel-text{padding:0;margin:0;background-color:transparent;box-shadow:none}
+
+.bright-steel-copy .eyebrow,.bottom-cta>div .eyebrow{color:#bbcbd5!important}

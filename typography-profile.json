@@ -1,0 +1,26 @@
+{
+  "reference": "Homepage fleet feature: Polished Steel. Proven Commitment.",
+  "titleMaterial": "One bright polished-silver gradient with independently timed white glints",
+  "lightSurfaces": "Dark recessed backing for silver title groups, silver frame/background retained",
+  "eyebrow": {
+    "font": "Arial",
+    "weight": 800,
+    "sizeDesktop": 12,
+    "sizeMobile": 10,
+    "letterSpacing": ".18em",
+    "color": "#bbcbd5"
+  },
+  "sectionIntro": {
+    "size": 16,
+    "lineHeight": 1.6,
+    "color": "#c5d2db"
+  },
+  "intentionalVariants": [
+    "Employment body20px desktop19px mobile retained",
+    "Compact card body13px desktop12px mobile retained",
+    "Existing role-specific heading sizes and font families retained",
+    "Footer body stays dark on silver for readability; heading has dark backing"
+  ],
+  "scope": "All16 review pages",
+  "motion": "Independent randomized glints; offscreen/hidden-page and reduced-motion gates retained"
+}

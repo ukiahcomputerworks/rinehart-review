@@ -1,4 +1,14 @@
 const button=document.querySelector('.menu');const nav=document.querySelector('#nav');button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')==='true';button.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open)});document.addEventListener('keydown',event=>{if(event.key==='Escape'){button.setAttribute('aria-expanded','false');nav.classList.remove('open')}});
+document.querySelectorAll('footer h3').forEach(heading=>{
+ const frame=document.createElement('div');frame.className='footer-heading-frame';
+ heading.replaceWith(frame);frame.append(heading);
+});
+// Recessed dark steel behind bright headings preserves the approved silver material.
+document.querySelectorAll('.page-head,.dispatch-band').forEach(surface=>{
+ const panel=document.createElement('div');panel.className='bright-steel-copy';
+ [...surface.children].filter(child=>!child.matches('.source-header-photo,.policy-header-panel')).forEach(child=>panel.append(child));
+ surface.prepend(panel);
+});
 // Independent, newly randomized sunlight passes rather than synchronized loops.
 const steelSurfaces=document.querySelectorAll('.masthead,.proof-strip,.service,.story-photo span,.dispatch-band,.bottom-cta,footer,.page-head,.notice,.contact-panel a,.fleet-gallery figure,.secondary-button,.summary,.hero-stamp,.menu');
 steelSurfaces.forEach(element=>element.classList.add('steel-surface'));
