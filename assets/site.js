@@ -2,11 +2,11 @@ const button=document.querySelector('.menu');const nav=document.querySelector('#
 // Independent, newly randomized sunlight passes rather than synchronized loops.
 const steelSurfaces=document.querySelectorAll('.masthead,.proof-strip,.service,.story-photo span,.dispatch-band,.bottom-cta,footer,.page-head,.notice,.contact-panel a,.fleet-gallery figure,.secondary-button,.summary,.hero-stamp,.menu');
 steelSurfaces.forEach(element=>element.classList.add('steel-surface'));
-const steelTitles=document.querySelectorAll('.hero h1 span,.services h2,.story h2,.fleet-feature h2,.application-aside h2,.application-step h2,.prose h3,.prose h4,.command-copy h1 span,.team-heading h2,.resource-hero h1 span');
+const steelTitles=document.querySelectorAll('.hero h1 span,.services h2,.story h2,.fleet-feature h2,.application-aside h2,.application-step h2,.prose h3,.prose h4,.command-copy h1 span,.team-heading h2,.resource-hero h1 span,.policy-copy h2,.policy-navigator h2,.photo-rail-contact h2,.contact-base h2');
 steelTitles.forEach(element=>element.classList.add('steel-text'));
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 // Border reflections and plate reflections have separate clocks, even on the same panel.
-const borders=document.querySelectorAll('.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo');
+const borders=document.querySelectorAll('.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel');
 const plates=document.querySelectorAll('.page-head,.dispatch-band,.contact-address');
 const metalLayers=[];
 function addReflection(element,kind){
@@ -52,7 +52,8 @@ if(resourceSearch){
  let resourceCategory='all';
  const resourceButtons=document.querySelectorAll('[data-resource-filter]');
  const resourceCards=document.querySelectorAll('[data-resource]');
- function filterResources(){let count=0;const query=resourceSearch.value.trim().toLocaleLowerCase();resourceCards.forEach(card=>{card.hidden=!(resourceCategory==='all'||card.dataset.resource===resourceCategory)||!card.textContent.toLocaleLowerCase().includes(query);if(!card.hidden)count++});document.querySelector('#resource-count').textContent=`${count} of ${resourceCards.length} Resources`;document.querySelector('#resource-empty').hidden=count!==0;resourceButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resourceFilter===resourceCategory)))}
+ function filterResources(){let count=0;const query=resourceSearch.value.trim().toLocaleLowerCase();resourceCards.forEach(card=>{card.hidden=!(resourceCategory==='all'||card.dataset.resource===resourceCategory)||!card.textContent.toLocaleLowerCase().includes(query);if(!card.hidden)count++});const shown=[...resourceCards].filter(card=>!card.hidden);resourceCards.forEach(card=>card.classList.remove('document-last'));if(shown.length%2)shown.at(-1).classList.add('document-last');document.querySelector('#resource-count').textContent=`${count} of ${resourceCards.length} Resources`;document.querySelector('#resource-empty').hidden=count!==0;resourceButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resourceFilter===resourceCategory)))}
+ filterResources();
  resourceSearch.addEventListener('input',filterResources);
  resourceButtons.forEach(button=>button.addEventListener('click',()=>{resourceCategory=button.dataset.resourceFilter;filterResources()}));
  document.querySelector('#resource-reset').addEventListener('click',()=>{resourceCategory='all';resourceSearch.value='';filterResources();resourceSearch.focus()});

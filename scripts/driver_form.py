@@ -39,3 +39,6 @@ for file in ROOT.rglob('*.html'):
             text.replace_with(re.sub(r"(?<![\w'’])([a-z])",lambda m:m.group(1).upper(),str(text)))
     file.write_text(str(soup),encoding='utf8')
 print('Built seven-step driver application preview; all page titles and headings use owner-requested Title Case')
+
+from remaining_layout import apply as apply_remaining_layout
+apply_remaining_layout(ROOT)
