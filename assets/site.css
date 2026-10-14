@@ -209,7 +209,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 
 /* Compact title panels and contact actions across every route. */
 .page-head,.page-head.photo-page-head{padding-top:12px!important;padding-bottom:12px!important}
-.page-head>.bright-steel-copy{padding:12px 18px!important;min-height:0;align-self:center!important;justify-content:flex-start!important}
+.page-head>.bright-steel-copy{padding:12px 18px!important;min-height:0;align-self:start!important;justify-content:flex-start!important}
 .page-head .eyebrow{margin-bottom:8px!important}
 .page-head .page-title{margin-bottom:0!important}
 .page-head .bright-steel-copy>p:last-child{margin-bottom:0}

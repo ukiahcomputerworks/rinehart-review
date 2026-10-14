@@ -10,6 +10,10 @@ def apply(root):
         if any(part in {'scripts', 'source', '.deps', 'templates'} for part in file.relative_to(root).parts):
             continue
         soup = BeautifulSoup(file.read_text(encoding='utf-8'), 'html.parser')
+        if file.parent.name in {'trucking-for-hire', 'branded-fuels', 'unbranded-fuels', 'pacific-pride-card-lock'}:
+            eyebrow = soup.select_one('.page-head .eyebrow')
+            if eyebrow:
+                eyebrow.string = 'RINEHART OIL / BUILT ON DEPENDABILITY'
         if file == root / 'index.html':
             for panel in soup.select('.familiar-photos'):
                 panel.decompose()
