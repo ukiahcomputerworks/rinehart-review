@@ -344,3 +344,9 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .office-image-console>.office-secondary{display:block;text-align:center;padding:8px 10px;margin:6px 0 0;font-size:14px;line-height:1.4;min-height:44px;background:#13232e;border:1px solid #7895a6;color:#d8e8f3}
 .office-image-console>.office-secondary:hover{color:#fff;background:#284150}
 @media(max-width:700px){.contact-console>.office-image-console{margin-bottom:12px}}
+
+/* Original shared-inbox artwork replaces the text contact card. */
+.contact-console>.email-console.email-image-button{display:block;align-self:center;min-width:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #344e5c,0 6px 16px #0005}
+.email-image-button img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.email-image-button:hover{box-shadow:0 5px 0 #547180,0 10px 20px #0006}
+@media(max-width:700px){.contact-console>.email-image-button{margin-bottom:12px}}
