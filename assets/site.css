@@ -184,3 +184,9 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 @media(max-width:700px){.application-main>.notice{padding:10px 12px}}
 
 .resource-tools{grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr))}
+
+/* Original owner-supplied contact artwork, kept at its native proportions. */
+.bottom-cta .button.light.contact-image-button{display:block;flex:0 0 auto;width:235px;max-width:100%;min-height:0;padding:0;border:0;background:transparent;box-shadow:0 3px 0 #452a25,0 6px 16px #0005;overflow:hidden;line-height:0}
+.contact-image-button img{display:block;width:100%;height:auto;aspect-ratio:488/141;object-fit:contain}
+.bottom-cta .contact-image-button:hover{box-shadow:0 5px 0 #614139,0 10px 22px #0006}
+@media(max-width:700px){.bottom-cta .contact-image-button{align-self:flex-end}}
