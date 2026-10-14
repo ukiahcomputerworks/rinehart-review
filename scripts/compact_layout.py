@@ -26,6 +26,10 @@ def apply(root):
                 dispatch['aria-label'] = 'Contact Dispatch'
                 hero.append(dispatch)
         cta = soup.select_one('.bottom-cta')
+        if cta and file.parent.name == 'contact':
+            action = cta.find('a')
+            if action:
+                action.decompose()
         if cta:
             panel = cta.find('div', recursive=False)
             action = cta.find('a', recursive=False)

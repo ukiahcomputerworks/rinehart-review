@@ -430,6 +430,15 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .connection-fallback{display:block;padding:12px;border-bottom:1px solid #829fb2;min-height:44px}
 @media(max-width:700px){.resource-page-switch{padding-top:8px;gap:8px;display:flex}.resource-page-switch a{flex:1}.document-folder>summary{font-size:17px;padding:10px 12px;gap:8px}.folder-count{font-size:10px}.document-folder>.document-grid{padding:4px}.connection-console{grid-template-columns:1fr;gap:10px}.connection-choices{display:none}.connection-display{position:static}.connection-file{padding:12px}.connection-file-heading{grid-template-columns:54px minmax(0,1fr);gap:10px}.connection-seal{width:54px;height:54px;font-size:18px}.connection-file h2{font-size:28px}.connection-filters{gap:6px}.connection-filters button{font-size:12px;flex:1;min-width:90px}.connection-file>p{font-size:15px}.resource-filters>a{flex-grow:1}}
 
+/* Contact artwork preserves its named action and native image proportions. */
+.team-image-button{position:relative;display:block;width:min(100%,312px);margin-top:12px;border:3px solid #a6bfce;border-top-color:#f4fbff;border-bottom-color:#496677;box-shadow:0 4px 0 #243d4e;line-height:0;overflow:hidden}
+.team-image-button img{display:block;width:100%;height:auto}
+.team-image-button:hover{border-color:#f4fbff;filter:brightness(1.1)}
+.team-image-button:focus-visible{outline:3px solid #ffd66c;outline-offset:4px}
+.contact-console{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-bottom:16px;align-items:start}
+.contact-console>.dispatch-priority.dispatch-image-button,.contact-console>.office-console.office-image-console,.contact-console>.email-console.email-image-button{align-self:start;grid-column:auto;margin-bottom:0}
+@media(max-width:700px){.contact-console{grid-template-columns:1fr;gap:14px}.contact-console>.dispatch-image-button,.contact-console>.office-image-console,.contact-console>.email-image-button{width:min(100%,340px);justify-self:center}}
+
 /* A raised, labeled action makes the history artwork unmistakably interactive. */
 .story-copy .history-card{padding:3px;border:3px solid #a6bfce;border-top:5px solid #f4fbff;border-bottom:5px solid #496677;background:linear-gradient(110deg,#94aab8,#e7f4fc 45%,#819eaf);box-shadow:0 5px 0 #243d4e,0 9px 18px #0007;line-height:0;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
 .story-copy .history-card img{border:1px solid #324d5e;filter:contrast(1.08);transition:filter .2s}
