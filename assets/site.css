@@ -431,7 +431,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 @media(max-width:700px){.resource-page-switch{padding-top:8px;gap:8px;display:flex}.resource-page-switch a{flex:1}.document-folder>summary{font-size:17px;padding:10px 12px;gap:8px}.folder-count{font-size:10px}.document-folder>.document-grid{padding:4px}.connection-console{grid-template-columns:1fr;gap:10px}.connection-choices{display:none}.connection-display{position:static}.connection-file{padding:12px}.connection-file-heading{grid-template-columns:54px minmax(0,1fr);gap:10px}.connection-seal{width:54px;height:54px;font-size:18px}.connection-file h2{font-size:28px}.connection-filters{gap:6px}.connection-filters button{font-size:12px;flex:1;min-width:90px}.connection-file>p{font-size:15px}.resource-filters>a{flex-grow:1}}
 
 /* Statistics are quiet evidence; the image cards are the primary actions. */
-.hero .hero-stamp{position:static;inset:auto;width:auto;max-width:none;display:flex;gap:8px;align-items:center;padding:0;margin:0 48px 12px;border:0;box-shadow:none;background:transparent;color:#a9bac5;transform:none}
+.hero .hero-stamp{position:relative;inset:auto;width:calc(100% - 96px);max-width:1184px;display:flex;gap:8px;align-items:center;padding:0;margin:0 auto 12px;border:0;box-shadow:none;background:transparent;color:#a9bac5;transform:none}
 .hero .hero-stamp strong{font:700 16px/1.3 Arial,sans-serif}
 .hero .hero-stamp span{font:400 11px/1.4 Arial,sans-serif;letter-spacing:.02em}
 .proof-strip{padding:10px 48px;gap:20px;background:#111d25;color:#a9bac5;border:0;box-shadow:none}
@@ -439,7 +439,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .hero-actions .button.put-work-image-button,.hero-actions .fuel-solution-image-button{position:relative;width:260px;border:3px solid #aec5d2;border-top-color:#f6fbff;border-bottom-color:#526e7e;padding:2px;background:#192e3b;box-shadow:0 5px 0 #284657,0 8px 18px #0008;transition:transform .18s,border-color .18s;cursor:pointer}
 .hero-actions a:hover,.hero-actions a:focus-visible{transform:translateY(-2px);border-color:#fff;filter:brightness(1.13)}
 .hero-actions a:active{transform:translateY(2px);box-shadow:0 1px 0 #284657}
-@media(max-width:700px){.hero-actions{grid-template-columns:1fr;gap:12px}.hero-actions .button.put-work-image-button,.hero-actions .fuel-solution-image-button{width:min(100%,340px);justify-self:start}.hero .hero-stamp{order:4;margin:0 22px 12px}.proof-strip{padding:8px 22px;gap:8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.proof-strip div{display:block}.proof-strip strong{font-size:15px}.proof-strip span{display:block;margin-top:2px;font-size:10px;letter-spacing:0}}
+@media(max-width:700px){.hero-actions{grid-template-columns:1fr;gap:12px}.hero-actions .button.put-work-image-button,.hero-actions .fuel-solution-image-button{width:min(100%,340px);justify-self:start}.hero .hero-stamp{order:4;width:calc(100% - 44px);margin:0 22px 12px}.proof-strip{padding:8px 22px;gap:8px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}.proof-strip div{display:block}.proof-strip strong{font-size:15px}.proof-strip span{display:block;margin-top:2px;font-size:10px;letter-spacing:0}}
 @media(prefers-reduced-motion:reduce){.hero-actions a{transition:none}.hero-actions a:hover,.hero-actions a:focus-visible,.hero-actions a:active{transform:none}}
 
 /* Contact artwork preserves its named action and native image proportions. */
