@@ -277,3 +277,14 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .resource-tool.resource-image-tool,.resource-tool.resource-image-tool:first-child{display:block;align-self:center;padding:0;border:0;min-height:0;background:transparent;box-shadow:0 3px 0 #314653,0 6px 16px #0005;overflow:hidden;line-height:0}
 .resource-image-tool img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .resource-image-tool:hover{box-shadow:0 5px 0 #547180,0 10px 20px #0006}
+
+/* Document search becomes the primary library action. */
+.library-heading{display:block;margin-bottom:14px}.library-heading>div{margin-bottom:12px}.library-heading h2{font-size:28px;margin:0}.library-heading .eyebrow{margin-bottom:5px}
+.document-search.document-search-hero{position:relative;display:block;width:100%;padding:16px 20px;background:linear-gradient(135deg,#253b49,#0c1821);border:3px solid #a7bfce;border-top-color:#f4fbff;border-left-color:#d4e4ee;box-shadow:0 4px 0 #405a6b,0 8px 22px #0004}
+#document-search-title{display:block;font:800 clamp(24px,2.7vw,36px)/1.15 Arial,sans-serif;color:#e7f3fb;margin-bottom:14px;letter-spacing:-.02em}
+.document-search-field{display:flex;align-items:center;gap:14px;padding:0 16px;border:2px solid #b5cbd9;background:#08151e;box-shadow:inset 0 3px 9px #0007}
+.document-search-field svg{width:28px;height:28px;flex-shrink:0;stroke:#c5e1f3;stroke-width:2.5}
+.document-search.document-search-hero input{min-width:0;width:100%;height:70px;padding:12px 0;margin:0;border:0;box-shadow:none;background:transparent;color:#f3f8fc;font:20px/1.3 Arial,sans-serif}
+.document-search-hero input::placeholder{color:#a9c1d2;opacity:1}.document-search-field:focus-within{border-color:#fff;box-shadow:0 0 0 3px #bde6ff44,inset 0 3px 9px #0007}
+#document-search-help{display:block;font:13px/1.5 Arial,sans-serif;margin-top:10px;color:#c4d6e1}
+@media(max-width:700px){.document-search.document-search-hero{padding:14px 12px;margin-top:12px}#document-search-title{font-size:26px;margin-bottom:12px}.document-search-field{padding:0 10px;gap:10px}.document-search-field svg{width:23px;height:23px}.document-search.document-search-hero input{height:62px;font-size:16px}#document-search-help{font-size:12px}}
