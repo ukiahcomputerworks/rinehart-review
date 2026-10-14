@@ -393,3 +393,8 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .prose .button.fuel-supply-image-button{display:block;width:min(100%,312px);min-height:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 3px 0 #344e5c,0 6px 16px #0005}
 .prose .fuel-supply-image-button img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;padding:0;background:transparent}
 .fuel-supply-image-button:hover{box-shadow:0 5px 0 #547180,0 10px 20px #0006}
+
+/* Compact owner directions artwork, keeping the verified Street View target. */
+.compact-address .button.directions-image-button{display:block;width:124px;max-width:100%;min-height:0;padding:0;border:0;background:transparent;line-height:0;overflow:hidden;box-shadow:0 2px 0 #344e5c,0 4px 12px #0005}
+.directions-image-button img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
+.directions-image-button:hover{box-shadow:0 4px 0 #547180,0 8px 18px #0006}
