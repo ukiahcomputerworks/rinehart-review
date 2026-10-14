@@ -45,3 +45,6 @@ apply_remaining_layout(ROOT)
 
 from strip_arrows import apply as strip_link_arrows
 strip_link_arrows(ROOT)
+
+from apply_colophon import apply as apply_site_colophon
+apply_site_colophon(ROOT)
