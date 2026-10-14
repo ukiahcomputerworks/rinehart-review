@@ -275,5 +275,5 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 
 /* Owner artwork replaces the Resources credit card at native proportions. */
 .resource-tool.resource-image-tool,.resource-tool.resource-image-tool:first-child{display:block;align-self:center;padding:0;border:0;min-height:0;background:transparent;box-shadow:0 3px 0 #314653,0 6px 16px #0005;overflow:hidden;line-height:0}
-.resource-image-tool img{display:block;width:100%;height:auto;aspect-ratio:1024/410;object-fit:contain}
+.resource-image-tool img{display:block;width:100%;height:auto;aspect-ratio:auto;object-fit:contain}
 .resource-image-tool:hover{box-shadow:0 5px 0 #547180,0 10px 20px #0006}
