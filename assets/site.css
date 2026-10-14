@@ -142,3 +142,8 @@ footer a:not(.brand){margin-bottom:4px}.footer-base{padding-top:10px;gap:16px;al
 .story-copy .history-card{grid-column:auto;flex-shrink:0;width:min(100%,var(--history-button-width,340px));margin-top:auto;align-self:flex-start;border-top-width:2px;box-shadow:0 3px 0 #354e5e,0 6px 14px #0005}
 .story-copy .history-card img{width:100%;height:auto;aspect-ratio:1024/254}
 @media(max-width:700px){.story-copy .history-card{margin-top:8px}}
+
+.fleet-image-button{display:block;position:relative;width:min(100%,312px);margin-top:18px;border:2px solid #9bb0be;border-top-color:#e8f3fa;background:#101c24;box-shadow:0 3px 0 #354e5e,0 6px 14px #0005;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.fleet-image-button img{display:block;width:100%;height:auto;aspect-ratio:1024/254;object-fit:contain}
+.fleet-image-button:hover{transform:translateY(-3px);border-color:#edf8ff;box-shadow:0 5px 0 #526f82,0 10px 20px #0007}.fleet-image-button:active{transform:translateY(2px)}
+@media(prefers-reduced-motion:reduce){.fleet-image-button{transition:none}.fleet-image-button:hover,.fleet-image-button:active{transform:none}}
