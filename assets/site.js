@@ -18,7 +18,7 @@ const steelTitles=document.querySelectorAll('h1,h2,h3,h4,.hero-lead,.hero h1 spa
 steelTitles.forEach(element=>element.classList.add('steel-text'));
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 // Border reflections and plate reflections have separate clocks, even on the same panel.
-const borders=document.querySelectorAll('.directions-image-button,.fuel-supply-image-button,.contact-disclosure,.email-image-button,.office-image-button,.dispatch-image-button,.document-search-hero,.resource-hero,.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch,.cardlock-action,.cardlock-sales,.cardlock-sales-actions a');
+const borders=document.querySelectorAll('.document-folder,.connection-file,.connection-choice,.connection-open,.directions-image-button,.fuel-supply-image-button,.contact-disclosure,.email-image-button,.office-image-button,.dispatch-image-button,.document-search-hero,.resource-hero,.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch,.cardlock-action,.cardlock-sales,.cardlock-sales-actions a');
 const plates=document.querySelectorAll('.page-head,.resource-hero,.dispatch-band,.contact-address');
 const metalLayers=[];
 function addReflection(element,kind){
@@ -64,7 +64,7 @@ if(resourceSearch){
  let resourceCategory='all';
  const resourceButtons=document.querySelectorAll('[data-resource-filter]');
  const resourceCards=document.querySelectorAll('[data-resource]');
- function filterResources(){let count=0;const query=resourceSearch.value.trim().toLocaleLowerCase();resourceCards.forEach(card=>{card.hidden=!(resourceCategory==='all'||card.dataset.resource===resourceCategory)||!card.textContent.toLocaleLowerCase().includes(query);if(!card.hidden)count++});const shown=[...resourceCards].filter(card=>!card.hidden);resourceCards.forEach(card=>card.classList.remove('document-last'));if(shown.length%2)shown.at(-1).classList.add('document-last');document.querySelector('#resource-count').textContent=`${count} of ${resourceCards.length} Resources`;document.querySelector('#resource-empty').hidden=count!==0;resourceButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resourceFilter===resourceCategory)))}
+ function filterResources(){let count=0;const query=resourceSearch.value.trim().toLocaleLowerCase();resourceCards.forEach(card=>{card.hidden=!(resourceCategory==='all'||card.dataset.resource===resourceCategory)||!card.textContent.toLocaleLowerCase().includes(query);if(!card.hidden)count++});const shown=[...resourceCards].filter(card=>!card.hidden);resourceCards.forEach(card=>card.classList.remove('document-last'));if(shown.length%2)shown.at(-1).classList.add('document-last');document.querySelector('#resource-count').textContent=`${count} of ${resourceCards.length} ${document.querySelector('.resource-library').dataset.resourceKind||'Resources'}`;document.querySelectorAll('.document-folder').forEach(folder=>{const matches=[...folder.querySelectorAll('[data-resource]')].filter(card=>!card.hidden).length;folder.hidden=matches===0;if(query||resourceCategory!=='all'){folder.open=matches>0;folder.dataset.searchOpened='true'}else if(folder.dataset.searchOpened){folder.open=false;delete folder.dataset.searchOpened}});document.querySelector('#resource-empty').hidden=count!==0;resourceButtons.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.resourceFilter===resourceCategory)))}
  filterResources();
  resourceSearch.addEventListener('input',filterResources);
  resourceButtons.forEach(button=>button.addEventListener('click',()=>{resourceCategory=button.dataset.resourceFilter;filterResources()}));
@@ -77,4 +77,26 @@ if(historyButton){
  const historyMeasure=document.createElement('canvas').getContext('2d');
  historyMeasure.font=historyFont;
  historyButton.style.setProperty('--history-button-width',`${Math.ceil(historyMeasure.measureText('principles that started this business still drive it.').width)}px`);
+}
+
+// Alpha-inspired resource selection, using Rinehart's compact steel components.
+const connectionSelect=document.querySelector('#connection-select');
+if(connectionSelect){
+ const choices=[...document.querySelectorAll('.connection-choice')];
+ const files=[...document.querySelectorAll('.connection-file')];
+ const filters=[...document.querySelectorAll('[data-connection-filter]')];
+ function chooseConnection(id){
+  const chosen=files.find(file=>file.id===id);if(!chosen)return;
+  files.forEach(file=>file.hidden=file!==chosen);
+  choices.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.connection===id)));
+  connectionSelect.value=id;
+  filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.connectionFilter===chosen.dataset.group)));
+  document.querySelectorAll('.connection-choice-group').forEach(group=>group.hidden=group.dataset.connectionGroup!==chosen.dataset.group);
+ }
+ function chooseCategory(group){const first=choices.find(button=>button.dataset.group===group);if(first)chooseConnection(first.dataset.connection)}
+ choices.forEach(button=>button.addEventListener('click',()=>chooseConnection(button.dataset.connection)));
+ filters.forEach(button=>button.addEventListener('click',()=>chooseCategory(button.dataset.connectionFilter)));
+ connectionSelect.addEventListener('change',()=>chooseConnection(connectionSelect.value));
+ function readCategoryHash(){const group=location.hash.slice(1);chooseCategory(['industry','government','sds'].includes(group)?group:'industry')}
+ window.addEventListener('hashchange',readCategoryHash);readCategoryHash();
 }

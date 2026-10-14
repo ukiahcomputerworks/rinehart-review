@@ -1,0 +1,104 @@
+[
+  {
+    "title": "CARB Cap-And-Invest Program",
+    "url": "https://ww2.arb.ca.gov/our-work/programs/cap-and-invest-program",
+    "description": "Program information and resources from the California Air Resources Board.",
+    "group": "government"
+  },
+  {
+    "title": "CFCA California Fuels & Convenience Alliance",
+    "url": "https://cfca.energy/",
+    "description": "California fuel and convenience industry information and member resources.",
+    "group": "industry"
+  },
+  {
+    "title": "EMA Energy Marketers Of America",
+    "url": "https://www.energymarketersofamerica.org/",
+    "description": "Energy marketer industry news, advocacy and association resources.",
+    "group": "industry"
+  },
+  {
+    "title": "SIGMA Society Of Independent Gasoline Marketers Of America",
+    "url": "https://www.sigma.org/",
+    "description": "Resources for independent fuel marketers and convenience retailers.",
+    "group": "industry"
+  },
+  {
+    "title": "WPMA Western Petroleum Marketers Association",
+    "url": "https://www.wpma.com/",
+    "description": "Association information, events and resources for petroleum marketers.",
+    "group": "industry"
+  },
+  {
+    "title": "NACS National Association Of Convenience Stores",
+    "url": "https://www.convenience.org/",
+    "description": "Convenience and fuel retail industry information, education and research.",
+    "group": "industry"
+  },
+  {
+    "title": "California Air Resources Board",
+    "url": "https://ww2.arb.ca.gov/",
+    "description": "California air-quality and emissions program information.",
+    "group": "government"
+  },
+  {
+    "title": "California Department Of Alcoholic Beverage Control",
+    "url": "https://www.abc.ca.gov/",
+    "description": "California alcoholic beverage licensing and agency resources.",
+    "group": "government"
+  },
+  {
+    "title": "California Environmental Protection Agency",
+    "url": "https://calepa.ca.gov/",
+    "description": "California environmental agency information and program connections.",
+    "group": "government"
+  },
+  {
+    "title": "California Board Of Equalization",
+    "url": "https://www.boe.ca.gov/",
+    "description": "Agency services, tax information and public resources.",
+    "group": "government"
+  },
+  {
+    "title": "State Water Resources Control Board",
+    "url": "https://www.waterboards.ca.gov/",
+    "description": "California water-quality and water-board program resources.",
+    "group": "government"
+  },
+  {
+    "title": "California Energy Commission",
+    "url": "https://www.energy.ca.gov/",
+    "description": "California energy policy, planning and program information.",
+    "group": "government"
+  },
+  {
+    "title": "California Department Of Industrial Relations",
+    "url": "https://www.dir.ca.gov/",
+    "description": "California workplace and industrial-relations information.",
+    "group": "government"
+  },
+  {
+    "title": "California Legislative Information",
+    "url": "https://leginfo.legislature.ca.gov/",
+    "description": "Find California bills, laws and legislative information.",
+    "group": "government"
+  },
+  {
+    "title": "Phillips 66 Safety Data Sheets",
+    "url": "https://www.phillips66.com/safety-data-sheets/",
+    "description": "Open the supplier\u2019s product safety-data resources.",
+    "group": "sds"
+  },
+  {
+    "title": "Valero Safety Data Sheets",
+    "url": "https://www.valero.com/responsibility/safety/safety-data-sheets",
+    "description": "Search the supplier\u2019s product safety-data documentation.",
+    "group": "sds"
+  },
+  {
+    "title": "Chevron Safety Data Sheets",
+    "url": "https://cglapps.chevron.com/msdspds/MSDSPage.aspx?language=en&country=&region=NA",
+    "description": "Find product safety-data documentation in the supplier\u2019s library.",
+    "group": "sds"
+  }
+]

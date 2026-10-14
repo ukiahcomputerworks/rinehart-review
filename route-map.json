@@ -63,5 +63,10 @@
     "source": "/privacy-policy/",
     "target": "/privacy-policy/index.html",
     "disposition": "migrated public content; local routes and documents validated"
+  },
+  {
+    "source": "/resource-links/",
+    "target": "resource-links/index.html",
+    "disposition": "owner-requested external links directory; documents retained at customer-resources"
   }
 ]
