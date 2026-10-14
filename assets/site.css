@@ -112,9 +112,9 @@ footer a:not(.brand){margin-bottom:4px}.footer-base{padding-top:10px;gap:16px;al
 .fleet-action .action-copy{display:block}.fleet-action strong{display:block;font-size:20px;line-height:1.15}.fleet-action small{display:block;margin-top:7px;font-size:11px;line-height:1.45;font-weight:400}.fleet-action b{display:grid;place-items:center;flex-shrink:0;width:36px;height:36px;border:1px solid #597482;background:#162d3b;color:#fff;font-size:24px;transition:transform .2s}
 .photo-rail-contact .fleet-action:hover{color:#061f30;transform:translateY(-3px);box-shadow:0 7px 0 #3b505e,0 13px 28px #0007}.fleet-action:hover b{transform:translate(2px,-2px)}
 .bottom-cta .button.light{background:linear-gradient(135deg,#e24532,#a21d15);color:#fff;border:1px solid #eff7fc;border-top:3px solid #fff;box-shadow:0 5px 0 #651710,0 8px 26px #a51e253d;min-height:68px;padding:16px 22px;font-size:18px;gap:24px;transition:transform .2s,box-shadow .2s,background .2s}
-.bottom-cta .button.light span{display:grid;place-items:center;width:32px;height:32px;border:1px solid #ffd1c9;background:#780f1355;font-size:23px;color:#fff;transition:transform .2s}.bottom-cta .button.light:hover{background:linear-gradient(135deg,#f05a42,#b1251b);transform:translateY(-3px);box-shadow:0 7px 0 #651710,0 12px 30px #a51e2555}.bottom-cta .button.light:hover span{transform:translate(2px,-2px)}
+.bottom-cta .button.light > span:not(.metal-reflection){display:grid;place-items:center;width:32px;height:32px;border:1px solid #ffd1c9;background:#780f1355;font-size:23px;color:#fff;transition:transform .2s}.bottom-cta .button.light:hover{background:linear-gradient(135deg,#f05a42,#b1251b);transform:translateY(-3px);box-shadow:0 7px 0 #651710,0 12px 30px #a51e2555}.bottom-cta .button.light:hover > span:not(.metal-reflection){transform:translate(2px,-2px)}
 @media(max-width:700px){.bottom-cta .button.light{width:100%;font-size:18px;min-height:64px}.photo-rail-contact .fleet-action{min-height:76px}.fleet-action strong{font-size:20px}}
-@media(prefers-reduced-motion:reduce){.photo-rail-contact .fleet-action,.bottom-cta .button.light,.fleet-action b,.bottom-cta .button.light span{transition:none}.photo-rail-contact .fleet-action:hover,.bottom-cta .button.light:hover,.fleet-action:hover b,.bottom-cta .button.light:hover span{transform:none}}
+@media(prefers-reduced-motion:reduce){.photo-rail-contact .fleet-action,.bottom-cta .button.light,.fleet-action b,.bottom-cta .button.light > span:not(.metal-reflection){transition:none}.photo-rail-contact .fleet-action:hover,.bottom-cta .button.light:hover,.fleet-action:hover b,.bottom-cta .button.light:hover > span:not(.metal-reflection){transform:none}}
 
 /* The whole service card is a raised, responsive steel control. */
 .service.steel-surface,.service.steel-surface:hover{border:2px solid #8fa5b3!important;border-top:3px solid #e7f1f8!important;border-bottom-color:#475e6c!important;background:linear-gradient(145deg,#202b33,#0a1117);box-shadow:inset 1px 0 0 #e0f0fa55,inset -1px 0 0 #273f4d,0 5px 0 #344a58,0 12px 25px #0007;cursor:pointer;transition:transform .22s,box-shadow .22s,border-color .22s,background .22s;-webkit-tap-highlight-color:#d5edf533}
@@ -150,3 +150,6 @@ footer a:not(.brand){margin-bottom:4px}.footer-base{padding-top:10px;gap:16px;al
 
 /* Whole links remain the controls, without trailing arrow compartments. */
 .bottom-cta .button.light{justify-content:center;gap:0}.fleet-action{justify-content:center}.service-link,.document-action,.team-action{gap:0}
+
+/* Reflection layers must never inherit a button icon compartment. */
+.bottom-cta .button.light>.metal-reflection{width:auto;height:auto;border:0;box-shadow:none;background-color:transparent;transform:none}
