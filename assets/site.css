@@ -366,3 +366,14 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .department-contacts .team-card:hover{background:#294759}.department-contacts .team-card:active{background:#365d73}
 .contact-base.contact-accordions{display:block;padding-top:0;padding-bottom:16px}.disclosure-content{padding:12px 18px}.disclosure-content>p{margin-bottom:12px;font-size:15px;color:#d1e1ec}.disclosure-content .hours-row{padding:8px 0}.disclosure-content .button{min-height:44px}
 @media(max-width:700px){.team-heading{display:block}.team-heading h2{font-size:30px}.team-heading>p{margin-top:8px}.contact-disclosure>summary{font-size:16px;padding:12px;gap:8px}.disclosure-count{font-size:11px}.department-contacts{padding:4px 10px}.department-contacts .team-card{grid-template-columns:1fr;gap:4px;padding:10px 4px}.department-contacts .team-card h3{font-size:19px}.disclosure-content{padding:12px}.team-section{padding-top:12px}}
+
+/* Dense office details: readable information rather than oversized cards. */
+.contact-disclosure>summary{min-height:44px;padding:10px 14px;font-size:17px}
+.contact-disclosure>summary::after{font-size:24px}
+.disclosure-content.compact-hours{padding:6px 12px}
+.compact-hours .hours-row{display:grid;grid-template-columns:130px minmax(0,1fr);align-items:center;gap:12px;max-width:620px;padding:4px 0;margin:0;font-size:13px;line-height:1.4}
+.compact-hours .hours-row>span{text-align:left}.compact-hours .hours-row b{display:inline;margin-left:8px;font-size:13px;white-space:nowrap}
+.disclosure-content.compact-address{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:8px 14px;padding:8px 12px}
+.compact-address>p{font-size:14px;line-height:1.4;margin:0}.compact-address .button{min-height:44px;padding:8px 12px;font-size:13px;box-shadow:0 2px 0 #641610;gap:0}
+.compact-address .address-detail{grid-column:1/-1;font-size:12px;line-height:1.4;margin:0}
+@media(max-width:700px){.contact-disclosure>summary{font-size:16px;padding:10px 12px}.compact-hours .hours-row{grid-template-columns:74px minmax(0,1fr);gap:8px;font-size:12px}.compact-hours .hours-row b{margin-left:6px;display:inline;font-size:12px}.compact-address{gap:8px}.compact-address .button{font-size:12px;padding:8px 10px}.compact-address>p{font-size:13px}}

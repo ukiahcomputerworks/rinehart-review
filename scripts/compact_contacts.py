@@ -26,9 +26,12 @@ def apply(root):
  for panel,title in [(base.select_one('.contact-hours'),'Office & Dispatch Hours'),(base.select_one('.contact-address'),'Address & Directions')]:
   detail=s.new_tag('details',attrs={'class':'contact-disclosure','name':'rinehart-contact-detail'})
   summary=s.new_tag('summary');summary.string=title;detail.append(summary)
-  body=s.new_tag('div',attrs={'class':'disclosure-content'})
+  body=s.new_tag('div',attrs={'class':'disclosure-content '+('compact-hours' if 'Hours' in title else 'compact-address')})
   for heading in panel.select('.eyebrow,h2'):heading.decompose()
   for child in list(panel.contents):body.append(child.extract())
+  if 'Hours' in title:
+   for node in body.find_all(string=True):
+    if 'Monday–Friday' in node:node.replace_with(node.replace('Monday–Friday','Mon–Fri'))
   detail.append(body);panel.replace_with(detail)
  file.write_text(str(s),encoding='utf8')
 if __name__=='__main__':apply(Path(__file__).resolve().parents[1])
