@@ -430,6 +430,20 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .connection-fallback{display:block;padding:12px;border-bottom:1px solid #829fb2;min-height:44px}
 @media(max-width:700px){.resource-page-switch{padding-top:8px;gap:8px;display:flex}.resource-page-switch a{flex:1}.document-folder>summary{font-size:17px;padding:10px 12px;gap:8px}.folder-count{font-size:10px}.document-folder>.document-grid{padding:4px}.connection-console{grid-template-columns:1fr;gap:10px}.connection-choices{display:none}.connection-display{position:static}.connection-file{padding:12px}.connection-file-heading{grid-template-columns:54px minmax(0,1fr);gap:10px}.connection-seal{width:54px;height:54px;font-size:18px}.connection-file h2{font-size:28px}.connection-filters{gap:6px}.connection-filters button{font-size:12px;flex:1;min-width:90px}.connection-file>p{font-size:15px}.resource-filters>a{flex-grow:1}}
 
+/* Credit return details stay compact instead of one paragraph per address line. */
+.prose .credit-packet{font:15px/1.4 Arial,sans-serif}
+.credit-download{display:inline-flex;align-items:center;min-height:44px;padding:8px 14px;border:1px solid #b8d0dd;border-top:2px solid #fff;background:linear-gradient(110deg,#9ab4c5,#e5f4fc 46%,#adc8d9);color:#102d40;font-weight:800;text-decoration:none}
+.credit-download:hover{background:#f0faff;color:#102d40}
+.prose .credit-packet .credit-intro{font:15px/1.4 Arial,sans-serif;margin:10px 0}
+.credit-return{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
+.prose .credit-return h3{font:800 16px/1.25 Arial,sans-serif;margin:0 0 4px}
+.prose .credit-return p{font:15px/1.4 Arial,sans-serif;margin:0}
+.credit-return a{display:inline-flex;align-items:center;min-height:44px;overflow-wrap:anywhere}
+.credit-help{margin-top:8px;border-top:1px solid #657f90}
+.credit-help summary{cursor:pointer;min-height:44px;display:list-item;padding:10px 0;font:700 14px/1.4 Arial,sans-serif}
+.prose .credit-help p{font:14px/1.4 Arial,sans-serif;margin:0 0 8px}
+@media(max-width:700px){.credit-return{grid-template-columns:1fr;gap:10px}.credit-download{font-size:14px;padding:8px 10px}.prose .credit-return p{font-size:14px}.prose .credit-packet .credit-intro{font-size:14px}}
+
 /* Statistics are quiet evidence; the image cards are the primary actions. */
 .hero .hero-stamp{position:relative;inset:auto;width:calc(100% - 96px);max-width:1184px;display:flex;gap:8px;align-items:center;padding:0;margin:0 auto 12px;border:0;box-shadow:none;background:transparent;color:#a9bac5;transform:none}
 .hero .hero-stamp strong{font:700 16px/1.3 Arial,sans-serif}
