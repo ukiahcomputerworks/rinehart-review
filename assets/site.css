@@ -9,7 +9,7 @@
 .service.steel-surface:hover{background-image:repeating-linear-gradient(0deg,#ffffff20 0 1px,#23303a08 1px 3px),linear-gradient(112deg,#96a6b0,#fff 28%,#b5c2cb 49%,#fff 70%,#96a6b0);color:#0e202c}
 .steel-surface p,.steel-surface .eyebrow,.steel-surface .service-num,.steel-surface figcaption,.steel-surface small,.steel-surface span,.steel-surface strong,.steel-surface a{color:#233b4b}
 .steel-surface .button{color:#fff}.steel-surface .service-link b{color:#9c231a}.steel-surface h2,.steel-surface h3{color:#142c3b}
-.page-head.steel-surface,.dispatch-band.steel-surface{background-image:linear-gradient(112deg,#8999a3cc,#f8fbfce6 28%,#a8b8c4da 49%,#edf4f8e6 73%,#8b9ba5cc),url('diamond.svg');background-size:auto,56px 56px}
+.page-head.steel-surface,.dispatch-band.steel-surface,.resource-hero.steel-surface{background-image:linear-gradient(112deg,#8999a3cc,#f8fbfce6 28%,#a8b8c4da 49%,#edf4f8e6 73%,#8b9ba5cc),url('diamond.svg');background-size:auto,56px 56px}
 .steel-text,.hero h1 span{background-image:linear-gradient(110deg,transparent 37%,#fff 49%,transparent 59%),linear-gradient(180deg,#fff 0%,#d9e4ec 25%,#8497a5 44%,#fff 49%,#a8bac6 54%,#f8fcff 77%,#bdccd6 100%);background-size:280% 100%,100% 100%;background-position:115% center,center;-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;filter:drop-shadow(0 2px 1px #0006)}
 .steel-text.steel-glint{animation:steel-text-pass var(--steel-duration,2.4s) ease-in-out both}
 @keyframes steel-text-pass{from{background-position:115% center,center}to{background-position:-15% center,center}}

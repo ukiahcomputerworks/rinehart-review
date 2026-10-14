@@ -12,14 +12,14 @@ document.querySelectorAll('.page-head,.dispatch-band,.resource-hero').forEach(su
  surface.prepend(panel);
 });
 // Independent, newly randomized sunlight passes rather than synchronized loops.
-const steelSurfaces=document.querySelectorAll('.masthead,.proof-strip,.service,.story-photo span,.dispatch-band,.bottom-cta,footer,.page-head,.notice,.contact-panel a,.fleet-gallery figure,.secondary-button,.summary,.hero-stamp,.menu');
+const steelSurfaces=document.querySelectorAll('.masthead,.resource-hero,.proof-strip,.service,.story-photo span,.dispatch-band,.bottom-cta,footer,.page-head,.notice,.contact-panel a,.fleet-gallery figure,.secondary-button,.summary,.hero-stamp,.menu');
 steelSurfaces.forEach(element=>element.classList.add('steel-surface'));
 const steelTitles=document.querySelectorAll('h1,h2,h3,h4,.hero-lead,.hero h1 span,.command-copy h1 span,.resource-hero h1 span');
 steelTitles.forEach(element=>element.classList.add('steel-text'));
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 // Border reflections and plate reflections have separate clocks, even on the same panel.
-const borders=document.querySelectorAll('.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch,.cardlock-action,.cardlock-sales,.cardlock-sales-actions a');
-const plates=document.querySelectorAll('.page-head,.dispatch-band,.contact-address');
+const borders=document.querySelectorAll('.resource-hero,.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.hero-stamp,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,.proof-strip,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch,.cardlock-action,.cardlock-sales,.cardlock-sales-actions a');
+const plates=document.querySelectorAll('.page-head,.resource-hero,.dispatch-band,.contact-address');
 const metalLayers=[];
 function addReflection(element,kind){
   element.classList.add('metal-host');
