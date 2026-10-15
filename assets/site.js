@@ -71,6 +71,25 @@ if(resourceSearch){
  document.querySelector('#resource-reset').addEventListener('click',()=>{resourceCategory='all';resourceSearch.value='';filterResources();resourceSearch.focus()});
 }
 
+// The One Call artwork offers both phone numbers without an extra banner.
+const officeTrigger=document.querySelector('.office-image-button');
+const officeOptions=document.querySelector('#office-call-options');
+if(officeTrigger&&officeOptions){
+ const dialog=document.createElement('dialog');
+ dialog.id='office-call-dialog';dialog.className='office-call-dialog';
+ dialog.setAttribute('aria-labelledby','office-call-title');
+ officeOptions.before(dialog);dialog.append(officeOptions);
+ const close=document.createElement('button');close.type='button';close.className='office-call-close';close.textContent='Close';
+ officeOptions.append(close);
+ officeTrigger.setAttribute('aria-haspopup','dialog');officeTrigger.setAttribute('aria-controls',dialog.id);
+ officeTrigger.setAttribute('role','button');
+ officeTrigger.addEventListener('keydown',event=>{if(event.key===' '){event.preventDefault();officeTrigger.click()}});
+ officeTrigger.addEventListener('click',event=>{event.preventDefault();dialog.showModal();officeOptions.querySelector('a').focus()});
+ close.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+ dialog.addEventListener('close',()=>officeTrigger.focus());
+}
+
 const historyButton=document.querySelector('.story-copy .history-card');
 if(historyButton){
  const historyFont=getComputedStyle(document.querySelector('.story-copy p:not(.eyebrow)')).font;

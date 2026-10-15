@@ -471,9 +471,17 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .team-image-button img{display:block;width:100%;height:auto}
 .team-image-button:hover{border-color:#f4fbff;filter:brightness(1.1)}
 .team-image-button:focus-visible{outline:3px solid #ffd66c;outline-offset:4px}
-.contact-console{grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;padding-bottom:16px;align-items:start}
+.contact-console{grid-template-columns:1.1067fr 1fr 1fr;gap:16px;padding-top:6px;padding-bottom:16px;align-items:start}
 .contact-console>.dispatch-priority.dispatch-image-button,.contact-console>.office-console.office-image-console,.contact-console>.email-console.email-image-button{align-self:start;grid-column:auto;margin-bottom:0}
 @media(max-width:700px){.contact-console{grid-template-columns:1fr;gap:14px}.contact-console>.dispatch-image-button,.contact-console>.office-image-console,.contact-console>.email-image-button{width:min(100%,340px);justify-self:center}}
+.office-call-dialog{width:min(420px,calc(100% - 32px));padding:0;border:2px solid #c8dfeb;background:linear-gradient(135deg,#233c4b,#101c25);color:#e6f3fc;box-shadow:0 12px 50px #000b}
+.office-call-dialog::backdrop{background:#02090dd9}
+.office-call-options{max-width:420px;margin:0 auto;padding:16px}
+.office-call-options h2{font-size:28px;margin:0 0 12px}
+.office-call-choice{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:56px;padding:10px 12px;margin-top:8px;text-decoration:none;border:1px solid #afc7d5;border-top:2px solid #f7fcff;background:linear-gradient(115deg,#9fb8c8,#e7f5fd,#afcbdc);color:#102d40;line-height:1.3}
+.office-call-choice:hover{background:#f1faff;color:#102d40}.office-call-choice span{font-size:13px}.office-call-choice strong{font-size:18px;white-space:nowrap}
+.office-call-close{min-height:44px;padding:8px 16px;margin-top:12px;border:1px solid #93acbd;background:#142733;color:#e3f1fa;font-weight:700;cursor:pointer}
+@media(max-width:360px){.office-call-choice{padding:10px 8px;gap:8px}.office-call-choice strong{font-size:16px}.office-call-choice span{font-size:12px}}
 
 /* A raised, labeled action makes the history artwork unmistakably interactive. */
 .story-copy .history-card{padding:3px;border:3px solid #a6bfce;border-top:5px solid #f4fbff;border-bottom:5px solid #496677;background:linear-gradient(110deg,#94aab8,#e7f4fc 45%,#819eaf);box-shadow:0 5px 0 #243d4e,0 9px 18px #0007;line-height:0;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
