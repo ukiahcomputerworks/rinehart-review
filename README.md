@@ -5,7 +5,7 @@ Owner-requested, local-computer website redesign published as a staged, noindex 
 ## Current Features
 
 - Seventeen pages with original RINO branding, original and owner-supplied photography, Title Case headings, polished silver framing and independently timed shimmer.
-- Compact mobile layouts, full-card service links, grouped navigation and the ComputerWorks.ai colophon integrated into the existing footer.
+- Compact mobile layouts, full-card service links, grouped navigation, one quiet service/history assurance strip and the ComputerWorks.ai colophon integrated into the existing footer.
 - Documents: sixteen downloads in two searchable folders. Links: seventeen external resources in full category lists with a silver selection-transfer effect and portrait photo detail card.
 - Contact: aligned image actions, a choice between the 707 and 800 office numbers, three department disclosures, office hours, and an always-visible Google map. The directions artwork opens the selected station Street View.
 - Seven-page credit packet with 246 fillable PDF fields and checkboxes. Users download, fill, save, sign, then email an attachment or print and mail it. The website does not collect credit-application data.
