@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 def check(root):
     root = Path(root)
     expected = [
+        ('pacific-pride-card-lock/index.html', 'credit-app.jpg', '../assets/6333-rino-pac-credit-app-new.pdf'),
         ('index.html', 'our-roots-run-deep.jpg', 'about/index.html'),
         ('index.html', '24-7-fuel-transport.jpg', 'trucking-for-hire/index.html'),
         ('index.html', 'company-owned-fleet.jpg', 'fleet/index.html'),
