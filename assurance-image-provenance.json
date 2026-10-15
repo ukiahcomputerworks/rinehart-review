@@ -1,0 +1,26 @@
+[
+  {
+    "asset": "assets/our-roots-run-deep.jpg",
+    "sha256": "029317C3257D122971CCA6FAFC078F8CE3B3D6909A49410A9A1F2AFDD8EF84A9",
+    "sourceRemoved": true,
+    "source": "C:\\Users\\Admin\\OneDrive - CWU\\AI\\Media\\Incoming\\RinehartWeb\\OurRootsRunDeep.jpg",
+    "operation": "move",
+    "resizing": "CSS, native aspect ratio; original bytes preserved"
+  },
+  {
+    "asset": "assets/24-7-fuel-transport.jpg",
+    "sha256": "588ADA7B04775D13E3B0A7F59B79B5930ADA16156B00835A0840F62985C95E1C",
+    "sourceRemoved": true,
+    "source": "C:\\Users\\Admin\\OneDrive - CWU\\AI\\Media\\Incoming\\RinehartWeb\\24-7FuelTransport.jpg",
+    "operation": "move",
+    "resizing": "CSS, native aspect ratio; original bytes preserved"
+  },
+  {
+    "asset": "assets/company-owned-fleet.jpg",
+    "sha256": "0CA6E9B1BFECF0F099CEA50550CB38A6BE6CA01218C3336F3B8CA5DFC5BBE8C8",
+    "sourceRemoved": true,
+    "source": "C:\\Users\\Admin\\OneDrive - CWU\\AI\\Media\\Incoming\\RinehartWeb\\CompanyOwnedFleet.jpg",
+    "operation": "move",
+    "resizing": "CSS, native aspect ratio; original bytes preserved"
+  }
+]

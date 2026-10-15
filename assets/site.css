@@ -454,14 +454,16 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .prose .credit-help p{font:14px/1.4 Arial,sans-serif;margin:0 0 8px}
 @media(max-width:700px){.credit-return{grid-template-columns:1fr;gap:10px}.credit-download{font-size:14px;padding:8px 10px}.prose .credit-return p{font-size:14px}.prose .credit-packet .credit-intro{font-size:14px}}
 
-/* One readable, non-interactive assurance line replaces scattered statistics. */
-.company-assurance{background:#0d171e;border-bottom:1px solid #344b59;color:#b7c8d3}
-.company-assurance>ul{list-style:none;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:10px 24px;margin:0 auto;padding-top:14px;padding-bottom:14px}
-.company-assurance li{display:flex;align-items:center;gap:6px;font:14px/1.4 Arial,sans-serif;cursor:default}
-.company-assurance strong{font-weight:700;color:#e0edf5}
-.company-assurance li+li{border-left:1px solid #557180;padding-left:24px}
-.company-assurance li>span{font-size:12px;color:#9fb5c4;margin-left:4px}
-@media(max-width:700px){.company-assurance>ul{display:grid;grid-template-columns:1fr;justify-content:start;gap:7px;padding-top:12px;padding-bottom:12px}.company-assurance li{font-size:14px;flex-wrap:wrap;gap:5px}.company-assurance li+li{border:0;padding-left:0}.company-assurance li>span{font-size:12px;margin-left:3px}}
+/* Owner artwork keeps its native proportions on a compact diamond-plate backing. */
+.company-assurance{background-image:linear-gradient(112deg,#8999a3cc,#f8fbfce6 28%,#a8b8c4da 49%,#edf4f8e6 73%,#8b9ba5cc),url('diamond.svg');background-size:auto,56px 56px;border-block:1px solid #c8dce7}
+.assurance-images{display:grid;grid-template-columns:4.231fr 4.971fr 3.230fr;gap:16px;align-items:center;padding-block:14px}
+.assurance-image{display:block;min-width:0;padding:3px;border:2px solid #a6bfce;border-top-color:#f4fbff;border-bottom:4px solid #496677;background:linear-gradient(110deg,#94aab8,#e7f4fc 45%,#819eaf);box-shadow:0 3px 0 #243d4e,0 5px 9px #0005;line-height:0;transition:transform .2s,box-shadow .2s}
+.assurance-image img{display:block;width:100%;height:auto}
+.assurance-image:hover,.assurance-image:focus-visible{transform:translateY(-3px);box-shadow:0 5px 0 #243d4e,0 9px 14px #0007;outline:2px solid #f4fbff;outline-offset:3px}
+.assurance-image:active{transform:translateY(1px)}
+@media(max-width:700px){.assurance-images{grid-template-columns:1fr;justify-items:center;gap:12px;padding-block:12px}.assurance-image{width:100%;max-width:420px}}
+@media(prefers-reduced-motion:reduce){.assurance-image{transition:none}}
+
 
 /* Statistics are quiet evidence; the image cards are the primary actions. */
 .hero .hero-stamp{position:relative;inset:auto;width:calc(100% - 96px);max-width:1184px;display:flex;gap:8px;align-items:center;padding:0;margin:0 auto 12px;border:0;box-shadow:none;background:transparent;color:#a9bac5;transform:none}
