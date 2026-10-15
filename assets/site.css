@@ -461,7 +461,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .assurance-image img{display:block;width:100%;height:auto}
 .assurance-image:hover,.assurance-image:focus-visible{transform:translateY(-3px);box-shadow:0 5px 0 #243d4e,0 9px 14px #0007;outline:2px solid #f4fbff;outline-offset:3px}
 .assurance-image:active{transform:translateY(1px)}
-@media(max-width:700px){.assurance-images{grid-template-columns:1fr;justify-items:center;gap:12px;padding-block:12px}.assurance-image{width:100%;max-width:420px}}
+@media(max-width:700px){.company-assurance{display:none}}
 @media(prefers-reduced-motion:reduce){.assurance-image{transition:none}}
 
 
