@@ -104,7 +104,7 @@ if(connectionSelect){
  const choices=[...document.querySelectorAll('.connection-choice')];
  const files=[...document.querySelectorAll('.connection-file')];
  const filters=[...document.querySelectorAll('[data-connection-filter]')];
- let connectionPulseTimer;
+ let connectionPulseTimer,connectionScrollTimer;
  function transferConnection(source,destination){
   if(motionPreference.matches||!source)return;
   document.querySelectorAll('.connection-transfer').forEach(e=>{e.getAnimations().forEach(a=>a.cancel());e.remove()});
@@ -126,12 +126,19 @@ if(connectionSelect){
   filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.connectionFilter===chosen.dataset.group)));
   document.querySelectorAll('.connection-choice-group').forEach(group=>group.hidden=group.dataset.connectionGroup!==chosen.dataset.group);
   transferConnection(source,chosen);
-  if(source?.matches('.connection-choice')&&innerWidth<=700){chosen.scrollIntoView({block:'nearest',behavior:motionPreference.matches?'instant':'smooth'})}
+  clearTimeout(connectionScrollTimer);
+  // Reveal the complete selected card after its transfer effect, for every control.
+  // Oversized cards start at the top so their content remains readable in order.
+  if(source){connectionScrollTimer=setTimeout(()=>{
+   if(chosen.hidden)return;
+   const fits=chosen.getBoundingClientRect().height<=innerHeight-32;
+   chosen.scrollIntoView({block:fits?'center':'start',behavior:motionPreference.matches?'instant':'smooth'});
+  },motionPreference.matches?0:540)}
  }
  function chooseCategory(group,source){const first=choices.find(button=>button.dataset.group===group);if(first)chooseConnection(first.dataset.connection,source)}
  choices.forEach(button=>button.addEventListener('click',()=>chooseConnection(button.dataset.connection,button)));
  filters.forEach(button=>button.addEventListener('click',()=>chooseCategory(button.dataset.connectionFilter,button)));
- connectionSelect.addEventListener('change',()=>chooseConnection(connectionSelect.value));
+ connectionSelect.addEventListener('change',()=>chooseConnection(connectionSelect.value,connectionSelect));
  function readCategoryHash(){const group=location.hash.slice(1);chooseCategory(['industry','government','sds'].includes(group)?group:'industry')}
  window.addEventListener('hashchange',readCategoryHash);readCategoryHash();
 }
