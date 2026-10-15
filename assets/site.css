@@ -483,6 +483,28 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .office-call-close{min-height:44px;padding:8px 16px;margin-top:12px;border:1px solid #93acbd;background:#142733;color:#e3f1fa;font-weight:700;cursor:pointer}
 @media(max-width:360px){.office-call-choice{padding:10px 8px;gap:8px}.office-call-choice strong{font-size:16px}.office-call-choice span{font-size:12px}}
 
+/* Full category lists feed a portrait steel resource card. */
+.connection-console{grid-template-columns:minmax(0,1fr) minmax(300px,360px);gap:24px}
+.connection-choices{max-height:none;overflow:visible;border:0;padding:0;background:transparent}
+.connection-choice-group>h3{margin:0 0 8px;font-size:14px}
+.connection-choice{min-height:48px;margin-bottom:6px;padding:10px 12px;border:1px solid #7894a6;border-top:2px solid #d4e6f1;box-shadow:0 2px 0 #263f4e;font-size:15px}
+.connection-select-label,#connection-select{display:none}
+.connection-file{padding:14px;border:3px solid #a8c2d2;border-top-color:#f3fbff;border-bottom-color:#506d7f;box-shadow:0 5px 0 #243f50,0 12px 28px #0007;background:radial-gradient(ellipse at 0 0,#577c8d66,transparent 70%),linear-gradient(140deg,#203743,#0b1720);overflow:hidden}
+.connection-visual{position:relative;margin:-14px -14px 14px;border-bottom:3px solid #bfd6e3}
+.connection-visual img{display:block;width:100%;height:180px;object-fit:cover;filter:contrast(1.1) saturate(.85)}
+.connection-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(transparent 40%,#081923dd);pointer-events:none}
+.connection-record{position:absolute;z-index:1;bottom:10px;left:14px;color:#f1faff;font:800 10px/1.3 Arial,sans-serif;letter-spacing:.16em}
+.connection-file-heading{grid-template-columns:54px minmax(0,1fr);gap:10px;align-items:start;margin-bottom:12px}
+.connection-seal{width:54px;height:54px;font-size:17px;border-width:2px;box-shadow:inset 0 0 0 3px #486475,0 3px 0 #253f51}
+.connection-file h2{font-size:32px;line-height:1.08}.connection-file .eyebrow{font-size:9px;letter-spacing:.12em}
+.connection-file>p{font-size:15px;line-height:1.45;margin-bottom:12px}
+.connection-file.is-receiving{animation:connection-arrival .65s ease-out}
+@keyframes connection-arrival{0%{border-color:#fff;box-shadow:0 0 28px #d0efffa6;transform:translateX(5px)}100%{transform:none}}
+.connection-transfer{position:fixed;top:0;left:0;z-index:1000;width:16px;height:16px;pointer-events:none;border-radius:50%;background:radial-gradient(circle,#fff 10%,#e2f6ff 30%,#7da7bc 65%,transparent 70%);box-shadow:0 0 14px #ecfaff,0 0 30px #a0dcff88}
+.connection-transfer::before{content:'';position:absolute;right:8px;top:6px;width:95px;height:4px;background:linear-gradient(90deg,transparent,#abc8d988,#fff);border-radius:50%}
+@media(max-width:700px){.connection-console{grid-template-columns:1fr;gap:16px}.connection-choices{display:block}.connection-display{position:static;width:min(100%,410px);justify-self:center}.connection-file{padding:12px}.connection-visual{margin:-12px -12px 12px}.connection-visual img{height:130px}.connection-file h2{font-size:28px}.connection-choice{font-size:14px;padding:9px 10px}.connection-filters button{min-width:100px}}
+@media(prefers-reduced-motion:reduce){.connection-file.is-receiving{animation:none}.connection-transfer{display:none}}
+
 /* A raised, labeled action makes the history artwork unmistakably interactive. */
 .story-copy .history-card{padding:3px;border:3px solid #a6bfce;border-top:5px solid #f4fbff;border-bottom:5px solid #496677;background:linear-gradient(110deg,#94aab8,#e7f4fc 45%,#819eaf);box-shadow:0 5px 0 #243d4e,0 9px 18px #0007;line-height:0;cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
 .story-copy .history-card img{border:1px solid #324d5e;filter:contrast(1.08);transition:filter .2s}

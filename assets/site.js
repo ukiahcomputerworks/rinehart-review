@@ -104,17 +104,33 @@ if(connectionSelect){
  const choices=[...document.querySelectorAll('.connection-choice')];
  const files=[...document.querySelectorAll('.connection-file')];
  const filters=[...document.querySelectorAll('[data-connection-filter]')];
- function chooseConnection(id){
+ let connectionPulseTimer;
+ function transferConnection(source,destination){
+  if(motionPreference.matches||!source)return;
+  document.querySelectorAll('.connection-transfer').forEach(e=>{e.getAnimations().forEach(a=>a.cancel());e.remove()});
+  const start=source.getBoundingClientRect(),target=destination.getBoundingClientRect();
+  const sx=start.left+start.width*.75,sy=start.top+start.height/2;
+  const ex=target.left+Math.min(48,target.width*.15),ey=Math.max(24,Math.min(innerHeight-24,target.top+Math.min(170,target.height*.4)));
+  const angle=Math.atan2(ey-sy,ex-sx)*180/Math.PI;
+  const move=(x,y,scale)=>`translate(${x}px,${y}px) rotate(${angle}deg) scale(${scale})`;
+  const spark=document.createElement('span');spark.className='connection-transfer';spark.setAttribute('aria-hidden','true');document.body.append(spark);
+  const flight=spark.animate([{opacity:0,transform:move(sx,sy,.6)},{opacity:1,transform:move(sx+(ex-sx)*.1,sy+(ey-sy)*.1,1),offset:.12},{opacity:1,transform:move(ex,ey,1),offset:.8},{opacity:0,transform:move(ex,ey,1.7)}],{duration:520,easing:'cubic-bezier(.19,.74,.24,1)',fill:'forwards'});
+  flight.finished.then(()=>{destination.classList.remove('is-receiving');void destination.offsetWidth;destination.classList.add('is-receiving');clearTimeout(connectionPulseTimer);connectionPulseTimer=setTimeout(()=>destination.classList.remove('is-receiving'),700)}).catch(()=>{}).finally(()=>spark.remove());
+ }
+ function chooseConnection(id,source){
   const chosen=files.find(file=>file.id===id);if(!chosen)return;
+  files.forEach(file=>file.classList.remove('is-receiving'));
   files.forEach(file=>file.hidden=file!==chosen);
   choices.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.connection===id)));
   connectionSelect.value=id;
   filters.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.connectionFilter===chosen.dataset.group)));
   document.querySelectorAll('.connection-choice-group').forEach(group=>group.hidden=group.dataset.connectionGroup!==chosen.dataset.group);
+  transferConnection(source,chosen);
+  if(source?.matches('.connection-choice')&&innerWidth<=700){chosen.scrollIntoView({block:'nearest',behavior:motionPreference.matches?'instant':'smooth'})}
  }
- function chooseCategory(group){const first=choices.find(button=>button.dataset.group===group);if(first)chooseConnection(first.dataset.connection)}
- choices.forEach(button=>button.addEventListener('click',()=>chooseConnection(button.dataset.connection)));
- filters.forEach(button=>button.addEventListener('click',()=>chooseCategory(button.dataset.connectionFilter)));
+ function chooseCategory(group,source){const first=choices.find(button=>button.dataset.group===group);if(first)chooseConnection(first.dataset.connection,source)}
+ choices.forEach(button=>button.addEventListener('click',()=>chooseConnection(button.dataset.connection,button)));
+ filters.forEach(button=>button.addEventListener('click',()=>chooseCategory(button.dataset.connectionFilter,button)));
  connectionSelect.addEventListener('change',()=>chooseConnection(connectionSelect.value));
  function readCategoryHash(){const group=location.hash.slice(1);chooseCategory(['industry','government','sds'].includes(group)?group:'industry')}
  window.addEventListener('hashchange',readCategoryHash);readCategoryHash();
