@@ -49,7 +49,7 @@ def apply(root):
     logo.wrap(s.new_tag('span', attrs={'class': 'brand-logo-frame'}))
    framed = s.select_one('.source-header-photo')
    framed['class'] = framed.get('class', []) + ['riveted-photo']
-  if route == 'trucking-for-hire':
+  if route in {'trucking-for-hire', 'unbranded-fuels'}:
    for framed in s.select('.source-header-photo,.source-photo-rail figure'):
     framed['class'] = framed.get('class', []) + ['riveted-photo']
   file.write_text(str(s),encoding='utf8')
