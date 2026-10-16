@@ -40,6 +40,13 @@ def apply(root):
    action=BeautifulSoup(f'<a class="fleet-action fleet-art-button" href="{prefix}fleet/index.html" aria-label="Check Out Our Fleet"><img src="{prefix}assets/fleet-button-industrial.png" alt="Check Out Our Fleet — Rinehart tanker trucks in an industrial steel frame" width="1024" height="254" loading="lazy" decoding="async"></a>','html.parser')
    panel.append(action.a)
   if route == 'branded-fuels':
+   for logo in s.select('.prose img[src$="2805-p66-logo.webp"],.prose img[src$="6334-76-logo-i_94x92.webp"],.prose img[src$="2806-valero-logo_188x132.webp"]'):
+    if logo.parent.get('class') == ['brand-logo-frame']:continue
+    row = logo.parent
+    row['class'] = list(dict.fromkeys(row.get('class', []) + ['brand-logo-row']))
+    for spacer in list(row.find_all(string=True, recursive=False)):
+     if not spacer.strip() or set(spacer.strip()) <= {'\ufffd'}:spacer.extract()
+    logo.wrap(s.new_tag('span', attrs={'class': 'brand-logo-frame'}))
    framed = s.select_one('.source-header-photo')
    framed['class'] = framed.get('class', []) + ['riveted-photo']
   if route == 'trucking-for-hire':

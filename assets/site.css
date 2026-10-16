@@ -518,7 +518,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 @media(prefers-reduced-motion:reduce){.connection-file.is-receiving{animation:none}.connection-transfer{display:none}}
 
 /* Fleet artwork uses the history banner's machined frame, without a caption strip. */
-.fleet-image-button,.photo-rail-contact .fleet-action.fleet-art-button,.source-photo-rail .machined-photo-frame{padding:3px;border:3px solid #a6bfce;border-top:5px solid #f4fbff;border-bottom:5px solid #496677;background:linear-gradient(110deg,#94aab8,#e7f4fc 45%,#819eaf);box-shadow:0 5px 0 #243d4e,0 9px 18px #0007}
+.fleet-image-button,.photo-rail-contact .fleet-action.fleet-art-button,.source-photo-rail .machined-photo-frame,.brand-logo-frame{padding:3px;border:3px solid #a6bfce;border-top:5px solid #f4fbff;border-bottom:5px solid #496677;background:linear-gradient(110deg,#94aab8,#e7f4fc 45%,#819eaf);box-shadow:0 5px 0 #243d4e,0 9px 18px #0007}
 .fleet-image-button,.photo-rail-contact .fleet-action.fleet-art-button{line-height:0;cursor:pointer}
 .fleet-image-button img,.fleet-art-button img,.machined-photo-frame img{border:1px solid #324d5e;filter:contrast(1.08)}
 .fleet-image-button:hover,.fleet-image-button:focus-visible,.photo-rail-contact .fleet-art-button:hover,.photo-rail-contact .fleet-art-button:focus-visible{border-color:#f5fbff;box-shadow:0 7px 0 #52758b,0 13px 24px #0008}
@@ -551,3 +551,8 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 @media(max-width:700px){.contact-command .command-photo>.metal-border,.riveted-photo>.metal-border{inset:-10px;padding:10px}}
 
 .riveted-photo,.source-photo-rail .riveted-photo{overflow:visible}
+
+.brand-logo-row{display:flex;flex-wrap:wrap;align-items:flex-start;gap:16px}
+.brand-logo-frame{position:relative;display:inline-block;max-width:100%;line-height:0}
+.prose .brand-logo-frame img{display:block;height:auto;border:1px solid #324d5e}
+.brand-logo-frame>.metal-border{inset:-5px -3px;padding:5px 3px}
