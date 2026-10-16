@@ -7,7 +7,7 @@ PHOTOS={
  'trucking-for-hire':('6346-rino-truck-6-1-of-1-cropped.webp','Rinehart Tanker Fleet','6338-rino-truck-4-1-of-1.webp','Rinehart On The Road'),
  'branded-fuels':('6345-valero-1-of-1.webp','Branded Fuel Supply','2796-76-pump.webp','76 Fueling'),
  'unbranded-fuels':('6338-rino-truck-4-1-of-1.webp','Company-Owned Fuel Transport','6346-rino-truck-6-1-of-1-cropped.webp','Ready For Your Next Delivery'),
- 'pacific-pride-card-lock':('6370-pac-pride-station-image-1.webp','Pacific Pride Commercial Fueling','2796-76-pump.webp','Fueling Your Operation'),
+ 'pacific-pride-card-lock':('owner-08.webp','Rinehart Fleet Support','2796-76-pump.webp','Fueling Your Operation'),
  'about':('6373-old-time-station-1.webp','A Familiar Piece Of Our Website History','6338-rino-truck-4-1-of-1.webp','The Rinehart Name On The Road'),
  'employment-opportunities':('6346-rino-truck-6-1-of-1-cropped.webp','Drive With Rinehart','6338-rino-truck-4-1-of-1.webp','Company Trucks. Real Opportunity.'),
  'employment-application':('6338-rino-truck-4-1-of-1.webp','The Team Behind Every Delivery','6346-rino-truck-6-1-of-1-cropped.webp','A Fleet Built To Deliver'),
@@ -47,6 +47,7 @@ def apply(root):
     for spacer in list(row.find_all(string=True, recursive=False)):
      if not spacer.strip() or set(spacer.strip()) <= {'\ufffd'}:spacer.extract()
     logo.wrap(s.new_tag('span', attrs={'class': 'brand-logo-frame'}))
+  if route in {'branded-fuels', 'pacific-pride-card-lock'}:
    framed = s.select_one('.source-header-photo')
    framed['class'] = framed.get('class', []) + ['riveted-photo']
   if route in {'trucking-for-hire', 'unbranded-fuels'}:
