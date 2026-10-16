@@ -535,3 +535,8 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 
 .source-photo-rail .machined-photo-frame figcaption{padding:8px 10px;background:#16232c;line-height:1.4}
 .source-photo-rail .machined-photo-frame a:focus-visible{display:block;outline:2px solid #f5fbff;outline-offset:-3px}
+
+/* Riveted charcoal steel matches the owner-supplied industrial artwork. */
+.contact-command .command-photo{border:14px solid #343d42;border-image:url('riveted-steel-frame.svg') 24 / 14px / 0 round;background:#0b1216;box-shadow:0 5px 0 #070d11,0 10px 22px #0008}
+.contact-command .command-photo>span:not(.metal-reflection){bottom:14px;inset-inline:14px}
+@media(max-width:700px){.contact-command .command-photo{border-width:10px;border-image-width:10px}.contact-command .command-photo>span:not(.metal-reflection){bottom:10px;inset-inline:10px}}
