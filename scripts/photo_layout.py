@@ -39,6 +39,9 @@ def apply(root):
      else:link['class']=['career-action']
    action=BeautifulSoup(f'<a class="fleet-action fleet-art-button" href="{prefix}fleet/index.html" aria-label="Check Out Our Fleet"><img src="{prefix}assets/fleet-button-industrial.png" alt="Check Out Our Fleet — Rinehart tanker trucks in an industrial steel frame" width="1024" height="254" loading="lazy" decoding="async"></a>','html.parser')
    panel.append(action.a)
+  if route == 'branded-fuels':
+   framed = s.select_one('.source-header-photo')
+   framed['class'] = framed.get('class', []) + ['riveted-photo']
   if route == 'trucking-for-hire':
    for framed in s.select('.source-header-photo,.source-photo-rail figure'):
     framed['class'] = framed.get('class', []) + ['riveted-photo']
