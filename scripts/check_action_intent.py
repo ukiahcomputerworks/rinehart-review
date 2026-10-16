@@ -32,6 +32,7 @@ def check(root):
     contact = BeautifulSoup((root/'contact/index.html').read_text(encoding='utf8'), 'html.parser')
     assert not contact.select('.office-secondary'), 'Remove separate toll-free strip'
     assert {a.get('href') for a in contact.select('#office-call-options a')} == {'tel:+17074628811', 'tel:+18006408814'}, 'Offer both approved office numbers'
+    assert len(contact.select('.bottom-cta .contact-keep-moving img[src$="/keep-you-moving.jpg"]')) == 1, 'Contact needs its owner-selected companion artwork'
     assert not contact.select('.bottom-cta a'), 'Contact must not contain a bottom Contact button'
     assert len(contact.select('.contact-disclosure')) == 4, 'Preserve three department sections and office hours'
     assert contact.select_one('.contact-location iframe'), 'Address must have a visible map'

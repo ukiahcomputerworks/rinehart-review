@@ -540,3 +540,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .contact-command .command-photo{border:14px solid #343d42;border-image:url('riveted-steel-frame.svg') 24 / 14px / 0 round;background:#0b1216;box-shadow:0 5px 0 #070d11,0 10px 22px #0008}
 .contact-command .command-photo>span:not(.metal-reflection){bottom:14px;inset-inline:14px}
 @media(max-width:700px){.contact-command .command-photo{border-width:10px;border-image-width:10px}.contact-command .command-photo>span:not(.metal-reflection){bottom:10px;inset-inline:10px}}
+
+/* Contact-only companion artwork occupies the standard banner position. */
+.bottom-cta .contact-keep-moving{position:relative;width:235px;max-width:100%;justify-self:end;align-self:center;overflow:hidden;line-height:0;box-shadow:0 3px 0 #344e5e,0 6px 16px #0005}
+.contact-keep-moving img{display:block;width:100%;height:auto}

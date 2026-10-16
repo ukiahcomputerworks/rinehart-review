@@ -30,9 +30,14 @@ def apply(root):
             action = cta.find('a')
             if action:
                 action.decompose()
+            if not cta.select_one('.contact-keep-moving'):
+                image = soup.new_tag('img', attrs={'src': '../assets/keep-you-moving.jpg', 'alt': 'Rinehart tanker on the road in a riveted steel frame', 'width': '1024', 'height': '254', 'loading': 'lazy', 'decoding': 'async'})
+                artwork = soup.new_tag('div', attrs={'class': 'contact-keep-moving'})
+                artwork.append(image)
+                cta.append(artwork)
         if cta:
             panel = cta.find('div', recursive=False)
-            action = cta.find('a', recursive=False)
+            action = cta.find('a', recursive=False) or cta.find(class_='contact-keep-moving', recursive=False)
             if panel and action:
                 copy = soup.new_tag('div', attrs={'class': 'cta-copy'})
                 for child in list(panel.contents):
