@@ -544,3 +544,8 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 /* Contact-only companion artwork occupies the standard banner position. */
 .bottom-cta .contact-keep-moving{position:relative;width:235px;max-width:100%;justify-self:end;align-self:center;overflow:hidden;line-height:0;box-shadow:0 3px 0 #344e5e,0 6px 16px #0005}
 .contact-keep-moving img{display:block;width:100%;height:auto}
+
+/* Reflect on the physical frame, outside the photograph's padding box. */
+.contact-command .command-photo>.metal-border{inset:-14px;padding:14px;border:0;background-color:transparent;box-shadow:none}
+.contact-console .dispatch-image-button>.metal-border,.contact-console .office-image-button>.metal-border,.contact-console .email-image-button>.metal-border{padding:10px}
+@media(max-width:700px){.contact-command .command-photo>.metal-border{inset:-10px;padding:10px}}
