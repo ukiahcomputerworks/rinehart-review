@@ -560,7 +560,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 /* Shared polished diamond plate for disclosure headers and Cardlock actions. */
 :is(.contact-disclosure,.document-folder)>summary,
 :is(.contact-disclosure,.document-folder)[open]>summary,
-.cardlock-action-label{position:relative;isolation:isolate;overflow:hidden;background-image:linear-gradient(112deg,#829eafba,#f7fcffcc 30%,#a4bdccaa 58%,#e4f2facc),url('diamond.svg'),linear-gradient(110deg,#8ca5b5,#dceaf2);background-size:auto,40px 40px,auto;color:#102c3d;border-top:2px solid #f4fbff;box-shadow:inset 0 1px 0 #ffffffaa,inset 0 -2px 0 #678494}
+.connection-choice,.connection-choice[aria-pressed=true],.cardlock-action-label{position:relative;isolation:isolate;overflow:hidden;background-image:linear-gradient(112deg,#829eafba,#f7fcffcc 30%,#a4bdccaa 58%,#e4f2facc),url('diamond.svg'),linear-gradient(110deg,#8ca5b5,#dceaf2);background-size:auto,40px 40px,auto;color:#102c3d;border-top:2px solid #f4fbff;box-shadow:inset 0 1px 0 #ffffffaa,inset 0 -2px 0 #678494}
 :is(.contact-disclosure,.document-folder)>summary:hover{filter:brightness(1.06)}
 :is(.contact-disclosure,.document-folder)>summary::after{color:#183c51}
 :is(.contact-disclosure,.document-folder)[open]>summary::after{content:'\2212'}
@@ -588,3 +588,9 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 
 /* Directory information stays solid and readable inside steel dropdowns. */
 .contact-disclosure h3,.document-folder h3{color:#e5eef4;-webkit-text-fill-color:currentColor;background:none;filter:none;text-shadow:none;animation:none}
+
+/* Resource selection bars share the silver plate, with solid text above reflections. */
+.connection-choice>.connection-choice-name{position:relative;z-index:3;font:inherit;color:inherit}
+.connection-choice>.connection-choice-index{position:relative;z-index:3;color:#28495d}
+.connection-choice:hover{filter:brightness(1.07)}
+.connection-choice[aria-pressed=true]{border-color:#f5fcff;box-shadow:inset 4px 0 #153e53,0 2px 0 #263f4e}
