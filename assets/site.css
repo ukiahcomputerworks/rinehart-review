@@ -556,3 +556,13 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .brand-logo-frame{position:relative;display:inline-block;max-width:100%;line-height:0}
 .prose .brand-logo-frame img{display:block;height:auto;border:1px solid #324d5e}
 .brand-logo-frame>.metal-border{inset:-5px -3px;padding:5px 3px}
+
+/* Shared polished diamond plate for disclosure headers and Cardlock actions. */
+:is(.contact-disclosure,.document-folder)>summary,
+:is(.contact-disclosure,.document-folder)[open]>summary,
+.cardlock-action-label{position:relative;isolation:isolate;overflow:hidden;background-image:linear-gradient(112deg,#829eafba,#f7fcffcc 30%,#a4bdccaa 58%,#e4f2facc),url('diamond.svg'),linear-gradient(110deg,#8ca5b5,#dceaf2);background-size:auto,40px 40px,auto;color:#102c3d;border-top:2px solid #f4fbff;box-shadow:inset 0 1px 0 #ffffffaa,inset 0 -2px 0 #678494}
+:is(.contact-disclosure,.document-folder)>summary:hover{filter:brightness(1.06)}
+:is(.contact-disclosure,.document-folder)>summary::after{color:#183c51}
+:is(.contact-disclosure,.document-folder)[open]>summary::after{content:'\2212'}
+:is(.contact-disclosure,.document-folder)>summary :is(.disclosure-count,.folder-count){color:#28495d}
+.cardlock-action-label small{color:#173b50;border-color:#526f80;background:#f2faff88}
