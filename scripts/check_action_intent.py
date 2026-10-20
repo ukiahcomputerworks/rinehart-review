@@ -42,6 +42,10 @@ def check(root):
     assert contact.select_one('.contact-location iframe'), 'Address must have a visible map'
     assert not contact.select_one('.contact-location').find_parent('details'), 'Location must not be collapsed'
     assert not contact.select('.contact-disclosure[open]'), 'Directory must start collapsed'
+    assert len(contact.select('.team-card')) == 9, 'Keep nine currently listed contacts'
+    for page in root.rglob('index.html'):
+        text = page.read_text(encoding='utf8').lower()
+        assert 'julie rinehart' not in text and 'jrinehart@' not in text and 'hr applications' not in text, f'{page}: former HR contact must stay unpublished'
     print(f'PASS {len(expected)} owner artwork destinations and Contact exclusions')
 
 if __name__ == '__main__':
