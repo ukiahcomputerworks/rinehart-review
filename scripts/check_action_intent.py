@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup
 def check(root):
     root = Path(root)
     expected = [
+        ('pacific-pride-card-lock/index.html', 'talk-with-joy.jpg', '#joy-contact-options'),
         ('pacific-pride-card-lock/index.html', 'pacific-pride.jpg', 'https://pacificpride.com/site-locator/'),
         ('pacific-pride-card-lock/index.html', 'credit-app.jpg', '../assets/6333-rino-pac-credit-app-new.pdf'),
         ('index.html', 'our-roots-run-deep.jpg', 'about/index.html'),
@@ -29,6 +30,9 @@ def check(root):
         assert len(matches) == 1, f'{page}: expected one {image}, found {len(matches)}'
         anchor = matches[0].find_parent('a')
         assert anchor and anchor.get('href') == target, f'{page}: {image} must link to {target}'
+    joy = BeautifulSoup((root/'pacific-pride-card-lock/index.html').read_text(encoding='utf8'), 'html.parser')
+    assert {a.get('href') for a in joy.select('#joy-contact-options a')} == {'tel:+17074628811', 'mailto:joyw@rinehartoil.com'}, 'Joy chooser must offer call and email'
+    assert not joy.select('.cardlock-sales-actions'), 'Move Joy actions into the chooser'
     contact = BeautifulSoup((root/'contact/index.html').read_text(encoding='utf8'), 'html.parser')
     assert not contact.select('.office-secondary'), 'Remove separate toll-free strip'
     assert {a.get('href') for a in contact.select('#office-call-options a')} == {'tel:+17074628811', 'tel:+18006408814'}, 'Offer both approved office numbers'

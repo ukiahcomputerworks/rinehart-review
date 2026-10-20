@@ -11,6 +11,27 @@ document.querySelectorAll('.page-head,.dispatch-band,.resource-hero').forEach(su
  children.forEach(child=>panel.append(child));
  surface.prepend(panel);
 });
+// Keep contact choices available without JavaScript; enhance them into native dialogs.
+[
+ ['.office-image-button','office-call-options','office-call-dialog','office-call-title'],
+ ['.joy-image-button','joy-contact-options','joy-contact-dialog','joy-contact-title']
+].forEach(([selector,optionsId,dialogId,titleId])=>{
+ const trigger=document.querySelector(selector),options=document.getElementById(optionsId);
+ if(!trigger||!options)return;
+ const dialog=document.createElement('dialog');
+ dialog.id=dialogId;dialog.className='office-call-dialog';
+ dialog.setAttribute('aria-labelledby',titleId);
+ options.before(dialog);dialog.append(options);
+ const close=document.createElement('button');close.type='button';close.className='office-call-close';close.textContent='Close';
+ options.append(close);
+ trigger.setAttribute('aria-haspopup','dialog');trigger.setAttribute('aria-controls',dialog.id);
+ trigger.setAttribute('role','button');
+ trigger.addEventListener('keydown',event=>{if(event.key===' '){event.preventDefault();trigger.click()}});
+ trigger.addEventListener('click',event=>{event.preventDefault();dialog.showModal();options.querySelector('a').focus()});
+ close.addEventListener('click',()=>dialog.close());
+ dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+ dialog.addEventListener('close',()=>trigger.focus());
+});
 // Independent, newly randomized sunlight passes rather than synchronized loops.
 const steelSurfaces=document.querySelectorAll('.masthead,.resource-hero,.service,.story-photo span,.dispatch-band,.bottom-cta,footer,.page-head,.notice,.contact-panel a,.fleet-gallery figure,.secondary-button,.summary,.menu');
 steelSurfaces.forEach(element=>element.classList.add('steel-surface'));
@@ -18,8 +39,8 @@ const steelTitles=document.querySelectorAll('h1,h2,h3,h4,.hero-lead,.hero h1 spa
 steelTitles.forEach(element=>element.classList.add('steel-text'));
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 // Border reflections and plate reflections have separate clocks, even on the same panel.
-const borders=document.querySelectorAll('.brand-logo-frame,.contact-keep-moving,.assurance-image,.put-work-image-button,.fuel-solution-image-button,.team-image-button,.document-folder,.connection-file,.connection-choice,.connection-open,.directions-image-button,.fuel-supply-image-button,.contact-disclosure,.email-image-button,.office-image-button,.dispatch-image-button,.document-search-hero,.resource-hero,.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch,.cardlock-action,.cardlock-sales,.cardlock-sales-actions a');
-const plates=document.querySelectorAll('.contact-disclosure>summary,.document-folder>summary,.cardlock-action-label,.company-assurance,.page-head,.resource-hero,.dispatch-band,.contact-address');
+const borders=document.querySelectorAll('.brand-logo-frame,.contact-keep-moving,.assurance-image,.put-work-image-button,.fuel-solution-image-button,.team-image-button,.document-folder,.connection-file,.connection-choice,.connection-open,.directions-image-button,.fuel-supply-image-button,.contact-disclosure,.email-image-button,.office-image-button,.dispatch-image-button,.document-search-hero,.resource-hero,.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch,.cardlock-action,.cardlock-sales,.joy-image-button');
+const plates=document.querySelectorAll('.office-call-dialog,.office-call-choice,.office-call-close,.contact-disclosure>summary,.document-folder>summary,.cardlock-action-label,.company-assurance,.page-head,.resource-hero,.dispatch-band,.contact-address');
 const metalLayers=[];
 function addReflection(element,kind){
   element.classList.add('metal-host');
@@ -69,25 +90,6 @@ if(resourceSearch){
  resourceSearch.addEventListener('input',filterResources);
  resourceButtons.forEach(button=>button.addEventListener('click',()=>{resourceCategory=button.dataset.resourceFilter;filterResources()}));
  document.querySelector('#resource-reset').addEventListener('click',()=>{resourceCategory='all';resourceSearch.value='';filterResources();resourceSearch.focus()});
-}
-
-// The One Call artwork offers both phone numbers without an extra banner.
-const officeTrigger=document.querySelector('.office-image-button');
-const officeOptions=document.querySelector('#office-call-options');
-if(officeTrigger&&officeOptions){
- const dialog=document.createElement('dialog');
- dialog.id='office-call-dialog';dialog.className='office-call-dialog';
- dialog.setAttribute('aria-labelledby','office-call-title');
- officeOptions.before(dialog);dialog.append(officeOptions);
- const close=document.createElement('button');close.type='button';close.className='office-call-close';close.textContent='Close';
- officeOptions.append(close);
- officeTrigger.setAttribute('aria-haspopup','dialog');officeTrigger.setAttribute('aria-controls',dialog.id);
- officeTrigger.setAttribute('role','button');
- officeTrigger.addEventListener('keydown',event=>{if(event.key===' '){event.preventDefault();officeTrigger.click()}});
- officeTrigger.addEventListener('click',event=>{event.preventDefault();dialog.showModal();officeOptions.querySelector('a').focus()});
- close.addEventListener('click',()=>dialog.close());
- dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
- dialog.addEventListener('close',()=>officeTrigger.focus());
 }
 
 const historyButton=document.querySelector('.story-copy .history-card');
