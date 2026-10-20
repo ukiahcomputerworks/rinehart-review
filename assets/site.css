@@ -599,3 +599,11 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .bottom-cta.steel-surface,footer.steel-surface{background-image:linear-gradient(112deg,#829eafba,#f7fcffcc 30%,#a4bdccaa 58%,#e4f2facc),url('diamond.svg'),linear-gradient(110deg,#8ca5b5,#dceaf2);background-size:auto,40px 40px,auto}
 .bottom-cta.steel-surface::after,footer.steel-surface::after{display:none}
 .bottom-cta>.cta-panel,footer>div{position:relative;z-index:3}
+
+/* Frosted steel backing lets footer lettering read clearly over diamond plate. */
+footer.steel-surface>div:not(.footer-base){align-self:start;min-width:0;padding:10px 12px;background:linear-gradient(125deg,#f3faffeb,#d4e3eccf);border:1px solid #718d9e;border-top-color:#f5fbff;box-shadow:inset 0 1px 0 #fff9,0 3px 0 #536d7c;font-size:14px;line-height:1.5;font-weight:600}
+footer.steel-surface>div:not(.footer-base) :is(p,a:not(.brand)){color:#142e3d;text-shadow:0 1px 0 #ffffffa6}
+footer.steel-surface>div:not(.footer-base) a:not(.brand):hover{color:#861e18;text-decoration-thickness:2px}
+footer.steel-surface .footer-heading-frame{box-shadow:0 2px 0 #668494}
+
+@media(max-width:480px){footer{grid-template-columns:minmax(0,1fr);gap:12px}footer>div:first-child{grid-column:auto}}
