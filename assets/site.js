@@ -35,7 +35,7 @@ document.querySelectorAll('.page-head,.dispatch-band,.resource-hero').forEach(su
 // Independent, newly randomized sunlight passes rather than synchronized loops.
 const steelSurfaces=document.querySelectorAll('.masthead,.resource-hero,.service,.story-photo span,.dispatch-band,.bottom-cta,footer,.page-head,.notice,.contact-panel a,.fleet-gallery figure,.secondary-button,.summary,.menu');
 steelSurfaces.forEach(element=>element.classList.add('steel-surface'));
-const steelTitles=[...document.querySelectorAll('h1,h2,h3,h4,.hero-lead,.hero h1 span,.command-copy h1 span,.resource-hero h1 span')].filter(element=>!element.closest('.contact-disclosure'));
+const steelTitles=[...document.querySelectorAll('h1,h2,h3,h4,.hero-lead,.hero h1 span,.command-copy h1 span,.resource-hero h1 span')].filter(element=>!element.closest('.contact-disclosure,.document-folder'));
 steelTitles.forEach(element=>element.classList.add('steel-text'));
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 // Border reflections and plate reflections have separate clocks, even on the same panel.

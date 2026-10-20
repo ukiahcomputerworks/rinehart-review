@@ -587,4 +587,4 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 @media(max-width:380px){.office-call-options{padding:14px}.office-call-choice{gap:6px;padding:10px}.office-call-choice strong{font-size:16px}}
 
 /* Directory information stays solid and readable inside steel dropdowns. */
-.contact-disclosure h3{color:#e5eef4;-webkit-text-fill-color:currentColor;background:none;filter:none;text-shadow:none;animation:none}
+.contact-disclosure h3,.document-folder h3{color:#e5eef4;-webkit-text-fill-color:currentColor;background:none;filter:none;text-shadow:none;animation:none}
