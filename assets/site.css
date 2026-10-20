@@ -91,7 +91,7 @@
 @media(min-width:701px){.policy-navigator{max-height:calc(100dvh - 48px);overflow:auto}}
 
 /* Keep the original logo prominent while tightening its vertical surround. */
-.masthead.steel-surface{padding-top:8px;padding-bottom:8px}
+.masthead.steel-surface{padding-top:2px;padding-bottom:8px}
 .masthead .brand small{margin-top:4px}
 
 /* Every heading shares the polished-metal finish; light panels use dark steel. */
@@ -307,7 +307,7 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
  nav{flex-wrap:wrap;gap:8px 20px}
 }
 @media(max-width:700px){
- .masthead.steel-surface{padding:8px 16px;gap:12px}
+ .masthead.steel-surface{padding:2px 16px 8px;gap:12px}
  .masthead .brand .rino-logo{width:220px;max-width:100%}.masthead .brand small{font-size:7px;letter-spacing:.1em;white-space:nowrap}
  .masthead .phone{display:none}
  .masthead .menu{padding:10px 14px;min-height:44px;border:1px solid #a5becd;border-top:2px solid #edf8ff;background:linear-gradient(135deg,#354b5a,#142633);box-shadow:0 3px 0 #071017;font-weight:700;font-size:13px}
