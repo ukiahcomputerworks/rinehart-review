@@ -40,7 +40,7 @@ steelTitles.forEach(element=>element.classList.add('steel-text'));
 const motionPreference=matchMedia('(prefers-reduced-motion: reduce)');
 // Border reflections and plate reflections have separate clocks, even on the same panel.
 const borders=document.querySelectorAll('.brand-logo-frame,.contact-keep-moving,.assurance-image,.put-work-image-button,.fuel-solution-image-button,.team-image-button,.document-folder,.connection-file,.connection-choice,.connection-open,.directions-image-button,.fuel-supply-image-button,.contact-disclosure,.email-image-button,.office-image-button,.dispatch-image-button,.document-search-hero,.resource-hero,.service,.industrial-window,.story-photo,.fleet-gallery figure,.command-photo,.office-console,.email-console,.team-card,.contact-hours,.contact-address,.resource-tool,.document-card,.notice,.summary,.secondary-button,.page-head,.dispatch-band,.bottom-cta,footer,.source-header-photo,.source-photo-rail figure,.familiar-photo,.policy-navigator,.policy-header-panel,.fleet-action,.bottom-cta .button,.history-card,.fleet-image-button,.hero-dispatch,.cardlock-action,.cardlock-sales,.joy-image-button');
-const plates=document.querySelectorAll('.connection-choice,.office-call-choice,.office-call-close,.contact-disclosure>summary,.document-folder>summary,.cardlock-action-label,.company-assurance,.page-head,.resource-hero,.dispatch-band,.contact-address');
+const plates=document.querySelectorAll('.bottom-cta,footer,.connection-choice,.office-call-choice,.office-call-close,.contact-disclosure>summary,.document-folder>summary,.cardlock-action-label,.company-assurance,.page-head,.resource-hero,.dispatch-band,.contact-address');
 const metalLayers=[];
 function addReflection(element,kind){
   element.classList.add('metal-host');

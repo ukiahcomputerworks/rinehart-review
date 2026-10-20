@@ -594,3 +594,8 @@ footer h3.steel-text{display:inline-block;background-color:#14232d;padding:6px 9
 .connection-choice>.connection-choice-index{position:relative;z-index:3;color:#28495d}
 .connection-choice:hover{filter:brightness(1.07)}
 .connection-choice[aria-pressed=true]{border-color:#f5fcff;box-shadow:inset 4px 0 #153e53,0 2px 0 #263f4e}
+
+/* Continuous diamond plate replaces the brushed-gray lower-page surfaces. */
+.bottom-cta.steel-surface,footer.steel-surface{background-image:linear-gradient(112deg,#829eafba,#f7fcffcc 30%,#a4bdccaa 58%,#e4f2facc),url('diamond.svg'),linear-gradient(110deg,#8ca5b5,#dceaf2);background-size:auto,40px 40px,auto}
+.bottom-cta.steel-surface::after,footer.steel-surface::after{display:none}
+.bottom-cta>.cta-panel,footer>div{position:relative;z-index:3}
