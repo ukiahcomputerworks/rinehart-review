@@ -40,6 +40,9 @@ def check(root):
     assert contact.select_one('.transport-map iframe')
     assert contact.select_one('.transport-map iframe').find_parent('details')
     assert not contact.select('.bottom-cta')
+    transport = BeautifulSoup((root/'trucking-for-hire/index.html').read_text(encoding='utf8'), 'html.parser')
+    gallery_sources = {img['src'].rsplit('/', 1)[-1] for img in transport.select('.transport-gallery img[src]')}
+    assert {f'owner-{number:02}.webp' for number in range(1, 13)} <= gallery_sources, 'Keep all owner-supplied fleet photos in gallery'
     joy = BeautifulSoup((root/'pacific-pride-card-lock/index.html').read_text(encoding='utf8'), 'html.parser')
     assert {a['href'] for a in joy.select('#joy-contact-options a')} == {'tel:+17074628811', 'mailto:joyw@rinehartoil.com'}
     assert joy.select_one('.joy-image-button')['href'] == '#joy-contact-options'

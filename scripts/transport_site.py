@@ -4,7 +4,7 @@ import html
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261021-contact-card-height'
+VERSION = '20261021-complete-fleet-gallery'
 CONTENT = json.loads((ROOT/'scripts/transport-content.json').read_text(encoding='utf8'))
 NAV = [('', 'Home'), ('trucking-for-hire', 'Fuel Transport'), ('about', 'Our Story'),
        ('employment-opportunities', 'Careers'), ('contact', 'Contact & Dispatch')]
@@ -31,8 +31,18 @@ def intro(kicker, title, text):
 def fleet():
     images = [('6346-rino-truck-6-1-of-1-cropped.webp', 'Rinehart truck and tank trailer'),
               ('6338-rino-truck-4-1-of-1.webp', 'Rinehart tanker fleet at the yard'),
+              ('owner-04.webp', 'Rinehart number 24 fuel truck'),
+              ('owner-05.webp', 'Rinehart number 19 tanker truck'),
+              ('owner-06.webp', 'Rinehart number 22 fuel delivery truck and trailer'),
               ('owner-07.webp', 'Rinehart number 22 fuel delivery truck'),
-              ('owner-11.webp', 'Rinehart number 23 tanker and trailer')]
+              ('owner-08.webp', 'Front view of a Rinehart Peterbilt truck'),
+              ('owner-11.webp', 'Rinehart number 23 tanker and trailer'),
+              ('owner-12.webp', 'Rinehart support truck with tanker fleet'),
+              ('owner-09.webp', 'Rinehart fleet logo and truck detail'),
+              ('owner-10.webp', 'Rinehart truck door and fleet logo'),
+              ('owner-01.webp', 'Rinehart number 1 support truck'),
+              ('owner-02.webp', 'Rinehart number 2 support truck'),
+              ('owner-03.webp', 'Rinehart number 2 support truck and fleet logo')]
     visible = '<div class="transport-gallery">'+''.join(photo(f, a, a) for f, a in images[:2])+'</div>'
     more = '<details class="contact-disclosure transport-more-fleet"><summary>More Fleet Photos</summary><div class="transport-disclosure-body transport-gallery">'+''.join(photo(f, a, a) for f, a in images[2:])+'</div></details>'
     return visible+more
