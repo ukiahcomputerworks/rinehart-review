@@ -4,7 +4,7 @@ import html
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261021-centered-address'
+VERSION = '20261021-contact-without-team-banner'
 CONTENT = json.loads((ROOT/'scripts/transport-content.json').read_text(encoding='utf8'))
 NAV = [('', 'Home'), ('trucking-for-hire', 'Fuel Transport'), ('about', 'Our Story'),
        ('employment-opportunities', 'Careers'), ('contact', 'Contact & Dispatch')]
@@ -19,7 +19,7 @@ def action(href, label):
 
 
 def art(href, file, label, cls=''):
-    dimensions = {'put-us-to-work.jpg': (1024,499), 'check-out-our-fleet.jpg': (1024,254), 'call-dispatch.jpg': (1024,684), 'main-office.jpg': (1024,757), 'email-dispatch.jpg': (1024,757), 'directions.jpg': (1024,415), 'pacific-pride.jpg': (1024,433), 'credit-app.jpg': (1024,432), 'ask-our-team.jpg': (1024,397), 'talk-to-rinehart.jpg': (488,141)}
+    dimensions = {'put-us-to-work.jpg': (1024,499), 'check-out-our-fleet.jpg': (1024,254), 'call-dispatch.jpg': (1024,684), 'main-office.jpg': (1024,757), 'email-dispatch.jpg': (1024,757), 'directions.jpg': (1024,415), 'pacific-pride.jpg': (1024,433), 'credit-app.jpg': (1024,432), 'talk-to-rinehart.jpg': (488,141)}
     width, height = dimensions[file]
     return f'<a class="history-card transport-art-button {cls}" href="{html.escape(href, quote=True)}" aria-label="{html.escape(label, quote=True)}"><img src="@assets/{file}" alt="{html.escape(label, quote=True)}" width="{width}" height="{height}" loading="lazy" decoding="async"></a>'
 
@@ -76,7 +76,6 @@ def build():
     office_options = '<div class="office-call-options" id="office-call-options"><h2 id="office-call-title">Choose A Number</h2><a class="office-call-choice" href="tel:+17074628811"><span>Main Office</span><strong>(707) 462-8811</strong></a><a class="office-call-choice" href="tel:+18006408814"><span>Toll Free</span><strong>(800) 640-8814</strong></a></div>'
     console = '<section class="transport-section transport-contact-actions" aria-label="Contact Rinehart">'+art('tel:+17074673313', 'call-dispatch.jpg', 'Call Dispatch At (707) 467-3313', 'dispatch-image-button')+art('#office-call-options', 'main-office.jpg', 'Main Office, Choose A Number', 'office-image-button')+art('mailto:dispatch@rinehartoil.com', 'email-dispatch.jpg', 'Email Dispatch', 'email-image-button')+office_options+'</section>'
     contact = contact[:start]+console+contact[end:]
-    contact = contact.replace('</section>', art('#team', 'ask-our-team.jpg', 'Ask Our Team, Find Your Contact', 'team-image-button')+'</section>', 1)
     directions = '<a class="transport-text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Rinehart+Oil+2401+N+State+Street+Ukiah+CA+95482" rel="noopener noreferrer">Get Directions</a>'
     contact = contact.replace(directions, art('https://www.google.com/maps/@?api=1&map_action=pano&pano=FfEuPfSBLQI-kpTnBH7Asw&viewpoint=39.1814271%2C-123.209538&heading=100&pitch=0&fov=80', 'directions.jpg', 'Get Directions, View Rinehart In Google Street View', 'directions-image-button'))
     cardlock = cardlock.replace(action('https://pacificpride.com/site-locator/', 'Find A Pacific Pride Location'), art('https://pacificpride.com/site-locator/', 'pacific-pride.jpg', 'Find A Pacific Pride Location', 'cardlock-locator'))

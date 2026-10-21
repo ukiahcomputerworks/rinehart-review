@@ -13,7 +13,7 @@ def check(root):
         'index.html': {'rinehart-history.jpg':'about/index.html', 'check-out-our-fleet.jpg':'trucking-for-hire/index.html#fleet', 'put-us-to-work.jpg':'contact/index.html'},
         'about/index.html': {'check-out-our-fleet.jpg':'../trucking-for-hire/index.html#fleet'},
         'employment-opportunities/index.html': {'talk-to-rinehart.jpg':'tel:+17074628811'},
-        'contact/index.html': {'call-dispatch.jpg':'tel:+17074673313', 'main-office.jpg':'#office-call-options', 'email-dispatch.jpg':'mailto:dispatch@rinehartoil.com', 'ask-our-team.jpg':'#team'},
+        'contact/index.html': {'call-dispatch.jpg':'tel:+17074673313', 'main-office.jpg':'#office-call-options', 'email-dispatch.jpg':'mailto:dispatch@rinehartoil.com'},
         'pacific-pride-card-lock/index.html': {'pacific-pride.jpg':'https://pacificpride.com/site-locator/', 'credit-app.jpg':'../assets/6333-rino-pac-credit-app-new.pdf', 'talk-with-joy.jpg':'#joy-contact-options'}
     }
     for page, images in artwork.items():
@@ -35,6 +35,7 @@ def check(root):
         assert not any(x in text for x in ('julie rinehart', 'hr applications', 'costco', 'spill-free', '24/7', 'supply agreements'))
         assert 'jrinehart@' not in str(s)
     contact = BeautifulSoup((root/'contact/index.html').read_text(encoding='utf8'), 'html.parser')
+    assert not contact.select('img[src$="/ask-our-team.jpg"]')
     assert {a['href'] for a in contact.select('#office-call-options a')} == {'tel:+17074628811','tel:+18006408814'}
     assert len(contact.select('.team-card')) == 9
     assert contact.select_one('.transport-map iframe')
