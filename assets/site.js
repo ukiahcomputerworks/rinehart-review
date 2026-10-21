@@ -100,6 +100,19 @@ if(historyButton){
  historyButton.style.setProperty('--history-button-width',`${Math.ceil(historyMeasure.measureText('principles that started this business still drive it.').width)}px`);
 }
 
+const responsiveHistory=document.querySelector('.transport-history-details');
+if(responsiveHistory){
+ const mobileHistory=matchMedia('(max-width:700px)');
+ let mobileHistoryReady=false;
+ function syncResponsiveHistory(){
+  if(mobileHistory.matches){
+   if(!mobileHistoryReady){responsiveHistory.open=false;mobileHistoryReady=true}
+  }else{responsiveHistory.open=true;mobileHistoryReady=false}
+ }
+ mobileHistory.addEventListener('change',syncResponsiveHistory);
+ syncResponsiveHistory();
+}
+
 // Alpha-inspired resource selection, using Rinehart's compact steel components.
 const connectionSelect=document.querySelector('#connection-select');
 if(connectionSelect){
