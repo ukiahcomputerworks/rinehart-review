@@ -73,6 +73,7 @@
 .transport-main .compact-hours{padding:12px 16px;font-size:15px}
 .transport-main .hours-row{padding:6px 0}
 .transport-address{margin-top:18px;text-align:center}
+.transport-address>p{margin:0 auto 12px}
 .transport-site .transport-main .transport-address .directions-image-button{margin:10px auto}
 .transport-address .transport-map{text-align:left}
 .transport-main .transport-map{margin-top:10px}
