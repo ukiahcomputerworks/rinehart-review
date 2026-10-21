@@ -56,6 +56,7 @@
 .transport-disclosure-body{padding:14px 16px}
 .transport-disclosure-body p:last-child{margin:0}
 .transport-history-details .transport-disclosure-body p{max-width:none}
+.transport-mobile-history{display:none}
 @media(min-width:701px){.transport-history-details>summary{display:none}.transport-main .transport-history-details{margin-top:0}}
 .transport-disclosure-body ul{margin:0 0 12px;padding-left:22px}
 .transport-disclosure-body li{margin:4px 0}
@@ -116,6 +117,8 @@
  .transport-footer-brand .brand{grid-row:1/3}
 }
 @media(max-width:700px){
+ .transport-desktop-history{display:none}
+ .transport-mobile-history{display:block}
  .transport-main{padding:0 18px 12px}
  .transport-site .masthead{padding-left:18px;padding-right:18px}
  .transport-site #nav{padding:4px 18px;gap:0}
