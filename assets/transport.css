@@ -42,6 +42,7 @@
 .transport-site .transport-main .directions-image-button{width:min(100%,300px)}
 .transport-site .transport-contact-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
 .transport-site .transport-contact-actions .transport-art-button{width:100%;margin:0}
+.transport-site .transport-contact-actions .transport-art-button img{aspect-ratio:1024/757;object-fit:cover}
 .transport-site .transport-cardlock-links{display:grid;grid-template-columns:1fr 1fr;max-width:1000px;gap:18px}
 .transport-site .transport-cardlock-links .transport-art-button{width:100%;margin:0}
 .transport-section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px}
