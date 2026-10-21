@@ -55,6 +55,7 @@
 .transport-main .contact-disclosure>summary{padding:12px 16px;min-height:48px;line-height:1.4;font-size:19px;position:relative;z-index:1}
 .transport-disclosure-body{padding:14px 16px}
 .transport-disclosure-body p:last-child{margin:0}
+.transport-history-details .transport-disclosure-body p{max-width:none}
 .transport-disclosure-body ul{margin:0 0 12px;padding-left:22px}
 .transport-disclosure-body li{margin:4px 0}
 .transport-main .contact-disclosure h3{background:none;color:#eef5f9;-webkit-text-fill-color:currentColor;text-shadow:none;filter:none}
