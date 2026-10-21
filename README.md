@@ -4,28 +4,24 @@ Owner-requested, local-computer website redesign published as a staged, noindex 
 
 ## Current Features
 
-- Seventeen pages with original RINO branding, original and owner-supplied photography, Title Case headings, polished silver framing and independently timed shimmer.
-- Compact mobile layouts, full-card service links, grouped navigation, one quiet service/history assurance strip and the ComputerWorks.ai colophon integrated into the existing footer.
-- Documents: sixteen downloads in two searchable folders. Links: seventeen external resources in full category lists with a silver selection-transfer effect and portrait photo detail card.
-- Contact: aligned image actions, a choice between the 707 and 800 office numbers, three department disclosures, office hours, and an always-visible Google map. The directions artwork opens the selected station Street View.
-- Seven-page credit packet with 246 fillable PDF fields and checkboxes. Users download, fill, save, sign, then email an attachment or print and mail it. The website does not collect credit-application data.
-- Seven-step driver application preview with all ten owner-specified qualification requirements. It sends no application data and uses no browser storage. Secure HR processing and verified delivery remain pending.
+- Five main pages: Home, Fuel Transport (including Fleet), Our Story, Careers, and Contact & Dispatch. Privacy is a footer utility; existing Cardlock customers retain a temporary support page.
+- Ten former pages redirect to relevant retained destinations. Retail/wholesale sales pages, historical resource catalogs and the unfinished online application are out of the public journey. Original files and Git history remain preserved.
+- Compact shared navigation/footer, native disclosures, direct dispatch contact, office-number chooser and the approved charcoal, riveted-steel and diamond-plate shimmer.
+- Four selected fleet photos, with two behind More Fleet Photos. Full company history and driver qualifications expand on request.
+- No application collection. Careers directs visitors to the office for current openings and submission instructions. HR replacement and secure processing remain COM-493.
 
 ## Build And Verification
 
-On the CWU workstation, run `python scripts/driver_form.py` to build all pages and the driver preview. This requires the owning coordination folder's source inventory and BeautifulSoup dependency. The fillable-PDF generator uses the preserved original packet in coordination and the bundled Python runtime with pypdf.
-
-Run these release guards:
+Run `python scripts/build.py`. `scripts/transport_site.py` and `scripts/transport-content.json` are the canonical transport-first generator and retained content. The old `driver_form.py` command is a compatibility entry point for the same build; it cannot republish the unfinished form. Earlier migration helpers remain historical and are not part of this build.
 
 ```text
 python scripts/check_release_links.py
 python scripts/check_action_intent.py
 python scripts/apply_colophon.py --check
+node scripts/verify.cjs http://127.0.0.1:8770/
 ```
 
-Configure a fresh clone with `git config core.hooksPath .githooks`. The pre-push hook checks local destinations, forbidden legacy-site handoffs, owner-approved artwork actions and the shared colophon.
-
-For browser verification, use `node scripts/verify.cjs <site-base-url>` with Playwright available. Serve the repository locally with `python -m http.server 8769 --bind 127.0.0.1`, then use `http://127.0.0.1:8769/` as the base. Dated interaction, PDF save/reopen, motion and desktop/mobile evidence is kept in the coordination folder. `verification.json` records its tested source commit and date; it is evidence of those checks, not production acceptance.
+A fresh clone uses `git config core.hooksPath .githooks`. The pre-push hook checks destinations, retired-content boundaries, contact actions and the shared colophon. Serve locally with `python -m http.server 8770 --bind 127.0.0.1` for browser checks. Dated acceptance evidence belongs in the coordination PROJECT.md; deployment is not owner acceptance.
 
 ## Source, Privacy And Ownership
 
@@ -33,7 +29,7 @@ Public migration source: https://www.rinehartoil.com/. Captures, original docume
 
 The site has no first-party analytics, advertising tracker, login or application backend. The host can log visitor IP addresses. The Contact page embeds Google Maps, which connects to Google; the privacy notice identifies that service. Phone and email links open the visitor's own applications. No old-site fallback, comparison or placeholder links are permitted in visitor-facing pages.
 
-The owner instructed removal of the former photographer credit and states that they assume material ownership. Provenance records preserve that instruction; it is not an independent chain-of-title finding. The review retains recognizable source and supplied photographs. Historical documents remain labeled as historical references.
+The owner instructed removal of the former photographer credit and states that they assume material ownership. Provenance records preserve that instruction; it is not an independent chain-of-title finding. The review retains recognizable source and supplied photographs. Historical documents remain in preserved assets and source records, outside the public marketing journey.
 
 ## Outstanding Acceptance
 

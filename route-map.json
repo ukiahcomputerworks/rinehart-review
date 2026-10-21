@@ -2,71 +2,96 @@
   {
     "source": "/",
     "target": "index.html",
-    "disposition": "redesigned; full company history retained at about/index.html"
+    "disposition": "retained; transport-first compact preview"
   },
   {
     "source": "/trucking-for-hire/",
-    "target": "/trucking-for-hire/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
+    "target": "trucking-for-hire/index.html",
+    "disposition": "retained; transport-first compact preview"
   },
   {
-    "source": "/branded-fuels/",
-    "target": "/branded-fuels/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/unbranded-fuels/",
-    "target": "/unbranded-fuels/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/pacific-pride-card-lock/",
-    "target": "/pacific-pride-card-lock/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/customer-resources/",
-    "target": "/customer-resources/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/contact/",
-    "target": "/contact/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/credit-application/",
-    "target": "/credit-application/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/employment-application/",
-    "target": "/employment-application/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/employment-application/rroi-webpagecontentdriver-application-with-desc-2019-revpdf/",
-    "target": "/employment-application/rroi-webpagecontentdriver-application-with-desc-2019-revpdf/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
-  },
-  {
-    "source": "/employment-application/office-positions/",
-    "target": "/employment-application/office-positions/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
+    "source": "/about/",
+    "target": "about/index.html",
+    "disposition": "retained; transport-first compact preview"
   },
   {
     "source": "/employment-opportunities/",
-    "target": "/employment-opportunities/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
+    "target": "employment-opportunities/index.html",
+    "disposition": "retained; transport-first compact preview"
+  },
+  {
+    "source": "/contact/",
+    "target": "contact/index.html",
+    "disposition": "retained; transport-first compact preview"
+  },
+  {
+    "source": "/pacific-pride-card-lock/",
+    "target": "pacific-pride-card-lock/index.html",
+    "disposition": "retained; transport-first compact preview"
   },
   {
     "source": "/privacy-policy/",
-    "target": "/privacy-policy/index.html",
-    "disposition": "migrated public content; local routes and documents validated"
+    "target": "privacy-policy/index.html",
+    "disposition": "retained; transport-first compact preview"
+  },
+  {
+    "source": "/fleet/",
+    "target": "fleet/index.html",
+    "disposition": "redirect",
+    "redirectTo": "trucking-for-hire/index.html#fleet"
+  },
+  {
+    "source": "/branded-fuels/",
+    "target": "branded-fuels/index.html",
+    "disposition": "redirect",
+    "redirectTo": "trucking-for-hire/index.html"
+  },
+  {
+    "source": "/unbranded-fuels/",
+    "target": "unbranded-fuels/index.html",
+    "disposition": "redirect",
+    "redirectTo": "trucking-for-hire/index.html"
+  },
+  {
+    "source": "/credit-application/",
+    "target": "credit-application/index.html",
+    "disposition": "redirect",
+    "redirectTo": "contact/index.html"
+  },
+  {
+    "source": "/customer-resources/",
+    "target": "customer-resources/index.html",
+    "disposition": "redirect",
+    "redirectTo": "contact/index.html"
   },
   {
     "source": "/resource-links/",
     "target": "resource-links/index.html",
-    "disposition": "owner-requested external links directory; documents retained at customer-resources"
+    "disposition": "redirect",
+    "redirectTo": "trucking-for-hire/index.html"
+  },
+  {
+    "source": "/employment-application/",
+    "target": "employment-application/index.html",
+    "disposition": "redirect",
+    "redirectTo": "employment-opportunities/index.html"
+  },
+  {
+    "source": "/employment-application/office-positions/",
+    "target": "employment-application/office-positions/index.html",
+    "disposition": "redirect",
+    "redirectTo": "employment-opportunities/index.html"
+  },
+  {
+    "source": "/employment-application/rroi-webpagecontentdriver-application-with-desc-2019-revpdf/",
+    "target": "employment-application/rroi-webpagecontentdriver-application-with-desc-2019-revpdf/index.html",
+    "disposition": "redirect",
+    "redirectTo": "employment-opportunities/index.html"
+  },
+  {
+    "source": "/driver-application/",
+    "target": "driver-application/index.html",
+    "disposition": "redirect",
+    "redirectTo": "employment-opportunities/index.html"
   }
 ]
