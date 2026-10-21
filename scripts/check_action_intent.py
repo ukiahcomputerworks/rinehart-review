@@ -34,6 +34,9 @@ def check(root):
         text = s.get_text(' ',strip=True).lower()
         assert not any(x in text for x in ('julie rinehart', 'hr applications', 'costco', 'spill-free', '24/7', 'supply agreements'))
         assert 'jrinehart@' not in str(s)
+    home = BeautifulSoup((root/'index.html').read_text(encoding='utf8'), 'html.parser')
+    dispatch_button = home.select_one('.transport-actions .transport-button[href="tel:+17074673313"]')
+    assert dispatch_button and 'Dispatch:' in dispatch_button.get_text(' ', strip=True), 'Keep homepage dispatch action as a button'
     contact = BeautifulSoup((root/'contact/index.html').read_text(encoding='utf8'), 'html.parser')
     assert not contact.select('img[src$="/ask-our-team.jpg"]')
     assert {a['href'] for a in contact.select('#office-call-options a')} == {'tel:+17074628811','tel:+18006408814'}
