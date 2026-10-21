@@ -4,7 +4,7 @@ import html
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261021-complete-fleet-gallery'
+VERSION = '20261021-centered-address'
 CONTENT = json.loads((ROOT/'scripts/transport-content.json').read_text(encoding='utf8'))
 NAV = [('', 'Home'), ('trucking-for-hire', 'Fuel Transport'), ('about', 'Our Story'),
        ('employment-opportunities', 'Careers'), ('contact', 'Contact & Dispatch')]

@@ -72,7 +72,9 @@
 .transport-main .disclosure-count{font-size:13px;margin-left:12px}
 .transport-main .compact-hours{padding:12px 16px;font-size:15px}
 .transport-main .hours-row{padding:6px 0}
-.transport-address{margin-top:18px}
+.transport-address{margin-top:18px;text-align:center}
+.transport-site .transport-main .transport-address .directions-image-button{margin:10px auto}
+.transport-address .transport-map{text-align:left}
 .transport-main .transport-map{margin-top:10px}
 .transport-map iframe{display:block;width:100%;height:260px;border:1px solid #728d9e}
 .transport-cardlock-links{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin-bottom:18px}
