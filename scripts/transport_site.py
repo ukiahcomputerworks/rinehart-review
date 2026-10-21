@@ -4,7 +4,7 @@ import html
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
-VERSION = '20261021-history-button'
+VERSION = '20261021-image-actions'
 CONTENT = json.loads((ROOT/'scripts/transport-content.json').read_text(encoding='utf8'))
 NAV = [('', 'Home'), ('trucking-for-hire', 'Fuel Transport'), ('about', 'Our Story'),
        ('employment-opportunities', 'Careers'), ('contact', 'Contact & Dispatch')]
@@ -16,6 +16,12 @@ def photo(file, alt, caption='', cls=''):
 
 def action(href, label):
     return f'<a class="transport-button office-call-choice" href="{href}">{label}</a>'
+
+
+def art(href, file, label, cls=''):
+    dimensions = {'put-us-to-work.jpg': (1024,499), 'check-out-our-fleet.jpg': (1024,254), 'call-dispatch.jpg': (1024,684), 'main-office.jpg': (1024,757), 'email-dispatch.jpg': (1024,757), 'directions.jpg': (1024,415), 'pacific-pride.jpg': (1024,433), 'credit-app.jpg': (1024,432), 'ask-our-team.jpg': (1024,397), 'talk-to-rinehart.jpg': (488,141)}
+    width, height = dimensions[file]
+    return f'<a class="history-card transport-art-button {cls}" href="{html.escape(href, quote=True)}" aria-label="{html.escape(label, quote=True)}"><img src="@assets/{file}" alt="{html.escape(label, quote=True)}" width="{width}" height="{height}" loading="lazy" decoding="async"></a>'
 
 
 def intro(kicker, title, text):
@@ -50,6 +56,21 @@ def build():
     contact = intro('SPEAK WITH THE PEOPLE BEHIND THE DELIVERY', 'Contact &amp; Dispatch.', 'Speak directly with the team that keeps Rinehart moving to streamline your next delivery.')+'''<section class="transport-section transport-contact-actions" aria-label="Contact Rinehart"><div><h2>Dispatch</h2>'''+action('tel:+17074673313', 'Call (707) 467-3313')+action('mailto:dispatch@rinehartoil.com', 'Email Dispatch')+'''</div><div><h2>Office &amp; Transport Inquiries</h2><a class="transport-button office-call-choice office-image-button" href="#office-call-options">Choose An Office Number</a><div class="office-call-options" id="office-call-options"><h2 id="office-call-title">Choose A Number</h2><a class="office-call-choice" href="tel:+17074628811"><span>Main Office</span><strong>(707) 462-8811</strong></a><a class="office-call-choice" href="tel:+18006408814"><span>Toll Free</span><strong>(800) 640-8814</strong></a></div></div></section><section class="transport-section" id="team"><h2>Find Your Contact.</h2><p>Open a department, then select a name to email.</p>'''+CONTENT['directory']+'''</section><section class="transport-section">'''+CONTENT['hours']+'''<div class="transport-address"><h2>Visit Rinehart.</h2><p>2401 N. State Street, Ukiah, CA 95482<br>Mail: P.O. Box 725, Ukiah, CA 95482</p><a class="transport-text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Rinehart+Oil+2401+N+State+Street+Ukiah+CA+95482" rel="noopener noreferrer">Get Directions</a><details class="contact-disclosure transport-map"><summary>View Map &amp; Fax Numbers</summary><div class="transport-disclosure-body"><p>Fax: (707) 468-3820 / (707) 463-8787</p><iframe title="Map Of Rinehart Oil, Ukiah" loading="lazy" referrerpolicy="no-referrer" src="https://www.google.com/maps?q=Rinehart+Oil+2401+N+State+Street+Ukiah+CA+95482&amp;z=16&amp;output=embed"></iframe></div></details></div></section>'''
     cardlock = intro('EXISTING CUSTOMER SUPPORT', 'Cardlock Customer Resources.', 'Looking for help with your existing Pacific Pride account? Use the links below or contact our customer service team.')+'''<section class="transport-section"><div class="transport-cardlock-links">'''+action('https://pacificpride.com/site-locator/', 'Find A Pacific Pride Location')+'''<a class="transport-text-link" href="@assets/6333-rino-pac-credit-app-new.pdf">Cardlock Account Application PDF</a></div>'''+CONTENT['joy']+'''</section>'''
     privacy = intro('RINEHART OIL, INC.', 'Privacy Policy.', 'Information practices and contact details.')+'<section class="transport-section transport-policy">'+CONTENT['privacy']+'</section>'
+    # Preserve the approved visual actions while consolidating the surrounding content.
+    home = home.replace(action('@contact/index.html', 'Discuss Your Transport Needs'), art('@contact/index.html', 'put-us-to-work.jpg', 'Put Us To Work, Contact Rinehart', 'put-work-image-button'))
+    home = home.replace('<a class="transport-text-link" href="@trucking-for-hire/index.html#fleet">Explore Fuel Transport &amp; Our Fleet</a>', art('@trucking-for-hire/index.html#fleet', 'check-out-our-fleet.jpg', 'Check Out Our Fleet', 'fleet-image-button'))
+    story = story.replace('<a class="transport-text-link" href="@trucking-for-hire/index.html">Meet Today’s Transport Business</a>', art('@trucking-for-hire/index.html#fleet', 'check-out-our-fleet.jpg', 'Check Out Our Fleet', 'fleet-image-button'))
+    careers = careers.replace(action('tel:+17074628811', 'Call The Office: (707) 462-8811'), art('tel:+17074628811', 'talk-to-rinehart.jpg', 'Talk To Rinehart, Call The Office At (707) 462-8811', 'contact-image-button'))
+    start = contact.index('<section class="transport-section transport-contact-actions"')
+    end = contact.index('<section class="transport-section" id="team">', start)
+    office_options = '<div class="office-call-options" id="office-call-options"><h2 id="office-call-title">Choose A Number</h2><a class="office-call-choice" href="tel:+17074628811"><span>Main Office</span><strong>(707) 462-8811</strong></a><a class="office-call-choice" href="tel:+18006408814"><span>Toll Free</span><strong>(800) 640-8814</strong></a></div>'
+    console = '<section class="transport-section transport-contact-actions" aria-label="Contact Rinehart">'+art('tel:+17074673313', 'call-dispatch.jpg', 'Call Dispatch At (707) 467-3313', 'dispatch-image-button')+art('#office-call-options', 'main-office.jpg', 'Main Office, Choose A Number', 'office-image-button')+art('mailto:dispatch@rinehartoil.com', 'email-dispatch.jpg', 'Email Dispatch', 'email-image-button')+office_options+'</section>'
+    contact = contact[:start]+console+contact[end:]
+    contact = contact.replace('</section>', art('#team', 'ask-our-team.jpg', 'Ask Our Team, Find Your Contact', 'team-image-button')+'</section>', 1)
+    directions = '<a class="transport-text-link" href="https://www.google.com/maps/search/?api=1&amp;query=Rinehart+Oil+2401+N+State+Street+Ukiah+CA+95482" rel="noopener noreferrer">Get Directions</a>'
+    contact = contact.replace(directions, art('https://www.google.com/maps/@?api=1&map_action=pano&pano=FfEuPfSBLQI-kpTnBH7Asw&viewpoint=39.1814271%2C-123.209538&heading=100&pitch=0&fov=80', 'directions.jpg', 'Get Directions, View Rinehart In Google Street View', 'directions-image-button'))
+    cardlock = cardlock.replace(action('https://pacificpride.com/site-locator/', 'Find A Pacific Pride Location'), art('https://pacificpride.com/site-locator/', 'pacific-pride.jpg', 'Find A Pacific Pride Location', 'cardlock-locator'))
+    cardlock = cardlock.replace('<a class="transport-text-link" href="@assets/6333-rino-pac-credit-app-new.pdf">Cardlock Account Application PDF</a>', art('@assets/6333-rino-pac-credit-app-new.pdf', 'credit-app.jpg', 'Cardlock Account Application PDF', 'cardlock-credit'))
     pages = [('', 'Fuel Transport', home, True), ('trucking-for-hire', 'Fuel Transport & Our Fleet', transport, True), ('about', 'Our Story', story, False), ('employment-opportunities', 'Careers', careers, False), ('contact', 'Contact & Dispatch', contact, False), ('pacific-pride-card-lock', 'Cardlock Customer Resources', cardlock, False), ('privacy-policy', 'Privacy Policy', privacy, False)]
     routes = []
     for slug, title, body, cta in pages:

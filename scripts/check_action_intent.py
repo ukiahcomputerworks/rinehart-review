@@ -9,6 +9,20 @@ def check(root):
     routes = json.loads((root/'route-map.json').read_text(encoding='utf8'))
     rendered = [r for r in routes if r['disposition'] != 'redirect']
     assert len(rendered) == 7 and len(routes) == 17
+    artwork = {
+        'index.html': {'rinehart-history.jpg':'about/index.html', 'check-out-our-fleet.jpg':'trucking-for-hire/index.html#fleet', 'put-us-to-work.jpg':'contact/index.html'},
+        'about/index.html': {'check-out-our-fleet.jpg':'../trucking-for-hire/index.html#fleet'},
+        'employment-opportunities/index.html': {'talk-to-rinehart.jpg':'tel:+17074628811'},
+        'contact/index.html': {'call-dispatch.jpg':'tel:+17074673313', 'main-office.jpg':'#office-call-options', 'email-dispatch.jpg':'mailto:dispatch@rinehartoil.com', 'ask-our-team.jpg':'#team'},
+        'pacific-pride-card-lock/index.html': {'pacific-pride.jpg':'https://pacificpride.com/site-locator/', 'credit-app.jpg':'../assets/6333-rino-pac-credit-app-new.pdf', 'talk-with-joy.jpg':'#joy-contact-options'}
+    }
+    for page, images in artwork.items():
+        soup = BeautifulSoup((root/page).read_text(encoding='utf8'), 'html.parser')
+        for image, destination in images.items():
+            matches = soup.select(f'img[src$="/{image}"]')
+            assert len(matches) == 1 and matches[0].find_parent('a')['href'] == destination, f'{page}: preserve approved {image} action'
+    contact_art = BeautifulSoup((root/'contact/index.html').read_text(encoding='utf8'), 'html.parser')
+    assert contact_art.select_one('.directions-image-button img[src$="/directions.jpg"]')
     for route in rendered:
         s = BeautifulSoup((root/route['target']).read_text(encoding='utf8'), 'html.parser')
         assert len(s.select('h1')) == 1

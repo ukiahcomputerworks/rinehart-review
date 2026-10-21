@@ -35,6 +35,15 @@
 .transport-heritage p{margin-bottom:0}
 .transport-main .transport-history-button{display:block;width:min(100%,420px);margin:12px 0 4px;padding:3px;border:3px solid #a6bfce;border-top:4px solid #f4fbff;border-bottom:4px solid #496677;line-height:0}
 .transport-history-button img{display:block;width:100%;height:auto;aspect-ratio:1024/254}
+.transport-site .transport-main .transport-art-button{display:block;position:relative;grid-column:auto;width:min(100%,420px);max-width:100%;margin:10px 0;padding:3px;border:3px solid #a6bfce;border-top:4px solid #f4fbff;border-bottom:4px solid #496677;background:#314a59;line-height:0;align-self:start;text-decoration:none;box-shadow:0 4px 0 #243d4e,0 8px 15px #0007}
+.transport-site .transport-main .transport-art-button img{display:block;width:100%;height:auto;max-height:none;aspect-ratio:auto;object-fit:contain;margin:0;border:1px solid #324d5e}
+.transport-site .transport-actions .put-work-image-button{width:min(100%,300px)}
+.transport-site .transport-main .team-image-button{width:min(100%,300px);margin-top:14px}
+.transport-site .transport-main .directions-image-button{width:min(100%,300px)}
+.transport-site .transport-contact-actions{grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start}
+.transport-site .transport-contact-actions .transport-art-button{width:100%;margin:0}
+.transport-site .transport-cardlock-links{display:grid;grid-template-columns:1fr 1fr;max-width:1000px;gap:18px}
+.transport-site .transport-cardlock-links .transport-art-button{width:100%;margin:0}
 .transport-section-heading{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px}
 .transport-section-heading h2,.transport-section-heading p{margin-bottom:0}
 .transport-gallery{display:grid;grid-template-columns:1fr 1fr;gap:20px}
@@ -118,6 +127,9 @@
  .transport-section-heading{display:block}
  .transport-section-heading p{margin-top:8px}
  .transport-contact-actions{grid-template-columns:1fr;gap:16px}
+ .transport-site .transport-contact-actions{grid-template-columns:1fr;gap:12px;justify-items:start}
+ .transport-site .transport-contact-actions .transport-art-button{width:min(100%,360px)}
+ .transport-site .transport-cardlock-links{grid-template-columns:1fr;gap:12px}
  .transport-main .contact-disclosure>summary{font-size:17px;padding:12px}
  .transport-main .team-card{grid-template-columns:1fr 1fr}
  .transport-main .team-card h3{font-size:17px}
